@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Yorhom's Playground]]></title>
+  <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-02-04T15:23:57.931Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[Yorhom]]></name>
+    <email><![CDATA[wangyuehao1999@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2016/02/04/hello-world/"/>
+    <id>http://yoursite.com/2016/02/04/hello-world/</id>
+    <published>2016-02-04T15:23:57.931Z</published>
+    <updated>2016-02-04T15:23:57.931Z</updated>
+    <content type="html"><![CDATA[<p>今天是2016年2月4日，我的独立博客建立了，欢迎各位关注～</p>
+<p>本博客使用<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>构建，感谢<a href="https://github.com/ppoffice" target="_blank" rel="external">PPOffice同学</a>提供博客主题。</p>
+<p>希望以后能写出更多，更好的博文～ <strong>分享学习和生活中的精彩！</strong></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天是2016年2月4日，我的独立博客建立了，欢迎各位关注～</p>
+<p>本博客使用<a href="https://hexo.io">Hexo</a>构建，感谢<a href="https://github.com/ppoffice">PPOffice同学</a>提供博客主题。</p>
+<p>希望以后能写出更多，更好的博文～ <strong>分享学习和生活中的精彩！</strong></p>]]>
+    
+    </summary>
+    
+      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+</feed>
