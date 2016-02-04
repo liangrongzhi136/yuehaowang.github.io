@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yuehaowang.github.io/about/index.html</loc>
+    <lastmod>2016-02-04T17:29:11.712Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yuehaowang.github.io/tags/index.html</loc>
     <lastmod>2016-02-04T17:20:14.480Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://yuehaowang.github.io/categories/index.html</loc>
     <lastmod>2016-02-04T17:19:50.285Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yuehaowang.github.io/about/index.html</loc>
-    <lastmod>2016-02-04T17:19:22.858Z</lastmod>
   </url>
   
   <url>
