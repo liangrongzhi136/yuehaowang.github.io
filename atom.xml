@@ -3,9 +3,9 @@
   <title><![CDATA[Yorhom's Playground]]></title>
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
+  <link href="http://yuehaowang.github.io/"/>
   <updated>2016-02-04T15:23:57.931Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yuehaowang.github.io/</id>
   
   <author>
     <name><![CDATA[Yorhom]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2016/02/04/hello-world/"/>
-    <id>http://yoursite.com/2016/02/04/hello-world/</id>
+    <link href="http://yuehaowang.github.io/2016/02/04/hello-world/"/>
+    <id>http://yuehaowang.github.io/2016/02/04/hello-world/</id>
     <published>2016-02-04T15:23:57.931Z</published>
     <updated>2016-02-04T15:23:57.931Z</updated>
     <content type="html"><![CDATA[<p>今天是2016年2月4日，我的独立博客建立了，欢迎各位关注～</p>
@@ -31,9 +31,9 @@
     
     </summary>
     
-      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="http://yuehaowang.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
-      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="http://yuehaowang.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
