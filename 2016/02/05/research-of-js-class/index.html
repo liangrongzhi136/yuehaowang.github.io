@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript类的小小研究 | Yorhom&#39;s Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基础知识JavaScript中的类JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript类的小小研究">
+<meta property="og:url" content="http://yuehaowang.github.io/2016/02/05/research-of-js-class/index.html">
+<meta property="og:site_name" content="Yorhom's Playground">
+<meta property="og:description" content="基础知识JavaScript中的类JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/jpp_class_error.png">
+<meta property="og:updated_time" content="2016-02-05T14:55:01.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript类的小小研究">
+<meta name="twitter:description" content="基础知识JavaScript中的类JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Yorhom&#39;s Playground</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/showcase">作品展示</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://yuehaowang.github.io"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">首页</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">归档</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">分类</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">标签</a></td>
+        
+          <td><a class="main-nav-link" href="/showcase">作品展示</a></td>
+        
+          <td><a class="main-nav-link" href="/about">关于我</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuehaowang.github.io"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">Yorhom</h2>
+      <h3 id="title">std::vector&lt;Tech&gt; me;</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>中国 四川 成都</span>
+      <a id="follow" href="https://github.com/yuehaowang/">关注我</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        2
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        4
+        <span>标签</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="http://github.com/yuehaowang/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="http://weibo.com/yorhomwang/" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+          
+          <td><a href="http://twitter.com/yuehaowang/" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-research-of-js-class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript类的小小研究
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/02/05/research-of-js-class/">
+      <time datetime="2016-02-05T15:35:14.308Z" itemprop="datePublished">2016-02-05</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Html5-JavaScript/">Html5&JavaScript</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <h1 id="u57FA_u7840_u77E5_u8BC6"><a href="#u57FA_u7840_u77E5_u8BC6" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="JavaScript_u4E2D_u7684_u7C7B"><a href="#JavaScript_u4E2D_u7684_u7C7B" class="headerlink" title="JavaScript中的类"></a>JavaScript中的类</h2><p>JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的关于角色的代码算作一类，游戏背景算作一类，游戏特效又是一类。这样一来，我们对类进行操作，就不会使代码显得很凌乱，冗杂。虽然Js是弱类型语言，但是也提供了类这一概率。<br>定义Js中的类，实际上用的是<code>function</code>，总所周知，这个语法其实是用来定义函数的。不同于定义函数的是，我们可以在<code>function</code>中通过<code>this.xxx</code>的方式来定义属性和方法。比如说：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>使用的时候使用<code>new</code>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> People();</span><br><span class="line"><span class="comment">// "Yorhom"</span></span><br><span class="line">alert(yorhom.getName());</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，这样就可以使用到我们定义的类和类中的方法了。<br>也许你会问<code>this.xxx</code>只能定义公有属性和方法，那私有属性和方法怎么办呢？这个可以用到js闭包的知识来解决：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> age = <span class="number">16</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> People();</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line">alert(yorhom.age);</span><br><span class="line"><span class="comment">// 16</span></span><br><span class="line">alert(yorhom.getAge());</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，这里的age就是一个私有属性了。</p>
+<h2 id="JavaScript_u4E2D_u7684prototype"><a href="#JavaScript_u4E2D_u7684prototype" class="headerlink" title="JavaScript中的prototype"></a>JavaScript中的prototype</h2><p>上面的代码美中不足的地方就是，如果一个类有很多方法，同时用到这个类的地方又有很多（也就是<code>new</code>出来的对象有很多），那么用上面的代码就会出现内存占用过盛的问题。问题的根本原因在于，每次实例化一个对象，这个类就会执行构造器里的代码（以People类为例就是执行<code>function People () {...}</code>），因此每当这个类被实例化的时候，这些方法和属性就会被拷贝到实例化出来的对象中。这样一来，就会造成“吃”内存的现象。<br>于是js中的<code>prototype</code>就诞生了。<code>prototype</code>的作用通常是给一个类添加一系列属性或者方法。 每当一个类被实例化之后，实例化出来的对象会自动获取类的<code>prototype</code>中定义的方法和属性。只不过这里的获取方式类似于C++里面的引用，不会在内存里对这些方法和属性进行复制，而是指向这些方法和属性。示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">People.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> People();</span><br><span class="line"><span class="comment">// "Yorhom"</span></span><br><span class="line">alert(yorhom.getName());</span><br></pre></td></tr></table></figure></p>
+<p>这种方法虽然可以节约内存，但是，美中不足的是，无法定义私有属性。</p>
+<h2 id="u7C7B_u7684_u7EE7_u627F"><a href="#u7C7B_u7684_u7EE7_u627F" class="headerlink" title="类的继承"></a>类的继承</h2><p>Javascript没有提供继承的函数，所以只有自己写了。这里借用lufylegend.js中的继承方法向大家展示如何实现继承：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">base</span> (<span class="params">d, b, a</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> p = <span class="literal">null</span>, o = d.constructor.prototype, h = &#123;&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (p <span class="keyword">in</span> o) &#123;</span><br><span class="line">		h[p] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (p <span class="keyword">in</span> b.prototype) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!h[p]) &#123;</span><br><span class="line">			o[p] = b.prototype[p];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	b.apply(d, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里的base就是继承函数了。继承函数的原理莫过于复制类的方法和属性。因此，只要做到这点，就可以实现类的继承了。可以在上面的代码中看见，我们通过遍历<code>prototype</code>来获取原型链中定义的方法和属性。通过<code>apply</code>调用父类的构造器进行构造器中属性和方法的复制。使用示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">People.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	base(<span class="keyword">this</span>, People, []);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> Student();</span><br><span class="line"><span class="comment">// "Yorhom"</span></span><br><span class="line">alert(yorhom.getName());</span><br></pre></td></tr></table></figure></p>
+<h2 id="u9759_u6001_u5C5E_u6027_u548C_u65B9_u6CD5_u7684_u5B9A_u4E49"><a href="#u9759_u6001_u5C5E_u6027_u548C_u65B9_u6CD5_u7684_u5B9A_u4E49" class="headerlink" title="静态属性和方法的定义"></a>静态属性和方法的定义</h2><p>静态属性和方法以及静态类在js中的定义非常简单，先来看静态类：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> StaticClass = &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这么写不是在定义一个<code>Object</code>吗？是的，不错，不过js中的静态类也是可以这样定义的。如果要添加静态类中的方法和属性，就可以这么写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> StaticClass = &#123;</span><br><span class="line">	id : <span class="number">5</span>,</span><br><span class="line">	sayHello : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"Hello"</span>); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>如果是要向类中添加静态属性或者方法，可以采用这种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">People.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">People.TYPE = <span class="string">"people"</span>;</span><br><span class="line">People.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5B9E_u73B0_u4E00_u4E2A_u529F_u80FD_u4E30_u5BCC_u7684_u7C7B"><a href="#u5B9E_u73B0_u4E00_u4E2A_u529F_u80FD_u4E30_u5BCC_u7684_u7C7B" class="headerlink" title="实现一个功能丰富的类"></a>实现一个功能丰富的类</h1><p>我们在上文中提到了，节省内存和定义私有属性两者无法兼得，是啊，和“鱼和熊掌不可兼得”是一个道理，在通常的使用过程中，我们需要对这两项进行取舍。但是现在这个年代，哪有不可兼得的呢？鱼和熊掌不能同时吃？当然不行……因为吃熊掌是违法的（有待考证）？不过至少鸡和鱼是可以同时吃的吧。<br>由于js没有实现私有属性的定义，所以这其实是一个没有头绪的工作，因为在标准的做法中，我们除了闭包可以阻止外部访问，没有别的办法了。所以这里我们要用点歪门邪道的方法了。</p>
+<h2 id="JavaScript_Set/Get_u8BBF_u95EE_u5668"><a href="#JavaScript_Set/Get_u8BBF_u95EE_u5668" class="headerlink" title="JavaScript Set/Get访问器"></a>JavaScript Set/Get访问器</h2><p>什么是set/get访问器呢？如果你熟悉python，那么你可以理解为<code>@property</code>和<code>@xxx.setter</code>，难道简陋的js里也有？当然有，只不过是ES5的标准，可以采用这种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(<span class="keyword">this</span>, <span class="string">"name"</span>, &#123;</span><br><span class="line">	get : funtion () &#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	set : <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">		name = v;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>具体有什么用呢？大致就是<code>this.name</code>属性在被获取的时候调用<code>get</code>访问器，在被更改值的时候调用<code>set</code>。<br>你可以从上面的代码了解大致的写法，不过如果你想深究，可以参考这篇文章：<a href="http://blog.csdn.net/teajs/article/details/22738851" target="_blank" rel="external">http://blog.csdn.net/teajs/article/details/22738851</a></p>
+<p>注意以上的这种用法会有兼容性问题，浏览器支持情况如下：</p>
+<p><strong><em>PC端</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>Firefox</th>
+<th>Google Chrome</th>
+<th>Internet Explorer</th>
+<th>Opera</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.0</td>
+<td>5</td>
+<td>9</td>
+<td>11.6</td>
+<td>5.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>移动端</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>Firefox Mobile</th>
+<th>Android</th>
+<th>IE Mobile</th>
+<th>Opera Mobile</th>
+<th>Safari Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.0</td>
+<td>Yes</td>
+<td>9</td>
+<td>11.5</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>来自：</em></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#Browser_compatibility" target="_blank" rel="external">https://developer.mozilla.org/…/defineProperty#Browser_compatibility</a></p>
+<h1 id="u5982_u4F55_u201C_u6B6A_u95E8_u90AA_u9053_u201D_u5730_u505A_u5230_u7981_u6B62_u8BBF_u95EE_u79C1_u6709_u548C_u4FDD_u62A4_u5C5E_u6027_uFF1F"><a href="#u5982_u4F55_u201C_u6B6A_u95E8_u90AA_u9053_u201D_u5730_u505A_u5230_u7981_u6B62_u8BBF_u95EE_u79C1_u6709_u548C_u4FDD_u62A4_u5C5E_u6027_uFF1F" class="headerlink" title="如何“歪门邪道”地做到禁止访问私有和保护属性？"></a>如何“歪门邪道”地做到禁止访问私有和保护属性？</h1><p>这是个比较头疼的问题，正如本节开篇所说，我们在常规开发下，只能通过闭包来阻止某变量的访问。可是如果你使用了<code>prototype</code>，那么闭包这条路就走不通了。在这种情况下，我们的<code>Object.defineProperty</code>就出场了。我们知道，通过这个函数可以设定获取属性时返回的值，也可以设定更改属性时设置的值。有了这个函数，我们可以随时跟踪到某个属性是不是在被获取，或者是不是在被更改。我们还需要一个开关，我们在类内部的方法调用时，把这个开关打开，表明是在内部运行，方法调用结束后将开关关闭，表明回到外部运行状态。有了这两个状态，我们就可以跟踪<code>private</code>和<code>protected</code>属性和方法了，一旦他们在开关关闭的时候被使用，就终止这个属性或方法的获取或设置。<br>于是乎，大难题就快解决了。</p>
+<h1 id="u5F00_u6E90_u5E93_u4EF6jpp-js"><a href="#u5F00_u6E90_u5E93_u4EF6jpp-js" class="headerlink" title="开源库件jpp.js"></a>开源库件jpp.js</h1><p>秉着这个歪门邪道的思想，我把这个功能封装到jpp.js这个库件中，库件的github地址如下：<br><a href="https://github.com/yuehaowang/jpp.js" target="_blank" rel="external">https://github.com/yuehaowang/jpp.js</a><br>当然这个库件不限于创建一个类，还可以实现函数的重载等。目前库件还处于开发阶段，欢迎各位提交建议。</p>
+<h1 id="u4F7F_u7528jpp-js_u521B_u5EFA_u4E00_u4E2A_u7C7B"><a href="#u4F7F_u7528jpp-js_u521B_u5EFA_u4E00_u4E2A_u7C7B" class="headerlink" title="使用jpp.js创建一个类"></a>使用jpp.js创建一个类</h1><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> People = jpp.<span class="keyword">class</span>(&#123;</span><br><span class="line">	<span class="keyword">extends</span> : <span class="literal">null</span>,</span><br><span class="line">	<span class="keyword">private</span> : &#123;</span><br><span class="line">		id : <span class="literal">null</span>,</span><br><span class="line">		hobby : <span class="literal">null</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="keyword">protected</span> : &#123;</span><br><span class="line">		money : <span class="literal">null</span>,</span><br><span class="line">		phoneNumber : <span class="literal">null</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="keyword">public</span> : &#123;</span><br><span class="line">		firstName : <span class="literal">null</span>,</span><br><span class="line">		lastName : <span class="literal">null</span>,</span><br><span class="line">		age : <span class="literal">null</span>,</span><br><span class="line">		birthday : <span class="literal">null</span>,</span><br><span class="line">		occupation : <span class="literal">null</span>,</span><br><span class="line">		</span><br><span class="line">		constructor : <span class="function"><span class="keyword">function</span> <span class="params">(name, id)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (name) &#123;</span><br><span class="line">				<span class="keyword">var</span> nameArray = name.split(<span class="string">" "</span>);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">this</span>.firstName = nameArray[<span class="number">0</span>];</span><br><span class="line">				<span class="keyword">this</span>.lastName = nameArray[<span class="number">1</span>];</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (id) &#123;</span><br><span class="line">				<span class="keyword">this</span>.id = id;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		setBirthday : <span class="function"><span class="keyword">function</span> <span class="params">(date)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (date) &#123;</span><br><span class="line">				<span class="keyword">this</span>.birthday = date;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		getBirthday : <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.birthday;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		askForId : <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.id;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		findHobby : <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.hobby;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="keyword">static</span> : &#123;</span><br><span class="line">		OCCUPATION_PROGRAMMER : <span class="string">"programmer"</span>,</span><br><span class="line">		OCCUPATION_ARTIST : <span class="string">"artist"</span>,</span><br><span class="line">		OCCUPATION_MUSICIAN : <span class="string">"musician"</span>,</span><br><span class="line">		OCCUPATION_STUDENT : <span class="string">"student"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> peter = <span class="keyword">new</span> People(<span class="string">"Peter Wong"</span>, <span class="number">543232123565</span>);</span><br><span class="line">peter.occupation = People.OCCUPATION_PROGRAMMER;</span><br><span class="line"></span><br><span class="line">peter.setBirthday(<span class="string">"19980727"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result: Peter</span></span><br><span class="line">alert(peter.firstName);</span><br><span class="line"><span class="comment">// result: 19990727</span></span><br><span class="line">alert(peter.getBirthday());</span><br><span class="line"><span class="comment">// result: 51092028</span></span><br><span class="line">alert(peter.askForId());</span><br><span class="line"><span class="comment">// result: null</span></span><br><span class="line">alert(peter.findHobby());</span><br><span class="line"><span class="comment">// result: programmer</span></span><br><span class="line">alert(peter.occupation);</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line">alert(peter.id);</span><br></pre></td></tr></table></figure>
+<p>对上面的代码进行分析：<br>使用<code>jpp.class</code>函数创建一个类，函数的参数是一个Object，这个Object可添加的属性如下：</p>
+<ul>
+<li><strong>extends</strong> 继承时的父类</li>
+<li><strong>private</strong> 装载私有属性，里面定义的成员外部不可使用且不能继承给子类</li>
+<li><strong>protected</strong> 装载保护属性，里面定义的成员外部不可使用但可以继承给子类</li>
+<li><strong>public</strong> 装载公有属性</li>
+<li><strong>static</strong> 装载静态方法和属性</li>
+</ul>
+<p>在创建类的过程中，在<code>public</code>中添加<code>constructor</code>方法初始化构造器，<code>this.super</code>可访问父类构造器。</p>
+<p>运行代码，可以看到浏览器正常运行前5个<code>alert</code>，而最后一个运行的时候浏览器报错：</p>
+<p><img src="/images/in_posts/jpp_class_error.png" alt="运行结果"></p>
+<p>具体的实现过程有点复杂，不过原理在上文已经详细讲述了。代码可以在github里参看，欢迎各位研究。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuehaowang.github.io/2016/02/05/research-of-js-class/" data-id="cik9usi7i000aokb4ofnpts0f" class="article-share-link">分享到</a>
+      
+        <a href="http://yuehaowang.github.io/2016/02/05/research-of-js-class/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/05/research-of-js-class/" data-title="JavaScript类的小小研究" data-url="http://yuehaowang.github.io/2016/02/05/research-of-js-class/">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+      </div>
+  </section>
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/05/research-of-js-class/" class="thumbnail">
+  
+    <span style="background-image:url(/images/in_posts/jpp_class_error.png
+)" alt="JavaScript类的小小研究" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Html5-JavaScript/">Html5&JavaScript</a></p>
+              <p class="item-title"><a href="/2016/02/05/research-of-js-class/" class="title">JavaScript类的小小研究</a></p>
+              <p class="item-date"><time datetime="2016-02-05T15:35:14.308Z" itemprop="datePublished">2016-02-05</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/04/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/其他/">其他</a></p>
+              <p class="item-title"><a href="/2016/02/04/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2016-02-04T15:23:57.931Z" itemprop="datePublished">2016-02-04</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Html5-JavaScript/">Html5&JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://lufylegend.com/">lufylegend</a>
+          </li>
+        
+          <li>
+            <a href="http://www.ladeng6666.com/blog/">ladeng6666</a>
+          </li>
+        
+          <li>
+            <a href="http://www.liaoxuefeng.com/">廖雪峰的官方网站</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yorhom<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yuehaowang"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

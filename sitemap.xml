@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yuehaowang.github.io/showcase/index.html</loc>
+    <lastmod>2016-02-05T15:36:10.013Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yuehaowang.github.io/2016/02/05/research-of-js-class/</loc>
+    <lastmod>2016-02-05T14:55:01.714Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yuehaowang.github.io/about/index.html</loc>
-    <lastmod>2016-02-04T17:29:11.712Z</lastmod>
+    <lastmod>2016-02-05T11:19:44.500Z</lastmod>
   </url>
   
   <url>
