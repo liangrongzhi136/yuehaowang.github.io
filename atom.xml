@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2016-02-08T13:45:59.609Z</updated>
+  <updated>2016-02-08T13:47:34.552Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[lufylegend实现游戏中的卷轴]]></title>
     <link href="http://yuehaowang.github.io/2016/02/08/game-screen-scrolling/"/>
     <id>http://yuehaowang.github.io/2016/02/08/game-screen-scrolling/</id>
-    <published>2016-02-08T13:45:59.609Z</published>
-    <updated>2016-02-08T13:45:59.609Z</updated>
+    <published>2016-02-08T13:47:34.552Z</published>
+    <updated>2016-02-08T13:47:34.552Z</updated>
     <content type="html"><![CDATA[<h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo1.png" alt="三国战线卷轴 截图之一"></p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo2.png" alt="三国战线卷轴 截图之二"></p>
@@ -35,7 +35,7 @@
 <p>运行结果：</p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo3.png" alt="卷轴示例 截图之一"></p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo4.png" alt="卷轴示例 截图之二"></p>
-<p>大家可以到<a href="/demo/game_screen_scrolling/index.html">这里</a>查看在线演示。点击屏幕左半边控制小鸟向左移动，点击右半边屏幕，控制小鸟向右移动。</p>
+<p>大家可以到<a href="/demo/game_screen_scrolling/index.html">这里</a>查看在线演示。点击屏幕左半边控制小鸟向左移动，点击屏幕右半边屏幕，控制小鸟向右移动。小鸟到达屏幕中央后，开始卷轴。</p>
 <h1 id="u6E90_u4EE3_u7801_u4E0B_u8F7D"><a href="#u6E90_u4EE3_u7801_u4E0B_u8F7D" class="headerlink" title="源代码下载"></a>源代码下载</h1><h3 id="u70B9_u51FB_u4E0B_u8F7D"><a href="#u70B9_u51FB_u4E0B_u8F7D" class="headerlink" title="点击下载"></a><a href="/downloads/game_screen_scrolling.zip">点击下载</a></h3>]]></content>
     <summary type="html">
     <![CDATA[<h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
