@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python开发接水果小游戏 | Yorhom&#39;s Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我研发的Python游戏引擎Pylash已经更新到1.4.0了。现在我们就来使用它完成一个极其简单的小游戏：接水果。以下是游戏截图：
+
+游戏操作说明：点击屏幕左右两边或者使用键盘方向键控制人物移动，使人物与水果接触得分，碰到非水果的物品，如碎玻璃，就会game over。
+创建项目首先在工作目录创建一个名为get_fruits的目录。然后到Github下载Pylash。引擎是基于Python3和P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python开发接水果小游戏">
+<meta property="og:url" content="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/index.html">
+<meta property="og:site_name" content="Yorhom's Playground">
+<meta property="og:description" content="我研发的Python游戏引擎Pylash已经更新到1.4.0了。现在我们就来使用它完成一个极其简单的小游戏：接水果。以下是游戏截图：
+
+游戏操作说明：点击屏幕左右两边或者使用键盘方向键控制人物移动，使人物与水果接触得分，碰到非水果的物品，如碎玻璃，就会game over。
+创建项目首先在工作目录创建一个名为get_fruits的目录。然后到Github下载Pylash。引擎是基于Python3和P">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/get_fruits.png">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/pylash_demo_of_hello_world.png">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/get_fruits_beginning_page.png">
+<meta property="og:updated_time" content="2016-02-16T12:05:46.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python开发接水果小游戏">
+<meta name="twitter:description" content="我研发的Python游戏引擎Pylash已经更新到1.4.0了。现在我们就来使用它完成一个极其简单的小游戏：接水果。以下是游戏截图：
+
+游戏操作说明：点击屏幕左右两边或者使用键盘方向键控制人物移动，使人物与水果接触得分，碰到非水果的物品，如碎玻璃，就会game over。
+创建项目首先在工作目录创建一个名为get_fruits的目录。然后到Github下载Pylash。引擎是基于Python3和P">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Yorhom&#39;s Playground</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/showcase">作品展示</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://yuehaowang.github.io"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">首页</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">归档</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">分类</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">标签</a></td>
+        
+          <td><a class="main-nav-link" href="/showcase">作品展示</a></td>
+        
+          <td><a class="main-nav-link" href="/about">关于我</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuehaowang.github.io"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">Yorhom</h2>
+      <h3 id="title">std::vector&lt;Tech&gt; me;</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>中国 四川 成都</span>
+      <a id="follow" href="https://github.com/yuehaowang/">关注我</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        4
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        10
+        <span>标签</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="http://github.com/yuehaowang/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="http://weibo.com/yorhomwang/" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+          
+          <td><a href="http://twitter.com/yuehaowang/" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-python-game-dev-get-fruits" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python开发接水果小游戏
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/02/16/python-game-dev-get-fruits/">
+      <time datetime="2016-02-16T12:05:46.498Z" itemprop="datePublished">2016-02-16</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>我研发的Python游戏引擎Pylash已经更新到1.4.0了。现在我们就来使用它完成一个极其简单的小游戏：接水果。以下是游戏截图：</p>
+<p><img src="/images/in_posts/get_fruits.png" alt="接水果 游戏截图"></p>
+<p>游戏操作说明：点击屏幕左右两边或者使用键盘方向键控制人物移动，使人物与水果接触得分，碰到非水果的物品，如碎玻璃，就会game over。</p>
+<h1 id="u521B_u5EFA_u9879_u76EE"><a href="#u521B_u5EFA_u9879_u76EE" class="headerlink" title="创建项目"></a>创建项目</h1><p>首先在工作目录创建一个名为<code>get_fruits</code>的目录。然后到Github<a href="https://github.com/yuehaowang/pylash_engine" target="_blank" rel="external">下载Pylash</a>。引擎是基于Python3和PyQt4构建的，所以在使用前请确保你使用的是Python3并且安装了PyQt4。如果没有，可以在上述项目地址中找到他们的相关网页链接进行下载安装，安装和配置步骤都十分简单。这里不再赘述。</p>
+<p>下载完Pylash后，我们得到这样的目录结构：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+- pylash_engine/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- pylash/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- demo/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- examples/</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>大家可以在<code>demo</code>和<code>examples</code>两个目录下查看示例。</p>
+<p><code>pylash</code>目录就是引擎源代码。接下来把这个目录复制到我们创建的<code>get_fruits</code>目录下，再在<code>get_fruits</code>目录下创建一个<code>images</code>目录，用于储存图片。最后创建一个<code>Main.py</code>文件。这时，我们的<code>get_fruits</code>目录结构如下：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+- get_fruits/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- pylash/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- images/</span><br><span class="line">	<span class="string">|</span></span><br><span class="line">	+- Main.py</span><br></pre></td></tr></table></figure>
+<p>这样一来，我们的项目就创建好了，接下来只用往<code>Main.py</code>里填写代码，然后运行即可。</p>
+<h1 id="u7F16_u5199Hello_World_u5C0F_u7A0B_u5E8F"><a href="#u7F16_u5199Hello_World_u5C0F_u7A0B_u5E8F" class="headerlink" title="编写Hello World小程序"></a>编写Hello World小程序</h1><p>用代码编辑器（推荐Sublime Text）打开<code>Main.py</code>文件，写入以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># !/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pylash.utils <span class="keyword">import</span> init, addChild</span><br><span class="line"><span class="keyword">from</span> pylash.text <span class="keyword">import</span> TextField</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="comment"># 创建文本显示对象</span></span><br><span class="line">	txt = TextField()</span><br><span class="line">	<span class="comment"># 设置文本内容</span></span><br><span class="line">	txt.text = <span class="string">"Hello World"</span></span><br><span class="line">	<span class="comment"># 设置文本颜色</span></span><br><span class="line">	txt.textColor = <span class="string">"red"</span></span><br><span class="line">	<span class="comment"># 设置文本位置</span></span><br><span class="line">	txt.x = <span class="number">50</span></span><br><span class="line">	txt.y = <span class="number">100</span></span><br><span class="line">	<span class="comment"># 设置文本字体大小</span></span><br><span class="line">	txt.size = <span class="number">50</span></span><br><span class="line">	<span class="comment"># 将文本对象加入到最底层</span></span><br><span class="line">	addChild(txt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化窗口，参数：界面刷新时间，窗口标题，窗口宽度，窗口高度，初始化完毕后回调函数</span></span><br><span class="line">init(<span class="number">1000</span> / <span class="number">60</span>, <span class="string">"Hello World"</span>, <span class="number">800</span>, <span class="number">600</span>, main)</span><br></pre></td></tr></table></figure>
+<p>运行<code>Main.py</code>，如果得到了如下图所示的界面，说明程序正常运转起来了。</p>
+<p><img src="/images/in_posts/pylash_demo_of_hello_world.png" alt="Hello World 演示截图"></p>
+<p>大家可以结合注释初步认识Pylash。熟悉flash的同学不难发现，<code>TextField</code>就是flash里显示文本的类，而且用法十分相近。<br>我们从代码的第4行看起，这里我们引入了pylash中的一些函数和类。pylash提供了很多模块，大家可以到<a href="https://github.com/yuehaowang/pylash_engine/wiki/Pylash%E6%A6%82%E5%86%B5#pylash%E6%A8%A1%E5%9D%97" target="_blank" rel="external">这里</a>查看它们的简介。<br>再往下看，我们会发现，pylash提供了一个用于显示文本的类，通过设置这个类的不同属性来设定文本样式。最后使用<code>addChild</code>将文本显示对象加入到界面中。我们可以把游戏看作分为很多层：地图层、人物层、UI层……，通过分层我们就能实现层次化显示效果。比如人物一直是在地图上方显示的，那么人物层就在地图层上方。<code>addChild</code>函数就是把一个显示对象加到最底层。<br>最后，我们使用<code>init</code>函数初始化窗口。</p>
+<p>Pylash提供了许多基础显示对象，除了<code>TextField</code>文本显示类，还有<code>Bitmap</code>图片显示类，<code>Sprite</code>精灵类等。下文会提及。</p>
+<h1 id="u7F16_u5199_u6E38_u620F"><a href="#u7F16_u5199_u6E38_u620F" class="headerlink" title="编写游戏"></a>编写游戏</h1><p>有了上述对pylash的大致了解，我们就可以开始编写游戏了。首先，删除第四行以后所有代码。</p>
+<h3 id="u5F15_u5165_u6240_u9700"><a href="#u5F15_u5165_u6240_u9700" class="headerlink" title="引入所需"></a>引入所需</h3><p>首先引入我们所需的所有类和函数，修改<code>Main.py</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylash.utils <span class="keyword">import</span> stage, init, addChild, KeyCode</span><br><span class="line"><span class="keyword">from</span> pylash.system <span class="keyword">import</span> LoadManage</span><br><span class="line"><span class="keyword">from</span> pylash.display <span class="keyword">import</span> Sprite, BitmapData, Bitmap, FPS</span><br><span class="line"><span class="keyword">from</span> pylash.text <span class="keyword">import</span> TextField, TextFormatWeight</span><br><span class="line"><span class="keyword">from</span> pylash.events <span class="keyword">import</span> MouseEvent, Event, KeyboardEvent</span><br><span class="line"><span class="keyword">from</span> pylash.ui <span class="keyword">import</span> LoadingSample1</span><br></pre></td></tr></table></figure>
+<p>这些类和函数在下面的代码中都会被用到。由于我是提前写好了游戏，所以在这里把这部分代码一块儿贴出来了，大家使用的时候可以根据自己使用情况，每用一个引入一个。</p>
+<h3 id="u5168_u5C40_u53D8_u91CF"><a href="#u5168_u5C40_u53D8_u91CF" class="headerlink" title="全局变量"></a>全局变量</h3><p>游戏中需要用到一些全局变量，大家可以先浏览一遍，不同知道它们是干什么的，后文会用到它们：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dataList = &#123;&#125;</span><br><span class="line"></span><br><span class="line">stageLayer = <span class="keyword">None</span></span><br><span class="line">player = <span class="keyword">None</span></span><br><span class="line">itemLayer = <span class="keyword">None</span></span><br><span class="line">scoreTxt = <span class="keyword">None</span></span><br><span class="line">addItemSpeed = <span class="number">40</span></span><br><span class="line">addItemSpeedIndex = <span class="number">0</span></span><br><span class="line">score = <span class="number">0</span></span><br><span class="line">keyboardEnabled = <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="u52A0_u8F7D_u8D44_u6E90"><a href="#u52A0_u8F7D_u8D44_u6E90" class="headerlink" title="加载资源"></a>加载资源</h3><p>我们的游戏中要用到图片，所以要提前加载图片（存储于<code>images/</code>目录下）。加载图片我们用到<code>LoadManage</code>静态类和<code>LoadingSample1</code>进度条类（还有<code>LoadingSample2</code>、<code>LoadingSample3</code>这两款不同样式的进度条。或者大家深入学习后，可以自己写一个进度条类）。修改<code>main</code>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="comment"># 资源列表，一个list对象，格式：&#123;"name" : 资源名称, "path" : 资源路径&#125;</span></span><br><span class="line">	loadList = [</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"player"</span>, <span class="string">"path"</span> : <span class="string">"./images/player.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"bg"</span>, <span class="string">"path"</span> : <span class="string">"./images/bg.jpg"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item0"</span>, <span class="string">"path"</span> : <span class="string">"./images/item0.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item1"</span>, <span class="string">"path"</span> : <span class="string">"./images/item1.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item2"</span>, <span class="string">"path"</span> : <span class="string">"./images/item2.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item3"</span>, <span class="string">"path"</span> : <span class="string">"./images/item3.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item4"</span>, <span class="string">"path"</span> : <span class="string">"./images/item4.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item5"</span>, <span class="string">"path"</span> : <span class="string">"./images/item5.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item6"</span>, <span class="string">"path"</span> : <span class="string">"./images/item6.png"</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span> : <span class="string">"item7"</span>, <span class="string">"path"</span> : <span class="string">"./images/item7.png"</span>&#125;</span><br><span class="line">	]</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 创建进度条</span></span><br><span class="line">	loadingPage = LoadingSample1()</span><br><span class="line">	addChild(loadingPage)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加载完成后调用的函数，接受一个参数，该参数是一个dict对象，通过result[资源名称]来获取加载完成的资源</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">loadComplete</span><span class="params">(result)</span>:</span></span><br><span class="line">		<span class="comment"># 调用remove方法从界面上移除自身</span></span><br><span class="line">		loadingPage.remove()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 调用初始化游戏函数</span></span><br><span class="line">		gameInit(result)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加载文件，参数：资源列表，每加载完一个资源回调函数（多用于显示进度），加载完所有资源回调函数</span></span><br><span class="line">	LoadManage.load(loadList, loadingPage.setProgress, loadComplete)</span><br></pre></td></tr></table></figure>
+<p>上述代码含有详细注释，理解起来应该不算困难。可以看到，我们使用<code>LoadManage.load</code>实现加载。<code>LoadingSample1.setProgress</code>用于设置显示进度。</p>
+<h3 id="u521B_u5EFA_u5F00_u59CB_u754C_u9762"><a href="#u521B_u5EFA_u5F00_u59CB_u754C_u9762" class="headerlink" title="创建开始界面"></a>创建开始界面</h3><p>我们在<code>main</code>函数中调用了<code>gameInit</code>函数，所以添加该函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gameInit</span><span class="params">(result)</span>:</span></span><br><span class="line">	<span class="keyword">global</span> dataList, stageLayer</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 保存加载完成的资源，这样一来，就可以使用dataList[资源名称]来获取加载完成的资源</span></span><br><span class="line">	dataList = result</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 创建舞台层</span></span><br><span class="line">	stageLayer = Sprite()</span><br><span class="line">	addChild(stageLayer)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入FPS，方便查看游戏效率</span></span><br><span class="line">	fps = FPS()</span><br><span class="line">	addChild(fps)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入背景图片</span></span><br><span class="line">	bg = Bitmap(BitmapData(dataList[<span class="string">"bg"</span>]))</span><br><span class="line">	stageLayer.addChild(bg)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入文本</span></span><br><span class="line">	titleTxt = TextField()</span><br><span class="line">	titleTxt.text = <span class="string">"Get Furit"</span></span><br><span class="line">	titleTxt.size = <span class="number">70</span></span><br><span class="line">	titleTxt.textColor = <span class="string">"red"</span></span><br><span class="line">	titleTxt.x = (stage.width - titleTxt.width) / <span class="number">2</span></span><br><span class="line">	titleTxt.y = <span class="number">100</span></span><br><span class="line">	stageLayer.addChild(titleTxt)</span><br><span class="line"></span><br><span class="line">	hintTxt = TextField()</span><br><span class="line">	hintTxt.text = <span class="string">"Tap to Start the Game!~"</span></span><br><span class="line">	hintTxt.textColor = <span class="string">"red"</span></span><br><span class="line">	hintTxt.size = <span class="number">40</span></span><br><span class="line">	hintTxt.x = (stage.width - hintTxt.width) / <span class="number">2</span></span><br><span class="line">	hintTxt.y = <span class="number">300</span></span><br><span class="line">	stageLayer.addChild(hintTxt)</span><br><span class="line"></span><br><span class="line">	engineTxt = TextField()</span><br><span class="line">	engineTxt.text = <span class="string">"- Powered by Pylash -"</span></span><br><span class="line">	engineTxt.textColor = <span class="string">"red"</span></span><br><span class="line">	engineTxt.size = <span class="number">20</span></span><br><span class="line">	engineTxt.weight = TextFormatWeight.BOLD</span><br><span class="line">	engineTxt.italic = <span class="keyword">True</span></span><br><span class="line">	engineTxt.x = (stage.width - engineTxt.width) / <span class="number">2</span></span><br><span class="line">	engineTxt.y = <span class="number">500</span></span><br><span class="line">	stageLayer.addChild(engineTxt)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入鼠标点击事件：点击舞台层后，开始游戏</span></span><br><span class="line">	stageLayer.addEventListener(MouseEvent.MOUSE_UP, startGame)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入键盘事件：用于控制游戏中的人物</span></span><br><span class="line">	stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown)</span><br><span class="line">	stage.addEventListener(KeyboardEvent.KEY_UP, keyUp)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">startGame</span><span class="params">(e)</span>:</span></span><br><span class="line">	print(<span class="string">"start game"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">keyDown</span><span class="params">(e)</span>:</span></span><br><span class="line">	print(<span class="string">"key down"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">keyUp</span><span class="params">(e)</span>:</span></span><br><span class="line">	print(<span class="string">"key up"</span>)</span><br></pre></td></tr></table></figure>
+<p>上述代码中，我们需要突破以下几个难点：</p>
+<ol>
+<li><p><strong><code>Sprite</code>精灵类。</strong><code>Sprite</code>是一个精灵类。可是什么是精灵？其实你可以把它理解为一个层。它拥有<code>addChild</code>方法，用于把显示对象加到自身这个层上（和全局的<code>addChild</code>函数类似）。当然<code>Sprite</code>不只是有层的功能，不过你姑且把它看作一个层吧。</p>
+</li>
+<li><p><strong><code>Bitmap</code>和<code>BitmapData</code>类的使用。</strong><code>Bitmap</code>在上文中提到是一个用于显示图片的类。和<code>TextField</code>一样，使用<code>addChild</code>将它加入界面。<code>BitmapData</code>类是用于储存图像数据的，它接收的参数就是加载完成的图片资源。将他作为参数传给<code>Bitmap</code>类的构造器，就能创建出图片。<code>BitmapData</code>还可以进行像素操作，不过这是较高级的功能，目前不用了解。</p>
+</li>
+<li><p><strong>事件。</strong>在pylash中，使用<code>addEventListener</code>统一接口加入事件，该方法参数：事件类型，事件监听器（即事件回调函数）。什么是事件呢？类似于一个信号，这个信号在某种情况下被发送后，指定的信号监听器就会被触发。这里添加鼠标事件的<code>addEventListener</code>是在<code>EventDispatcher</code>中定义的，<code>DisplayObject</code>类继承自<code>EventDispatcher</code>，所以继承自<code>DisplayObject</code>的所有类，都能加入事件。不过只有<code>Sprite</code>才有触发鼠标事件的能力。所以我们给<code>stageLayer</code>（舞台层，一个<code>Sprite</code>对象）加入了鼠标点击事件（<code>MouseEvent.MOUSE_UP</code>）。对应<code>addEventListener</code>方法的有<code>removeEventListener</code>（移除事件，参数相同）。鼠标事件除了<code>MouseEvent.MOUSE_UP</code>（鼠标弹起），还有<code>MouseEvent.MOUSE_DOWN</code>（鼠标按下），<code>MouseEvent.MOUSE_MOVE</code>（鼠标移动），<code>MouseEvent.MOUSE_OUT</code>（鼠标移出）等事件。后文会用到一些。事件的监听器是一个函数，<code>startGame</code>、<code>keyDown</code>、<code>keyUp</code>它们都是事件监听器。监听器在事件触发时被调用，并接受一个事件数据参数（通常写为<code>e</code>），通过这个参数可以获取事件的一些信息，如鼠标事件的监听器可以通过该参数获取鼠标位置。</p>
+</li>
+<li><p><strong><code>stage</code>全局类。</strong>这里的<code>stage</code>是一个全局类，用于管理整个窗口，比如设置窗口刷新速度、获取窗口尺寸，有点类似于JavaScript里的<code>window</code>。键盘事件总不能加到某个对象上吧，所以<code>stage</code>还能加入键盘事件。加入键盘事件同样使用<code>addEventListener</code>这个的统一接口。</p>
+</li>
+</ol>
+<p>最后加入<code>init</code>函数初始化窗口：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(<span class="number">1000</span> / <span class="number">60</span>, <span class="string">"Get Fruits"</span>, <span class="number">800</span>, <span class="number">600</span>, main)</span><br></pre></td></tr></table></figure>
+<p>运行Main.py，得到如下界面：</p>
+<p><img src="/images/in_posts/get_fruits_beginning_page.png" alt="接水果开始界面 截图"></p>
+<p>可以看到，我们的界面上有图片也有文本。点击界面输出“start game”，按下键盘输出“key down”，释放键盘输出“key up”。这样一来，我们就成功地添加了显示对象和鼠标&amp;键盘事件。</p>
+<h3 id="u5F00_u59CB_u6E38_u620F"><a href="#u5F00_u59CB_u6E38_u620F" class="headerlink" title="开始游戏"></a>开始游戏</h3><p>舞台层鼠标点击事件的监听器是<code>startGame</code>函数，也就是说，在开始界面我们点击界面开始游戏。修改<code>startGame</code>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">startGame</span><span class="params">(e)</span>:</span></span><br><span class="line">	<span class="keyword">global</span> player, itemLayer, scoreTxt, addItemSpeedIndex, score, keyboardEnabled</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 初始一些全局变量</span></span><br><span class="line">	addItemSpeedIndex = <span class="number">0</span></span><br><span class="line">	score = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	keyboardEnabled = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># 清空舞台层和舞台事件</span></span><br><span class="line">	stageLayer.removeAllChildren()</span><br><span class="line">	stageLayer.removeAllEventListeners()</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入背景</span></span><br><span class="line">	bg = Bitmap(BitmapData(dataList[<span class="string">"bg"</span>]))</span><br><span class="line">	stageLayer.addChild(bg)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 创建角色</span></span><br><span class="line">	player = Player(dataList[<span class="string">"player"</span>])</span><br><span class="line">	player.x = (stage.width - player.width) / <span class="number">2</span></span><br><span class="line">	player.y = <span class="number">450</span></span><br><span class="line">	stageLayer.addChild(player)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 创建下落物品层</span></span><br><span class="line">	itemLayer = Sprite()</span><br><span class="line">	stageLayer.addChild(itemLayer)</span><br><span class="line">	<span class="comment"># 将人物对象保存到itemLayer中，用于检测碰撞</span></span><br><span class="line">	itemLayer.hitTarget = player</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入分数文本</span></span><br><span class="line">	scoreTxt = TextField()</span><br><span class="line">	scoreTxt.text = <span class="string">"Score: 0"</span></span><br><span class="line">	scoreTxt.textColor = <span class="string">"red"</span></span><br><span class="line">	scoreTxt.size = <span class="number">30</span></span><br><span class="line">	scoreTxt.x = scoreTxt.y = <span class="number">30</span></span><br><span class="line">	scoreTxt.weight = TextFormatWeight.BOLDER</span><br><span class="line">	stageLayer.addChild(scoreTxt)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 加入事件</span></span><br><span class="line">	stageLayer.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown)</span><br><span class="line">	stageLayer.addEventListener(MouseEvent.MOUSE_UP, onMouseUp)</span><br><span class="line">	stageLayer.addEventListener(Event.ENTER_FRAME, loop)</span><br></pre></td></tr></table></figure>
+<p>对应<code>addChild</code>，<code>Sprite</code>提供了<code>removeChild</code>方法用于移除显示对象。除此之外还有<code>removeAllChildren</code>移除所有对象方法。<code>removeAllEventListeners</code>顾名思义就是移除所有事件。上面的代码会让人一头雾水，同样的，我们需要突破以下难关：</p>
+<ol>
+<li><p><strong>全局变量。</strong><code>addItemSpeedIndex</code>是用于控制添加下落物品的时间间隔，后文会提及。<code>score</code>是保存分数的变量。由于游戏开始后，这些变量要回到初始值，所以在<code>startGame</code>函数中添加了这些代码来完成这项任务。<code>keyboardEnabled = True</code>这行代码是用于打开键盘事件，键盘事件是加到<code>stage</code>对象上的（见上文），但是是用于操作游戏中主角的，所以只有在游戏开始后才能触发，所以加入<code>keyboardEnabled</code>变量作为能否使用键盘的开关，这个开关的作用在可以在<code>keyDown</code>，<code>keyUp</code>两个函数中看到他们的作用：</p>
+</li>
+<li><p><strong>Player类。</strong>这个类是我们要自己创建的，是一个人物类，后文会展示其代码。</p>
+</li>
+<li><hr>
+</li>
+</ol>
+<p><strong>本文的源代码可以在引擎目录的<code>examples/get_fruits</code>中找到。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/" data-id="ciko1db8b00025wb4o66cqg9g" class="article-share-link">分享到</a>
+      
+        <a href="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pylash/">Pylash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏开发/">游戏开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/15/game-screen-scrolling/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">lufylegend实现游戏中的卷轴</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/" data-title="Python开发接水果小游戏" data-url="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+      </div>
+  </section>
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/16/python-game-dev-get-fruits/" class="thumbnail">
+  
+    <span style="background-image:url(/images/in_posts/get_fruits.png
+)" alt="Python开发接水果小游戏" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+              <p class="item-title"><a href="/2016/02/16/python-game-dev-get-fruits/" class="title">Python开发接水果小游戏</a></p>
+              <p class="item-date"><time datetime="2016-02-16T12:05:46.498Z" itemprop="datePublished">2016-02-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/15/game-screen-scrolling/" class="thumbnail">
+  
+    <span style="background-image:url(/images/in_posts/game_screen_scrolling_demo1.png
+)" alt="lufylegend实现游戏中的卷轴" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
+              <p class="item-title"><a href="/2016/02/15/game-screen-scrolling/" class="title">lufylegend实现游戏中的卷轴</a></p>
+              <p class="item-date"><time datetime="2016-02-15T12:46:35.728Z" itemprop="datePublished">2016-02-15</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/08/research-of-js-class/" class="thumbnail">
+  
+    <span style="background-image:url(/images/in_posts/jpp_class_error.png
+)" alt="JavaScript类的小小研究" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
+              <p class="item-title"><a href="/2016/02/08/research-of-js-class/" class="title">JavaScript类的小小研究</a></p>
+              <p class="item-date"><time datetime="2016-02-08T10:59:29.121Z" itemprop="datePublished">2016-02-08</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/04/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/其他/">其他</a></p>
+              <p class="item-title"><a href="/2016/02/04/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2016-02-04T15:23:57.931Z" itemprop="datePublished">2016-02-04</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Pylash/" style="font-size: 10px;">Pylash</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/lufylegend/" style="font-size: 10px;">lufylegend</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/游戏开发/" style="font-size: 20px;">游戏开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://lufylegend.com/">lufylegend</a>
+          </li>
+        
+          <li>
+            <a href="http://www.ladeng6666.com/blog/">ladeng6666</a>
+          </li>
+        
+          <li>
+            <a href="http://www.liaoxuefeng.com/">廖雪峰的官方网站</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yorhom<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yuehaowang"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
