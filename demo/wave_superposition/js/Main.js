@@ -67,9 +67,13 @@ function onFrame () {
 
 	var list = Wave.getNewWaveOscillators(w1, w2);
 
-	for (var i = 0, l = list.length; i < l; i++) {
+	for (var i = 0, preOsc = null, l = list.length; i < l; i++) {
 		var o = list[i];
 
-		demoLayer.graphics.drawArc(0, "", [o.x * DRAW_SCALE, o.y * DRAW_SCALE, 5, 0, Math.PI * 2], true, "red");
+		if (preOsc) {
+			demoLayer.graphics.drawLine(5, "red", [preOsc.x * DRAW_SCALE, preOsc.y * DRAW_SCALE, o.x * DRAW_SCALE, o.y * DRAW_SCALE]);
+		}
+
+		preOsc = o;
 	}
 }
