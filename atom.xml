@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2016-02-16T14:28:25.565Z</updated>
+  <updated>2016-04-24T13:41:01.759Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -13,6 +13,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Web App：波的叠加演示]]></title>
+    <link href="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/"/>
+    <id>http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/</id>
+    <published>2016-04-24T13:41:01.795Z</published>
+    <updated>2016-04-24T13:41:01.759Z</updated>
+    <content type="html"><![CDATA[<p>最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。<br>课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，用于演示波的叠加。截图如下：</p>
+<p><img src="/images/in_posts/wave_superposition_demo1.jpg" alt="波的叠加演示 截图之一"></p>
+<a id="more"></a>
+<p><img src="/images/in_posts/wave_superposition_demo2.jpg" alt="波的叠加演示 截图之二"><br><img src="/images/in_posts/wave_superposition_demo3.jpg" alt="波的叠加演示 截图之三"></p>
+<h1 id="u4F7F_u7528_u8BF4_u660E"><a href="#u4F7F_u7528_u8BF4_u660E" class="headerlink" title="使用说明"></a>使用说明</h1><p>在”Wave From Left”和”Wave From Right”两个区域内，分别调整波源在左边的波和波源在右边的波。<br>Wavelength（波长λ）、Period（周期T）、Amplitude（振幅A）几个滑块控件用于控制波的属性。以下是这几个属性的取值范围：</p>
+<table>
+<thead>
+<tr>
+<th>波长（m）</th>
+<th>周期（s）</th>
+<th>振幅（m）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> [0, 3]</td>
+<td>[0, 4]</td>
+<td>[0, 3]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：1m = 30px</strong></p>
+<h1 id="u517C_u5BB9_u5E73_u53F0"><a href="#u517C_u5BB9_u5E73_u53F0" class="headerlink" title="兼容平台"></a>兼容平台</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">iOS</th>
+<th style="text-align:center">Android</th>
+<th style="text-align:center">Google Chrome</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Opera</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">IE9+ </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> √</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<h1 id="u6280_u672F_u652F_u6301"><a href="#u6280_u672F_u652F_u6301" class="headerlink" title="技术支持"></a>技术支持</h1><p>GUI使用HTML5 Canvas和<a href="http://lufylegend.com/lufylegend/" target="_blank" rel="external">lufylegend.js</a>引擎</p>
+<h1 id="u4F20_u9001_u95E8"><a href="#u4F20_u9001_u95E8" class="headerlink" title="传送门"></a>传送门</h1><h3 id="u5728_u7EBF_u4F7F_u7528_u5730_u5740__u2192"><a href="#u5728_u7EBF_u4F7F_u7528_u5730_u5740__u2192" class="headerlink" title="在线使用地址 →"></a><a href="/demo/wave_superposition/">在线使用地址 →</a></h3><h3 id="Github_u9879_u76EE_u5730_u5740__u2192"><a href="#Github_u9879_u76EE_u5730_u5740__u2192" class="headerlink" title="Github项目地址 →"></a><a href="https://github.com/yuehaowang/wave_superposition" target="_blank" rel="external">Github项目地址 →</a></h3><h3 id="u4E0B_u8F7D_u5730_u5740__u2192"><a href="#u4E0B_u8F7D_u5730_u5740__u2192" class="headerlink" title="下载地址 →"></a><a href="/downloads/wave_superposition.zip/">下载地址 →</a></h3><p><strong>如果本作出现bug，请及时联系我～</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。<br>课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，用于演示波的叠加。截图如下：</p>
+<p><img src="/images/in_posts/wave_superposition_demo1.jpg" alt="波的叠加演示 截图之一"></p>]]>
+    
+    </summary>
+    
+      <category term="App" scheme="http://yuehaowang.github.io/tags/App/"/>
+    
+      <category term="HTML5" scheme="http://yuehaowang.github.io/tags/HTML5/"/>
+    
+      <category term="JavaScript" scheme="http://yuehaowang.github.io/tags/JavaScript/"/>
+    
+      <category term="canvas" scheme="http://yuehaowang.github.io/tags/canvas/"/>
+    
+      <category term="lufylegend" scheme="http://yuehaowang.github.io/tags/lufylegend/"/>
+    
+      <category term="物理模拟" scheme="http://yuehaowang.github.io/tags/%E7%89%A9%E7%90%86%E6%A8%A1%E6%8B%9F/"/>
+    
+      <category term="HTML5&amp;JavaScript" scheme="http://yuehaowang.github.io/categories/HTML5-JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Python开发接水果小游戏]]></title>
