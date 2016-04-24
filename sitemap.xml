@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yuehaowang.github.io/2016/04/24/js-calcu-pi/</loc>
+    <lastmod>2016-04-24T14:22:24.603Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yuehaowang.github.io/about/index.html</loc>
     <lastmod>2016-04-24T13:54:02.819Z</lastmod>
   </url>
