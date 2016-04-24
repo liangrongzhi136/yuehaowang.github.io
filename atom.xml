@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2016-04-24T14:22:24.603Z</updated>
+  <updated>2016-04-24T14:46:19.154Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -18,15 +18,15 @@
     <title><![CDATA[JavaScript计算圆周率（解析几何+定积分）]]></title>
     <link href="http://yuehaowang.github.io/2016/04/24/js-calcu-pi/"/>
     <id>http://yuehaowang.github.io/2016/04/24/js-calcu-pi/</id>
-    <published>2016-04-24T14:22:24.655Z</published>
-    <updated>2016-04-24T14:22:24.603Z</updated>
+    <published>2016-04-24T14:46:19.206Z</published>
+    <updated>2016-04-24T14:46:19.154Z</updated>
     <content type="html"><![CDATA[<p>最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。</p>
 <p>首先我们知道半径为r，圆心为(0, 0)的圆的方程是：</p>
 <p><img src="/images/in_posts/js_calcu_pi_formula1.jpg" alt="圆的方程"></p>
 <p>不过这个是个方程，无法使用积分求解，所以我们要对它进行变形，变成一个函数。根据本人多年刷题经验，要把其变为函数，只需取一个半圆即可，获取半圆则需将其变形为：</p>
 <p><img src="/images/in_posts/js_calcu_pi_formula2.jpg" alt="半圆的方程"></p>
 <a id="more"></a>
-<p>由于算术平方根运算的到的值 &gt; 0，所以该函数y就是以x为自变量的一个图像为半圆的函数。</p>
+<p>由于算术平方根运算得到的值 &gt; 0，所以该函数y就是以x为自变量的一个图像为半圆的函数。</p>
 <p>为了避免负数的出现，现在我们将函数沿着x轴往右平移r，然后取[0, 2r]的定积分得到面积。</p>
 <p>最终得到如下几个数学表达式求出圆周率：</p>
 <p><img src="/images/in_posts/js_calcu_pi_formula3.jpg" alt="计算圆周率的公式"></p>
