@@ -93,10 +93,10 @@
   
   <entry>
     <title><![CDATA[JavaScript计算圆周率（解析几何+定积分）]]></title>
-    <link href="http://yuehaowang.github.io/2016/04/24/js-calcu-pi/"/>
-    <id>http://yuehaowang.github.io/2016/04/24/js-calcu-pi/</id>
-    <published>2016-04-24T14:46:19.206Z</published>
-    <updated>2016-04-24T14:46:19.154Z</updated>
+    <link href="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/"/>
+    <id>http://yuehaowang.github.io/2016/03/26/js-calcu-pi/</id>
+    <published>2016-03-25T16:00:00.000Z</published>
+    <updated>2016-04-24T15:10:47.722Z</updated>
     <content type="html"><![CDATA[<p>最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。</p>
 <p>首先我们知道半径为r，圆心为(0, 0)的圆的方程是：</p>
 <p><img src="/images/in_posts/js_calcu_pi_formula1.jpg" alt="圆的方程"></p>
