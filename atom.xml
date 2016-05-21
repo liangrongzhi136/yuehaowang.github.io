@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2016-04-29T09:47:22.425Z</updated>
+  <updated>2016-05-21T14:27:52.260Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -13,6 +13,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[证明：sin'x = cosx]]></title>
+    <link href="http://yuehaowang.github.io/2016/05/21/derivative_of_sinx/"/>
+    <id>http://yuehaowang.github.io/2016/05/21/derivative_of_sinx/</id>
+    <published>2016-05-20T16:00:00.000Z</published>
+    <updated>2016-05-21T14:27:52.260Z</updated>
+    <content type="html"><![CDATA[<p>初三将近毕业的时候老爸给我买了几本数学相关的书籍。还把他的大学教材翻出来给我看，希望我去提前学习高等数学。很遗憾，当时的我对于这些东西完全不感兴趣，所以就不屑一顾，往书架上一扔就是两年。不久前，自己在数学教科书上看到了积分。书中运用积分的知识求得了一个曲边形的面积。当时我就傻眼了，什么！数学居然可以这么神奇。我这才意识到自己的无知，并且激起了我强烈的研究数学的欲望。这段时间里，我相继学习了倒数和定积分，越发觉得数学的高深，决定提前学习大学里的高等数学。</p>
+<p>大学课程中，第一个难题就是极限。有了它，才有倒数、积分……</p>
+<p>经过一个半月的课余时间学习，我大致地掌握了极限的一些知识。于是我决定使用它来解决一个我在导数学习过程中的一个问题：证明sin’x = cosx。</p>
+<p>以下是我经过研究，得出的证明过程。</p>
+<h1 id="u8BC1_u660E_u8FC7_u7A0B"><a href="#u8BC1_u660E_u8FC7_u7A0B" class="headerlink" title="证明过程"></a>证明过程</h1><p>首先根据导数定义，我们得到以下几个式子：</p>
+<p><img src="/images/in_posts/derivative_of_sinx1.png" alt="证明过程 之一"></p>
+<a id="more"></a>
+<p>这时候，我们证明以下式子成立，那么（4）成立：</p>
+<p><img src="/images/in_posts/derivative_of_sinx2.png" alt="证明过程 之二"></p>
+<p>根据三角函数倍角公式：</p>
+<p><img src="/images/in_posts/derivative_of_sinx3.png" alt="三角函数倍角公式"></p>
+<p>（5）中左边式子化简得到：</p>
+<p><img src="/images/in_posts/derivative_of_sinx4.png" alt="证明过程 之三"></p>
+<p>所以（5）成立。证毕。</p>
+<p><strong><em>该方法由本人自行推导，对数学有所研究的朋友不妨告诉我一些更好的方法。</em></strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>初三将近毕业的时候老爸给我买了几本数学相关的书籍。还把他的大学教材翻出来给我看，希望我去提前学习高等数学。很遗憾，当时的我对于这些东西完全不感兴趣，所以就不屑一顾，往书架上一扔就是两年。不久前，自己在数学教科书上看到了积分。书中运用积分的知识求得了一个曲边形的面积。当时我就傻眼了，什么！数学居然可以这么神奇。我这才意识到自己的无知，并且激起了我强烈的研究数学的欲望。这段时间里，我相继学习了倒数和定积分，越发觉得数学的高深，决定提前学习大学里的高等数学。</p>
+<p>大学课程中，第一个难题就是极限。有了它，才有倒数、积分……</p>
+<p>经过一个半月的课余时间学习，我大致地掌握了极限的一些知识。于是我决定使用它来解决一个我在导数学习过程中的一个问题：证明sin’x = cosx。</p>
+<p>以下是我经过研究，得出的证明过程。</p>
+<h1 id="u8BC1_u660E_u8FC7_u7A0B"><a href="#u8BC1_u660E_u8FC7_u7A0B" class="headerlink" title="证明过程"></a>证明过程</h1><p>首先根据导数定义，我们得到以下几个式子：</p>
+<p><img src="/images/in_posts/derivative_of_sinx1.png" alt="证明过程 之一"></p>]]>
+    
+    </summary>
+    
+      <category term="数学" scheme="http://yuehaowang.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="其他" scheme="http://yuehaowang.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Web App：波的叠加演示]]></title>
