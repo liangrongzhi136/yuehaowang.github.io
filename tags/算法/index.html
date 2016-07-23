@@ -3,32 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JavaScript计算圆周率（解析几何+定积分） | Yorhom&#39;s Playground</title>
+  <title>Tag: 算法 | Yorhom&#39;s Playground</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。
-首先我们知道半径为r，圆心为(0, 0)的圆的方程是：
-
-不过这个是个方程，无法使用积分求解，所以我们要对它进行变形，变成一个函数。根据本人多年刷题经验，要把其变为函数，只需取一个半圆即可，获取半圆则需将其变形为：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript计算圆周率（解析几何+定积分）">
-<meta property="og:url" content="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/index.html">
+  <meta name="description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yorhom's Playground">
+<meta property="og:url" content="http://yuehaowang.github.io/tags/算法/index.html">
 <meta property="og:site_name" content="Yorhom's Playground">
-<meta property="og:description" content="最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。
-首先我们知道半径为r，圆心为(0, 0)的圆的方程是：
-
-不过这个是个方程，无法使用积分求解，所以我们要对它进行变形，变成一个函数。根据本人多年刷题经验，要把其变为函数，只需取一个半圆即可，获取半圆则需将其变形为：">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/js_calcu_pi_formula1.png">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/js_calcu_pi_formula2.png">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/js_calcu_pi_formula3.png">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/js_calcu_pi_integral_demo.jpg">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/js_calcu_pi_result.png">
-<meta property="og:updated_time" content="2016-04-29T11:12:26.358Z">
+<meta property="og:description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript计算圆周率（解析几何+定积分）">
-<meta name="twitter:description" content="最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。
-首先我们知道半径为r，圆心为(0, 0)的圆的方程是：
-
-不过这个是个方程，无法使用积分求解，所以我们要对它进行变形，变成一个函数。根据本人多年刷题经验，要把其变为函数，只需取一个半圆即可，获取半圆则需将其变形为：">
+<meta name="twitter:title" content="Yorhom's Playground">
+<meta name="twitter:description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
   
   
     <link rel="icon" href="/favicon.png">
@@ -150,105 +135,50 @@
 </aside>
 
       
-      <section id="main"><article id="post-js-calcu-pi" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+      <section id="main">
+    <section class="archives-wrap">
+    <div class="archive-tag-wrap">
+      <span class="archive-tag">#算法</span>
+    </div>
+    <div class="archives">
     
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
     
-    
-      <header class="article-header">
-        
+    <div class="archive-article-thumbnail">
+      <a href="/2016/07/22/counting_principle_algorithm/" class="thumbnail">
   
-    <h1 class="article-title" itemprop="name">
-      JavaScript计算圆周率（解析几何+定积分）
+    <span style="background-image:url(/images/in_posts/picture_of_couting_principle_math_question.jpg
+)" alt="算法研究：利用Python解决数学计数原理问题" class="thumbnail-image"></span>
+  
+</a>
+    </div>
+    
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/07/22/counting_principle_algorithm/">算法研究：利用Python解决数学计数原理问题</a>
     </h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
+      
+        
+  <div class="archive-article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2016/03/26/js-calcu-pi/">
-      <time datetime="2016-03-25T16:00:00.000Z" itemprop="datePublished">2016-03-26</time>
+    <a href="/2016/07/22/counting_principle_algorithm/">
+      <time datetime="2016-07-21T16:00:00.000Z" itemprop="datePublished">2016 7月 22</time>
     </a>
   </div>
 
 
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
+      
+    </header>
   </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <p>最近数学预习到选修本的定积分，前一向用它解决了物理上的正弦交流电有效值问题，前几天突发奇想，想用它来计算圆周率。于是我花了半节物理课的时间研究了一下，得出了以下求解方法。</p>
-<p>首先我们知道半径为r，圆心为(0, 0)的圆的方程是：</p>
-<p><img src="/images/in_posts/js_calcu_pi_formula1.png" alt="圆的方程"></p>
-<p>不过这个是个方程，无法使用积分求解，所以我们要对它进行变形，变成一个函数。根据本人多年刷题经验，要把其变为函数，只需取一个半圆即可，获取半圆则需将其变形为：</p>
-<p><img src="/images/in_posts/js_calcu_pi_formula2.png" alt="半圆的方程"></p>
-<a id="more"></a>
-<p>由于算术平方根运算得到的值 &gt; 0，所以该函数y就是以x为自变量的一个图像为半圆的函数。</p>
-<p>现在取[-r, r]定积分值得到半圆面积。</p>
-<p>最终得到如下几个数学表达式求出圆周率：</p>
-<p><img src="/images/in_posts/js_calcu_pi_formula3.png" alt="计算圆周率的公式"></p>
-<p>接下来的步骤就是求定积分的值了。如果要用牛顿—莱布尼茨公式，需要去找F(x)，F’(X) = y(x)。不过这个寻找的过程比较复杂（至少对于我而言是无法找到的，找到了该函数的朋友不妨告诉我一声？），所以我就直接通过程序计算来实现获取面积近似值。正如定积分所定义，我们可以用如下示意图来理解如何获取面积近似值：</p>
-<p><img src="/images/in_posts/js_calcu_pi_integral_demo.jpg" alt="面积分割法示意图"></p>
-<p>当我们把半圆分割为n（n为无穷大）个矩形，那么这个半圆面积就是这n个矩形的面积之和。</p>
-<p>有了以上理论，就不难使用代码来实现了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Calculate PI<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="keyword">var</span> r = <span class="number">1</span>, dx = <span class="number">0.00000001</span>, upperLimit = r;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">y</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(r * r - x * x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">main</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> s = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">var</span> x = -r; x &lt; upperLimit; x += dx) &#123;</span><br><span class="line">				s += dx * y(x);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">var</span> pi = (s * <span class="number">2</span>) / (r * r);</span><br><span class="line"></span><br><span class="line">			<span class="built_in">document</span>.write(<span class="string">"Calculational Value: "</span> + pi);</span><br><span class="line">			<span class="built_in">document</span>.write(<span class="string">"&lt;br /&gt;"</span>);</span><br><span class="line">			<span class="built_in">document</span>.write(<span class="string">"Theoretical Value: 3.1415926535897932"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		main();</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>输出结果：</p>
-<p><img src="/images/in_posts/js_calcu_pi_result.png" alt="输出结果"></p>
-<p>由于我们只能得到近似值，所以得到的圆周率和实际情况有差异。如果将半圆分得越细，那么得到的近似值越接近真实值。</p>
-<p><strong>该方法由本人自行研发，所以可能存在不足之处，如果大家知道更好的方式来求解圆周率，欢迎分享交流。</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/" data-id="cinenob820000ic69vbw4f9zb" class="article-share-link">分享到</a>
-      
-        <a href="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/04/24/webapp-wave-superposition/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Web App：波的叠加演示
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/02/16/python-game-dev-get-fruits/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Python开发接水果小游戏</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
-
-
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/" data-title="JavaScript计算圆周率（解析几何+定积分）" data-url="http://yuehaowang.github.io/2016/03/26/js-calcu-pi/">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
-      </div>
-  </section>
-
-</section>
+    
+    </div></section>
+    </section>
       
         <aside id="sidebar">
   
