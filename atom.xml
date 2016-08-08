@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[算法研究：利用Python解决数学计数原理问题]]></title>
-    <link href="http://yuehaowang.github.io/2016/07/22/counting_principle_algorithm/"/>
-    <id>http://yuehaowang.github.io/2016/07/22/counting_principle_algorithm/</id>
+    <link href="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/"/>
+    <id>http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/</id>
     <published>2016-07-21T16:00:00.000Z</published>
     <updated>2016-07-23T14:04:44.060Z</updated>
     <content type="html"><![CDATA[<p>最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：</p>
@@ -71,8 +71,8 @@
   
   <entry>
     <title><![CDATA[证明：sin'x = cosx]]></title>
-    <link href="http://yuehaowang.github.io/2016/05/21/derivative_of_sinx/"/>
-    <id>http://yuehaowang.github.io/2016/05/21/derivative_of_sinx/</id>
+    <link href="http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/"/>
+    <id>http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/</id>
     <published>2016-05-20T16:00:00.000Z</published>
     <updated>2016-07-23T13:44:20.090Z</updated>
     <content type="html"><![CDATA[<p>初三将近毕业的时候老爸给我买了几本数学相关的书籍。还把他的大学教材翻出来给我看，希望我去提前学习高等数学。很遗憾，当时的我对于这些东西完全不感兴趣，所以就不屑一顾，往书架上一扔就是两年。不久前，自己在数学教科书上看到了积分。书中运用积分的知识求得了一个曲边形的面积。当时我就傻眼了，什么！数学居然可以这么神奇。我这才意识到自己的无知，并且激起了我强烈的研究数学的欲望。这段时间里，我相继学习了导数和定积分，越发觉得数学的高深，决定提前学习大学里的高等数学。</p>
