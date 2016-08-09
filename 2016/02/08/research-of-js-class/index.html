@@ -138,20 +138,20 @@
 
       
       <section id="main"><article id="post-research-of-js-class" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+	<div class="article-inner">
+		
+		
+		
+			<header class="article-header">
+				
   
     <h1 class="article-title" itemprop="name">
       JavaScript类的小小研究
     </h1>
   
 
-        <div class="article-meta">
-          
+				<div class="article-meta">
+					
   <div class="article-date">
     <i class="fa fa-calendar"></i>
     <a href="/2016/02/08/research-of-js-class/">
@@ -160,19 +160,19 @@
   </div>
 
 
-          
+					
   <div class="article-category">
   	<i class="fa fa-folder"></i>
     <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
   </div>
 
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <h1 id="u57FA_u7840_u77E5_u8BC6"><a href="#u57FA_u7840_u77E5_u8BC6" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="JavaScript_u4E2D_u7684_u7C7B"><a href="#JavaScript_u4E2D_u7684_u7C7B" class="headerlink" title="JavaScript中的类"></a>JavaScript中的类</h2><p>JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的关于角色的代码算作一类，游戏背景算作一类，游戏特效又是一类。这样一来，我们对类进行操作，就不会使代码显得很凌乱，冗杂。虽然Js是弱类型语言，但是也提供了类这一概率。<br>定义Js中的类，实际上用的是<code>function</code>，总所周知，这个语法其实是用来定义函数的。不同于定义函数的是，我们可以在<code>function</code>中通过<code>this.xxx</code>的方式来定义属性和方法。比如说：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+				</div>
+			</header>
+		
+		<div class="article-entry" itemprop="articleBody">
+			
+								
+				<h1 id="u57FA_u7840_u77E5_u8BC6"><a href="#u57FA_u7840_u77E5_u8BC6" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="JavaScript_u4E2D_u7684_u7C7B"><a href="#JavaScript_u4E2D_u7684_u7C7B" class="headerlink" title="JavaScript中的类"></a>JavaScript中的类</h2><p>JavaScript实际上是一种弱类型语言，与C++和Java等语言不同。因此，在JavaScript中，没有强调类（class）这一概念，但实际运用中，类还是很重要的，比如写一款游戏，如果我们不停地调用函数来完成创建角色，移动角色的话，那会是什么样的呢？可能会出现非常多的重复代码，因此我们需要一个类来统一这些代码。所谓的类，就是把程序中的代码分类，比如说游戏中的关于角色的代码算作一类，游戏背景算作一类，游戏特效又是一类。这样一来，我们对类进行操作，就不会使代码显得很凌乱，冗杂。虽然Js是弱类型语言，但是也提供了类这一概率。<br>定义Js中的类，实际上用的是<code>function</code>，总所周知，这个语法其实是用来定义函数的。不同于定义函数的是，我们可以在<code>function</code>中通过<code>this.xxx</code>的方式来定义属性和方法。比如说：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>使用的时候使用<code>new</code>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> People();</span><br><span class="line"><span class="comment">// "Yorhom"</span></span><br><span class="line">alert(yorhom.getName());</span><br></pre></td></tr></table></figure></p>
 <p>可以看到，这样就可以使用到我们定义的类和类中的方法了。<br>也许你会问<code>this.xxx</code>只能定义公有属性和方法，那私有属性和方法怎么办呢？这个可以用到js闭包的知识来解决：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"Yorhom"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> age = <span class="number">16</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> yorhom = <span class="keyword">new</span> People();</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line">alert(yorhom.age);</span><br><span class="line"><span class="comment">// 16</span></span><br><span class="line">alert(yorhom.getAge());</span><br></pre></td></tr></table></figure></p>
@@ -248,32 +248,34 @@
 <p>具体的实现过程有点复杂，不过原理在上文已经详细讲述了。代码可以在github里参看，欢迎各位研究。</p>
 
 
-	<div style="margin-top: 80px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
-		<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
-		<a href="http://yuehaowang.github.io/2016/02/08/research-of-js-class/">http://yuehaowang.github.io/2016/02/08/research-of-js-class/</a>
-	</div>
+				
+					<div style="margin-top: 60px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
+						<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
+						<a href="http://yuehaowang.github.io/2016/02/08/research-of-js-class/">http://yuehaowang.github.io/2016/02/08/research-of-js-class/</a>
+					</div>
+				
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yuehaowang.github.io/2016/02/08/research-of-js-class/" data-id="cirhww0x7000sfi69z5gs2e14" class="article-share-link">分享到</a>
-      
-        <a href="http://yuehaowang.github.io/2016/02/08/research-of-js-class/#ds-thread" class="article-comment-link">评论</a>
-      
-      
+			
+		</div>
+		<footer class="article-footer">
+			<a data-url="http://yuehaowang.github.io/2016/02/08/research-of-js-class/" data-id="cirhww0x7000sfi69z5gs2e14" class="article-share-link">分享到</a>
+			
+				<a href="http://yuehaowang.github.io/2016/02/08/research-of-js-class/#ds-thread" class="article-comment-link">评论</a>
+			
+			
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </footer>
-  </div>
-  
-    
+		</footer>
+	</div>
+	
+		
 <nav id="article-nav">
   
     <a href="/2016/02/10/game-screen-scrolling/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          lufylegend实现游戏中的卷轴
+          使用lufylegend实现游戏中的卷轴
         
       </div>
     </a>
@@ -287,15 +289,15 @@
 </nav>
 
 
-  
+	
 </article>
 
 
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/08/research-of-js-class/" data-title="JavaScript类的小小研究" data-url="http://yuehaowang.github.io/2016/02/08/research-of-js-class/">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
-      </div>
-  </section>
+	<section id="comments">
+		<div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/08/research-of-js-class/" data-title="JavaScript类的小小研究" data-url="http://yuehaowang.github.io/2016/02/08/research-of-js-class/">
+			<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+			</div>
+	</section>
 
 </section>
       

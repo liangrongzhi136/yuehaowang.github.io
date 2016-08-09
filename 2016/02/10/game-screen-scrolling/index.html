@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>lufylegend实现游戏中的卷轴 | Yorhom&#39;s Playground</title>
+  <title>使用lufylegend实现游戏中的卷轴 | Yorhom&#39;s Playground</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="什么是卷轴玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：
 
 
 有了以上的简介，大家应该明白了什么是卷轴。说白了就是镜头跟随主角的效果。接下来，我们就利用lufylegend.js游戏引擎来实现这个效果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lufylegend实现游戏中的卷轴">
+<meta property="og:title" content="使用lufylegend实现游戏中的卷轴">
 <meta property="og:url" content="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/index.html">
 <meta property="og:site_name" content="Yorhom's Playground">
 <meta property="og:description" content="什么是卷轴玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：
@@ -21,9 +21,9 @@
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/game_screen_scrolling_demo2.png">
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/game_screen_scrolling_demo3.png">
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/game_screen_scrolling_demo4.png">
-<meta property="og:updated_time" content="2016-08-05T15:39:27.120Z">
+<meta property="og:updated_time" content="2016-08-09T12:57:07.185Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lufylegend实现游戏中的卷轴">
+<meta name="twitter:title" content="使用lufylegend实现游戏中的卷轴">
 <meta name="twitter:description" content="什么是卷轴玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：
 
 
@@ -150,20 +150,20 @@
 
       
       <section id="main"><article id="post-game-screen-scrolling" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+	<div class="article-inner">
+		
+		
+		
+			<header class="article-header">
+				
   
     <h1 class="article-title" itemprop="name">
-      lufylegend实现游戏中的卷轴
+      使用lufylegend实现游戏中的卷轴
     </h1>
   
 
-        <div class="article-meta">
-          
+				<div class="article-meta">
+					
   <div class="article-date">
     <i class="fa fa-calendar"></i>
     <a href="/2016/02/10/game-screen-scrolling/">
@@ -172,19 +172,19 @@
   </div>
 
 
-          
+					
   <div class="article-category">
   	<i class="fa fa-folder"></i>
     <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
   </div>
 
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
+				</div>
+			</header>
+		
+		<div class="article-entry" itemprop="articleBody">
+			
+								
+				<h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo1.png" alt="三国战线卷轴 截图之一"></p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo2.png" alt="三国战线卷轴 截图之二"></p>
 <p>有了以上的简介，大家应该明白了什么是卷轴。说白了就是镜头跟随主角的效果。接下来，我们就利用lufylegend.js游戏引擎来实现这个效果。</p>
@@ -202,25 +202,27 @@
 <p>大家可以到<a href="/demo/game_screen_scrolling/index.html">这里</a>查看在线演示。点击屏幕左半边控制小鸟向左移动，点击右半边屏幕，控制小鸟向右移动。小鸟到达屏幕中央后，开始卷轴。</p>
 <h1 id="u6E90_u4EE3_u7801_u4E0B_u8F7D"><a href="#u6E90_u4EE3_u7801_u4E0B_u8F7D" class="headerlink" title="源代码下载"></a>源代码下载</h1><h3 id="u70B9_u51FB_u4E0B_u8F7D"><a href="#u70B9_u51FB_u4E0B_u8F7D" class="headerlink" title="点击下载"></a><a href="/downloads/game_screen_scrolling.zip">点击下载</a></h3>
 
-	<div style="margin-top: 80px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
-		<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
-		<a href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/">http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/</a>
-	</div>
+				
+					<div style="margin-top: 60px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
+						<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
+						<a href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/">http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/</a>
+					</div>
+				
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/" data-id="cirhww0xu001bfi690t7tdtgk" class="article-share-link">分享到</a>
-      
-        <a href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/#ds-thread" class="article-comment-link">评论</a>
-      
-      
+			
+		</div>
+		<footer class="article-footer">
+			<a data-url="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/" data-id="cirhww0xu001bfi690t7tdtgk" class="article-share-link">分享到</a>
+			
+				<a href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/#ds-thread" class="article-comment-link">评论</a>
+			
+			
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lufylegend/">lufylegend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏开发/">游戏开发</a></li></ul>
 
-    </footer>
-  </div>
-  
-    
+		</footer>
+	</div>
+	
+		
 <nav id="article-nav">
   
     <a href="/2016/02/16/python-game-dev-get-fruits/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -241,15 +243,15 @@
 </nav>
 
 
-  
+	
 </article>
 
 
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/" data-title="lufylegend实现游戏中的卷轴" data-url="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
-      </div>
-  </section>
+	<section id="comments">
+		<div id="ds-thread" class="ds-thread" data-thread-key="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/" data-title="使用lufylegend实现游戏中的卷轴" data-url="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/">
+			<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+			</div>
+	</section>
 
 </section>
       

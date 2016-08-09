@@ -340,11 +340,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[lufylegend实现游戏中的卷轴]]></title>
+    <title><![CDATA[使用lufylegend实现游戏中的卷轴]]></title>
     <link href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/"/>
     <id>http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/</id>
     <published>2016-02-09T16:00:00.000Z</published>
-    <updated>2016-08-05T15:39:27.120Z</updated>
+    <updated>2016-08-09T12:57:07.185Z</updated>
     <content type="html"><![CDATA[<h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo1.png" alt="三国战线卷轴 截图之一"></p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo2.png" alt="三国战线卷轴 截图之二"></p>
