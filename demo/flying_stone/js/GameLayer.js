@@ -80,6 +80,12 @@ GameLayer.prototype.update = function (e) {
 
 		self.timeTxt.text = self.time + "s";
 
+		if (self.time <= 10) {
+			self.timeTxt.stroke = true;
+			self.timeTxt.lineWidth = 5;
+			self.timeTxt.lineColor = "#FF0000";
+		}
+
 		if (self.time <= 0) {
 			self.isGameOver = 1;
 		}
@@ -119,7 +125,7 @@ GameLayer.prototype.updateLayer = function (layer) {
 GameLayer.prototype.onDown = function (e) {
 	var self = e.currentTarget, angle;
 
-	if (self.isGameOver != 0) {
+	if (self.isGameOver != 0 || self.stoneLayer.numChildren >= 2) {
 		return;
 	}
 
