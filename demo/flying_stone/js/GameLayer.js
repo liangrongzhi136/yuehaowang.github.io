@@ -266,5 +266,12 @@ GameLayer.prototype.gameOver = function () {
 				self.timeTxt.remove();
 			}
 		});
+
+		LTweenLite.to(self.pauseBtn, 0.5, {
+			x : LGlobal.width,
+			onComplete : function () {
+				self.pauseBtn.remove();
+			}
+		});
 	}
 };
