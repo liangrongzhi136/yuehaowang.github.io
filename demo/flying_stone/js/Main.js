@@ -30,29 +30,42 @@ function loadRes () {
 		{path : "./js/RoundButton.js"},
 		{path : "./js/BeginningLayer.js"},
 		{path : "./js/GameLayer.js"},
+		{path : "./js/PauseButton.js"},
 		{path : "./js/Runner.js"},
 		{path : "./js/Bird.js"},
 		{path : "./js/Stone.js"},
 		{path : "./js/Explosion.js"},
 
 		{name : "bg", path : "./images/bg.png"},
+		{name : "btn_pause_sheet", path : "./images/btn_pause_sheet.png"},
 		{name : "logo", path : "./images/logo.png"},
 		{name : "bird", path : "./images/bird.png"},
 		{name : "stone", path : "./images/stone.png"},
 		{name : "explosion", path : "./images/explosion.png"}
 	];
 
-	LLoadManage.load(loadData, null, function (res) {
-		dataList = res;
+	var loadingBar = new SinLoadingBar();
+	addChild(loadingBar);
 
-		stageLayer = new LSprite();
-		addChild(stageLayer);
+	LLoadManage.load(
+		loadData,
+		function (p) {
+			loadingBar.setProgress(p);
+		},
+		function (res) {
+			dataList = res;
 
-		var fps = new FPS();
-		addChild(fps);
+			loadingBar.remove();
 
-		addBeginningLayer();
-	});
+			stageLayer = new LSprite();
+			addChild(stageLayer);
+
+			var fps = new FPS();
+			addChild(fps);
+
+			addBeginningLayer();
+		}
+	);
 }
 
 function addBeginningLayer () {

@@ -12,9 +12,13 @@ function GameLayer () {
 	self.pointText = null;
 	self.time = 99;
 	self.preTime = (new Date()).getTime();
+	self.pauseTime = null;
 	self.timeTxt = null;
+	self.timeTxtTween = null;
+	self.pauseBtn = null;
 	/** The flag of game over: 0 - running; 1 - waiting for showing result; 2 - showing result */
 	self.isGameOver = 0;
+	self.isPause = false;
 
 	self.birdLayer = new LSprite();
 	self.addChild(self.birdLayer);
@@ -33,6 +37,7 @@ function GameLayer () {
 
 	self.addPointText();
 	self.addTimeText();
+	self.addPauseBtn();
 
 	self.addEvents();
 }
@@ -57,11 +62,37 @@ GameLayer.prototype.addTimeText = function () {
 
 	self.timeTxt = new LTextField();
 	self.timeTxt.size = 35;
-	self.timeTxt.x = 20;
-	self.timeTxt.y = LGlobal.height - 50;
+	self.timeTxt.textAlign = "center";
+	self.timeTxt.textBaseline = "middle";
+	self.timeTxt.x = 50;
+	self.timeTxt.y = LGlobal.height - 40;
 	self.timeTxt.color = "#FFFFFF";
 	self.timeTxt.text = self.time + "s";
 	self.overLayer.addChild(self.timeTxt);
+};
+
+GameLayer.prototype.addPauseBtn = function () {
+	var self = this;
+
+	self.pauseBtn = new PauseButton();
+	self.pauseBtn.x = LGlobal.width - self.pauseBtn.getWidth() - 20;
+	self.pauseBtn.y = 10;
+	self.overLayer.addChild(self.pauseBtn);
+
+	self.pauseBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
+		self.isPause = !self.isPause;
+
+		if (self.isPause) {
+			LTweenLite.pauseAll();
+
+			self.pauseTime = (new Date()).getTime();
+		} else {
+			LTweenLite.resumeAll();
+
+			self.preTime += (new Date()).getTime() - self.pauseTime;
+			self.pauseTime = null;
+		}
+	});
 };
 
 GameLayer.prototype.addEvents = function () {
@@ -74,20 +105,35 @@ GameLayer.prototype.addEvents = function () {
 GameLayer.prototype.update = function (e) {
 	var self = e.currentTarget, currentTime = (new Date()).getTime();
 
+	if (self.isPause) {
+		return;
+	}
+
 	if (self.isGameOver == 0 && currentTime - self.preTime >= 1000) {
 		self.time -= 1;
 		self.preTime = currentTime;
 
 		self.timeTxt.text = self.time + "s";
 
-		if (self.time <= 10) {
+		if (self.time == 9) {
 			self.timeTxt.stroke = true;
 			self.timeTxt.lineWidth = 5;
-			self.timeTxt.lineColor = "#FF0000";
+			self.timeTxt.lineColor = "#AA0000";
+
+			self.timeTxtTween = LTweenLite.to(self.timeTxt, 0.3, {
+				scaleX : 1.5,
+				scaleY : 1.5,
+				loop : true
+			}).to(self.timeTxt, 0.3, {
+				scaleX : 1,
+				scaleY : 1,
+			});
 		}
 
 		if (self.time <= 0) {
 			self.isGameOver = 1;
+
+			LTweenLite.remove(self.timeTxtTween);
 		}
 	}
 
@@ -125,7 +171,12 @@ GameLayer.prototype.updateLayer = function (layer) {
 GameLayer.prototype.onDown = function (e) {
 	var self = e.currentTarget, angle;
 
-	if (self.isGameOver != 0 || self.stoneLayer.numChildren >= 2) {
+	if (
+		self.isGameOver != 0
+		|| self.stoneLayer.numChildren >= 2
+		|| (self.pauseBtn && self.pauseBtn.onDown(e))
+		|| self.isPause
+	) {
 		return;
 	}
 

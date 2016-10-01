@@ -14,6 +14,7 @@ function Runner () {
 
 	self.currentStone = new Stone();
 	self.currentStone.x = self.r;
+	self.currentStone.y = 6;
 	self.runningLayer.addChild(self.currentStone);
 
 	self.updateStone();
