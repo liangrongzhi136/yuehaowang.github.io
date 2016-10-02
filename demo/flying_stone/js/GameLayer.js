@@ -75,11 +75,11 @@ GameLayer.prototype.addPauseBtn = function () {
 	var self = this;
 
 	self.pauseBtn = new PauseButton();
-	self.pauseBtn.x = LGlobal.width - self.pauseBtn.getWidth() - 20;
+	self.pauseBtn.x = LGlobal.width - self.pauseBtn.getWidth() - 10;
 	self.pauseBtn.y = 10;
 	self.overLayer.addChild(self.pauseBtn);
 
-	self.pauseBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
+	self.pauseBtn.onClick = function () {
 		self.isPause = !self.isPause;
 
 		if (self.isPause) {
@@ -92,7 +92,7 @@ GameLayer.prototype.addPauseBtn = function () {
 			self.preTime += (new Date()).getTime() - self.pauseTime;
 			self.pauseTime = null;
 		}
-	});
+	};
 };
 
 GameLayer.prototype.addEvents = function () {

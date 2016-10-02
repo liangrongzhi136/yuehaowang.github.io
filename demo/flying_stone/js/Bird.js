@@ -88,7 +88,8 @@ Bird.prototype.goDead = function () {
 	explosion.y = self.y;
 	gameLayer.effectLayer.addChild(explosion);
 
-	gameLayer.addPoint(Math.ceil(-self.v / 2) + Math.round(3 - self.T));
+	var point = Math.ceil(-self.v / 2) + Math.round(3 - self.T) + (self.y0 + self.amplitude < 160 ? 1 : 0);
+	gameLayer.addPoint(point);
 
 	self.remove();
 };

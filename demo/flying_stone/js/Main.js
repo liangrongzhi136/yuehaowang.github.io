@@ -55,15 +55,19 @@ function loadRes () {
 		function (res) {
 			dataList = res;
 
-			loadingBar.remove();
+			var timer = new LTimer(1500, 1);
+			timer.addEventListener(LTimerEvent.TIMER_COMPLETE, function () {
+				loadingBar.remove();
 
-			stageLayer = new LSprite();
-			addChild(stageLayer);
+				stageLayer = new LSprite();
+				addChild(stageLayer);
 
-			var fps = new FPS();
-			addChild(fps);
+				// var fps = new FPS();
+				// addChild(fps);
 
-			addBeginningLayer();
+				addBeginningLayer();
+			});
+			timer.start();
 		}
 	);
 }

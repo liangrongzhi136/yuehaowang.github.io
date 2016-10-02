@@ -17,8 +17,9 @@ function SinLoadingBar () {
 	self.hintTxt.text = "Loading...";
 	self.hintTxt.color = "#00FF00";
 	self.hintTxt.size = 30;
+	self.hintTxt.weight = "bold";
 	self.hintTxt.x = (LGlobal.width - self.hintTxt.getWidth()) / 2;
-	self.hintTxt.y = LGlobal.height / 2 + 130;
+	self.hintTxt.y = LGlobal.height / 2 + 160;
 	self.addChild(self.hintTxt);
 }
 
