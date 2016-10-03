@@ -39,7 +39,9 @@ function loadRes () {
 		{name : "bg", path : "./images/bg.png"},
 		{name : "btn_pause_sheet", path : "./images/btn_pause_sheet.png"},
 		{name : "logo", path : "./images/logo.png"},
-		{name : "bird", path : "./images/bird.png"},
+		{name : "bird1", path : "./images/bird1.png"},
+		{name : "bird2", path : "./images/bird2.png"},
+		{name : "bird3", path : "./images/bird3.png"},
 		{name : "stone", path : "./images/stone.png"},
 		{name : "explosion", path : "./images/explosion.png"}
 	];
@@ -55,7 +57,7 @@ function loadRes () {
 		function (res) {
 			dataList = res;
 
-			var timer = new LTimer(1500, 1);
+			var timer = new LTimer(800, 1);
 			timer.addEventListener(LTimerEvent.TIMER_COMPLETE, function () {
 				loadingBar.remove();
 

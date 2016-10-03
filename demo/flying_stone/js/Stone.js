@@ -17,6 +17,8 @@ function Stone () {
 	/** Initial speed of y-axis */
 	self.vy0 = 0;
 
+	self.koCount = 0;
+
 	self.currentStyle = null;
 
 	self.bmp = new LBitmap();
@@ -65,7 +67,7 @@ Stone.prototype.update = function () {
 			return;
 		}
 
-		for (var i = 0; i < birdLayer.numChildren; i++) {
+		for (var i = 0, l = birdLayer.numChildren; i < l; i++) {
 			var bird = birdLayer.getChildAt(i);
 
 			if (!bird) {
@@ -73,7 +75,12 @@ Stone.prototype.update = function () {
 			}
 
 			if (bird.hitTestObject(self)) {
-				bird.goDead();
+				gameLayer.continuousKill(++self.koCount);
+
+				bird.goDead(gameLayer);
+
+				l--;
+				i--;
 			}
 		}
 	}

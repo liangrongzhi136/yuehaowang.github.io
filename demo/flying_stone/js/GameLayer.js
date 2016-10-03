@@ -191,6 +191,43 @@ GameLayer.prototype.onDown = function (e) {
 	self.runnerLayer.updateStone();
 };
 
+GameLayer.prototype.continuousKill = function (koCount) {
+	var self = this, textList = ["DOUBLE KILL", "TRIPLE KILL"];
+
+	if (koCount < 2 || koCount > 3) {
+		return;
+	}
+
+	self.addPoint(koCount);
+
+	var hintTxt = new LTextField();
+	hintTxt.text = textList[koCount - 2];
+	hintTxt.color = "#FFFFFF";
+	hintTxt.stroke = true;
+	hintTxt.lineWidth = 5;
+	hintTxt.lineColor = "#EE6633";
+	hintTxt.size = 10;
+	hintTxt.x = LGlobal.width / 2;
+	hintTxt.y = 250;
+	hintTxt.textAlign = "center";
+	hintTxt.textBaseline = "middle";
+	self.effectLayer.addChild(hintTxt);
+
+	LTweenLite.to(hintTxt, 0.4, {
+		size : 40,
+		ease : LEasing.Elastic.easeOut
+	}).to(hintTxt, 0.3, {
+		delay : 1,
+		y : 0,
+		alpha : 0,
+		size : 20,
+		ease : LEasing.Back.easeIn,
+		onComplete : function () {
+			hintTxt.remove();
+		}
+	});
+};
+
 GameLayer.prototype.addPoint = function (v) {
 	var self = this;
 
