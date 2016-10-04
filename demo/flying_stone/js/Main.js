@@ -64,8 +64,8 @@ function loadRes () {
 				stageLayer = new LSprite();
 				addChild(stageLayer);
 
-				// var fps = new FPS();
-				// addChild(fps);
+				var fps = new FPS();
+				addChild(fps);
 
 				addBeginningLayer();
 			});

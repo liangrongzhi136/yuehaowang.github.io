@@ -3,7 +3,7 @@ function Runner () {
 	LExtends(self, LSprite, []);
 
 	self.r = 100;
-	self.w = 360;
+	self.w = Runner.NORMAL_ROTATING_SPEED;
 	self.x = LGlobal.width / 2;
 	self.y = LGlobal.height - self.r - 80;
 
@@ -19,6 +19,8 @@ function Runner () {
 
 	self.updateStone();
 }
+
+Runner.NORMAL_ROTATING_SPEED = 360;
 
 Runner.prototype.updateStone = function () {
 	var self = this, rand = Math.random();

@@ -50,10 +50,14 @@ Bird.prototype.getReward = function () {
 
 	if (val <= 0.6) {
 		self.reward = 1;
-	} else if (val <= 0.9) {
+	} else if (val <= 0.95) {
 		self.reward = 2;
 	} else {
 		self.reward = 3;
+	}
+
+	if (self.y0 <= 160) {
+		self.reward += 1;
 	}
 };
 

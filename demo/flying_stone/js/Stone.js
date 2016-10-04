@@ -7,7 +7,7 @@ function Stone () {
 	/** Initial angle */
 	self.angle = 0;
 	/** Initial speed */
-	self.v0 = 12;
+	self.v0 = Stone.v0;
 	/** Used time */
 	self.t = 0;
 	/** Gravity acceleration */
@@ -31,6 +31,12 @@ function Stone () {
 
 Stone.STYLE1 = 0;
 Stone.STYLE2 = 1;
+
+Stone.NORMAL_V0 = 12;
+Stone.v0 = Stone.NORMAL_V0;
+
+Stone.NORMAL_NUM_LIMIT = 2;
+Stone.numLimit = Stone.NORMAL_NUM_LIMIT;
 
 Stone.prototype.setAngle = function (angle) {
 	var self = this;

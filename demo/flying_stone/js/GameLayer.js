@@ -2,7 +2,7 @@ function GameLayer () {
 	var self = this;
 	LExtends(self, LSprite, []);
 
-	self.addBirdSpeed = 80;
+	self.addBirdSpeed = GameLayer.NORMAL_SPEED_OF_ADDING_BIRD;
 	self.addBirdSpeedIndex = 0;
 
 	var bg = new LBitmap(new LBitmapData(dataList["bg"]));
@@ -10,15 +10,23 @@ function GameLayer () {
 
 	self.point = 0;
 	self.pointText = null;
-	self.time = 99;
+
+	self.time = GameLayer.GAME_TIME;
 	self.preTime = (new Date()).getTime();
+
 	self.pauseTime = null;
+	self.pauseBtn = null;
+
+	/** The flag of game over: 0 - running; 1 - waiting for showing result; 2 - showing result */
+	self.gameOverState = 0;
+	self.isPause = false;
+	/** The flag of super time: 0 - waiting; 1 - running; 2 - over */
+	self.superTimeState = 0;
+
 	self.timeTxt = null;
 	self.timeTxtTween = null;
-	self.pauseBtn = null;
-	/** The flag of game over: 0 - running; 1 - waiting for showing result; 2 - showing result */
-	self.isGameOver = 0;
-	self.isPause = false;
+	self.msgTxt = null;
+	self.msgTxtTween = null;
 
 	self.birdLayer = new LSprite();
 	self.addChild(self.birdLayer);
@@ -41,6 +49,9 @@ function GameLayer () {
 
 	self.addEvents();
 }
+
+GameLayer.NORMAL_SPEED_OF_ADDING_BIRD = 80;
+GameLayer.GAME_TIME = 99;
 
 GameLayer.prototype.addPointText = function () {
 	var self = this;
@@ -109,32 +120,21 @@ GameLayer.prototype.update = function (e) {
 		return;
 	}
 
-	if (self.isGameOver == 0 && currentTime - self.preTime >= 1000) {
+	if (self.gameOverState == 0 && currentTime - self.preTime >= 1000) {
 		self.time -= 1;
 		self.preTime = currentTime;
 
 		self.timeTxt.text = self.time + "s";
 
-		if (self.time == 9) {
-			self.timeTxt.stroke = true;
-			self.timeTxt.lineWidth = 5;
-			self.timeTxt.lineColor = "#AA0000";
-
-			self.timeTxtTween = LTweenLite.to(self.timeTxt, 0.3, {
-				scaleX : 1.5,
-				scaleY : 1.5,
-				loop : true
-			}).to(self.timeTxt, 0.3, {
-				scaleX : 1,
-				scaleY : 1,
-			});
-		}
-
 		if (self.time <= 0) {
-			self.isGameOver = 1;
+			self.gameOverState = 1;
 
 			LTweenLite.remove(self.timeTxtTween);
 		}
+
+		self.checkWhetherTimeWillSoonBeUp();
+
+		self.checkSuperTime();
 	}
 
 	self.runnerLayer.update();
@@ -142,15 +142,72 @@ GameLayer.prototype.update = function (e) {
 	self.updateLayer(self.stoneLayer);
 	self.updateLayer(self.birdLayer);
 
-	if (self.isGameOver == 1) {
+	if (self.gameOverState == 1) {
 		self.gameOver();
 	}
 
-	if (self.isGameOver == 0 && self.addBirdSpeedIndex++ >= self.addBirdSpeed) {
+	if (self.gameOverState == 0 && self.addBirdSpeedIndex++ >= self.addBirdSpeed) {
 		self.addBirdSpeedIndex = 0;
 
 		var bird = new Bird();
 		self.birdLayer.addChild(bird);
+	}
+};
+
+GameLayer.prototype.checkWhetherTimeWillSoonBeUp = function () {
+	var self = this;
+
+	if (self.time == 9) {
+		self.timeTxt.stroke = true;
+		self.timeTxt.lineWidth = 5;
+		self.timeTxt.lineColor = "#AA0000";
+
+		self.timeTxtTween = LTweenLite.to(self.timeTxt, 0.3, {
+			scaleX : 1.5,
+			scaleY : 1.5,
+			loop : true
+		}).to(self.timeTxt, 0.3, {
+			scaleX : 1,
+			scaleY : 1
+		});
+	}
+};
+
+GameLayer.prototype.checkSuperTime = function () {
+	var self = this;
+
+	if (self.superTimeState == 0 && self.time >= 30 && self.time <= 70) {
+		if (Math.random() < 0.3) {
+			self.superTimeState = 1;
+			
+			self.superTimeStartTime = self.time;
+			self.superTimePeriod = 10 + Math.floor(Math.random() * 10);
+
+			self.addBirdSpeedIndex = 0;
+			self.addBirdSpeed = 10 + Math.floor(Math.random() * 8);
+
+			self.runnerLayer.w = 500;
+
+			Stone.v0 = 14;
+			Stone.numLimit = 4;
+
+			self.showMsgTxt("ATTENTION !!!");
+		}
+	} else if (self.superTimeState == 1) {
+		if (self.superTimeStartTime - self.time >= self.superTimePeriod) {
+			self.superTimeState = 2;
+
+			self.superTimeStartTime = null;
+			self.superTimePeriod = null;
+
+			self.addBirdSpeedIndex = 0;
+			self.addBirdSpeed = GameLayer.NORMAL_SPEED_OF_ADDING_BIRD;
+
+			self.runnerLayer.w = Runner.NORMAL_ROTATING_SPEED;
+
+			Stone.v0 = Stone.NORMAL_V0;
+			Stone.numLimit = Stone.NORMAL_NUM_LIMIT;
+		}
 	}
 };
 
@@ -172,8 +229,8 @@ GameLayer.prototype.onDown = function (e) {
 	var self = e.currentTarget, angle;
 
 	if (
-		self.isGameOver != 0
-		|| self.stoneLayer.numChildren >= 2
+		self.gameOverState != 0
+		|| self.stoneLayer.numChildren >= Stone.numLimit
 		|| (self.pauseBtn && self.pauseBtn.onDown(e))
 		|| self.isPause
 	) {
@@ -191,41 +248,82 @@ GameLayer.prototype.onDown = function (e) {
 	self.runnerLayer.updateStone();
 };
 
-GameLayer.prototype.continuousKill = function (koCount) {
-	var self = this, textList = ["DOUBLE KILL", "TRIPLE KILL"];
+GameLayer.prototype.showMsgTxt = function (content) {
+	var self = this;
 
-	if (koCount < 2 || koCount > 3) {
-		return;
+	if (self.msgTxt) {
+		if (self.msgTxtTween) {
+			LTweenLite.remove(self.msgTxtTween);
+		}
+
+		LTweenLite.to(self.msgTxt, 0.3, {
+			y : 500,
+			alpha : 0,
+			size : 10,
+			ease : LEasing.Circ.easeOut,
+			onComplete : function (o) {
+				o.remove();
+			}
+		});
 	}
 
-	self.addPoint(koCount);
+	var msgTxt = new LTextField();
+	msgTxt.text = content;
+	msgTxt.alpha = 0;
+	msgTxt.color = "#FFFFFF";
+	msgTxt.stroke = true;
+	msgTxt.lineWidth = 5;
+	msgTxt.lineColor = "#EE6633";
+	msgTxt.size = 10;
+	msgTxt.x = LGlobal.width / 2;
+	msgTxt.y = 250;
+	msgTxt.textAlign = "center";
+	msgTxt.textBaseline = "middle";
+	self.effectLayer.addChild(msgTxt);
 
-	var hintTxt = new LTextField();
-	hintTxt.text = textList[koCount - 2];
-	hintTxt.color = "#FFFFFF";
-	hintTxt.stroke = true;
-	hintTxt.lineWidth = 5;
-	hintTxt.lineColor = "#EE6633";
-	hintTxt.size = 10;
-	hintTxt.x = LGlobal.width / 2;
-	hintTxt.y = 250;
-	hintTxt.textAlign = "center";
-	hintTxt.textBaseline = "middle";
-	self.effectLayer.addChild(hintTxt);
+	self.msgTxt = msgTxt;
 
-	LTweenLite.to(hintTxt, 0.4, {
+	self.msgTxtTween = LTweenLite.to(self.msgTxt, 0.4, {
 		size : 40,
+		alpha : 1,
 		ease : LEasing.Elastic.easeOut
-	}).to(hintTxt, 0.3, {
+	}).to(msgTxt, 0.4, {
 		delay : 1,
 		y : 0,
 		alpha : 0,
-		size : 20,
+		size : 10,
 		ease : LEasing.Back.easeIn,
 		onComplete : function () {
-			hintTxt.remove();
+			self.msgTxt.remove();
+
+			self.msgTxt = null;
+			self.msgTxtTween = null;
 		}
 	});
+};
+
+GameLayer.prototype.continuousKill = function (koCount) {
+	var self = this, textList;
+
+	if (koCount < 2) {
+		return;
+	}
+
+	koCount = (koCount > 8) ? 8 : koCount;
+
+	textList = [
+		"DOUBLE KILL",
+		"TRIPLE KILL",
+		"QUADRUPLE KILL",
+		"PENTA KILL",
+		"KILLING SPREE",
+		"GOD LIKE",
+		"LEGENDARY"
+	];
+
+	self.addPoint(koCount);
+
+	self.showMsgTxt(textList[koCount - 2])
 };
 
 GameLayer.prototype.addPoint = function (v) {
@@ -242,7 +340,7 @@ GameLayer.prototype.gameOver = function () {
 		&& self.stoneLayer.numChildren == 0
 		&& self.effectLayer.numChildren == 0
 	) {
-		self.isGameOver = 2;
+		self.gameOverState = 2;
 
 		var hintTxt = new LTextField();
 		hintTxt.size = 40;
