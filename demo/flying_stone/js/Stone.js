@@ -60,7 +60,6 @@ Stone.prototype.update = function () {
 	if (
 		self.x + self.bmpW / 2 <= 0
 		|| self.x - self.bmpW >= LGlobal.width
-		|| self.y + self.bmpH / 2 <= 0
 		|| self.y - self.bmpH / 2 >= LGlobal.height
 	) {
 		self.remove();
