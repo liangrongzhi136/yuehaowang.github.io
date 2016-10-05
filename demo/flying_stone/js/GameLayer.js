@@ -5,8 +5,8 @@ function GameLayer () {
 	self.addBirdSpeed = GameLayer.NORMAL_SPEED_OF_ADDING_BIRD;
 	self.addBirdSpeedIndex = 0;
 
-	var bg = new LBitmap(new LBitmapData(dataList["bg"]));
-	self.addChild(bg);
+	self.bg = new LBitmap(new LBitmapData(dataList["bg"]));
+	self.addChild(self.bg);
 
 	self.point = 0;
 	self.pointText = null;
@@ -42,6 +42,18 @@ function GameLayer () {
 
 	self.overLayer = new LSprite();
 	self.addChild(self.overLayer);
+
+	self.pauseMenuLayer = new PauseMenu();
+	self.pauseMenuLayer.y = 250;
+	self.addChild(self.pauseMenuLayer);
+	
+	self.pauseMenuLayer.onClickBackBtn = function () {
+		self.destroy(1);
+	};
+
+	self.pauseMenuLayer.onClickReplayBtn = function () {
+		self.destroy(0);
+	};
 
 	self.addPointText();
 	self.addTimeText();
@@ -97,11 +109,15 @@ GameLayer.prototype.addPauseBtn = function () {
 			LTweenLite.pauseAll();
 
 			self.pauseTime = (new Date()).getTime();
+
+			self.pauseMenuLayer.showMenu();
 		} else {
 			LTweenLite.resumeAll();
 
 			self.preTime += (new Date()).getTime() - self.pauseTime;
 			self.pauseTime = null;
+
+			self.pauseMenuLayer.hideMenu();
 		}
 	};
 };
@@ -362,9 +378,7 @@ GameLayer.prototype.gameOver = function () {
 		self.overLayer.addChild(replayBtn);
 
 		replayBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
-			self.remove();
-
-			startGame();
+			self.destroy(0);
 		});
 
 		LTweenLite.to(hintTxt, 0.8, {
@@ -410,3 +424,21 @@ GameLayer.prototype.gameOver = function () {
 		});
 	}
 };
+
+GameLayer.prototype.destroy = function (command) {
+	var self = this;
+
+	self.mouseEnabled = false;
+
+	sceneTransition(function () {
+		self.remove();
+
+		delete self.bg;
+
+		if (command == 0) {
+			startGame();
+		} else if (command == 1) {
+			addBeginningLayer();
+		}
+	});
+}

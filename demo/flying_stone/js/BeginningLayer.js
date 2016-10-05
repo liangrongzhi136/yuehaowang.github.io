@@ -9,10 +9,12 @@ function BeginningLayer () {
 	self.bg.y = self.bg.y0 = -self.A;
 	self.addChild(self.bg);
 
-	var logoBmp = new LBitmap(new LBitmapData(dataList["logo"]));
-	logoBmp.x = (LGlobal.width - logoBmp.getWidth()) / 2;
-	logoBmp.y = 80;
-	self.addChild(logoBmp);
+	self.logoBmp = new LBitmap(new LBitmapData(dataList["logo"]));
+	self.logoBmp.x = (LGlobal.width - self.logoBmp.getWidth()) / 2;
+	self.logoBmp.y = 80;
+	self.addChild(self.logoBmp);
+
+	self.startBtn = null;
 
 	self.createStartBtn();
 
@@ -22,12 +24,12 @@ function BeginningLayer () {
 BeginningLayer.prototype.createStartBtn = function () {
 	var self = this, r = 80;
 
-	var startBtn = new RoundButton("Go", r, 70);
-	startBtn.x = (LGlobal.width - r * 2) / 2;
-	startBtn.y = 430;
-	self.addChild(startBtn);
+	self.startBtn = new RoundButton("Go", r, 70);
+	self.startBtn.x = (LGlobal.width - r * 2) / 2;
+	self.startBtn.y = 430;
+	self.addChild(self.startBtn);
 
-	startBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
+	self.startBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
 		self.destroy();
 	});
 };
@@ -46,9 +48,29 @@ BeginningLayer.prototype.update = function (e) {
 BeginningLayer.prototype.destroy = function () {
 	var self = this;
 
-	delete self.bg;
+	self.mouseChildren = false;
 
-	self.remove();
+	LTweenLite.to(self.logoBmp, 0.4, {
+		x : -self.logoBmp.getWidth(),
+		ease : LEasing.Quart.easeOut,
+		onComplete : function () {
+			self.logoBmp.remove();
+		}
+	});
 
-	startGame();
+	LTweenLite.to(self.startBtn, 0.4, {
+		x : LGlobal.width,
+		ease : LEasing.Quart.easeOut,
+		onComplete : function () {
+			self.startBtn.remove();
+		}
+	});
+
+	sceneTransition(function () {
+		self.remove();
+
+		delete self.bg;
+
+		startGame();
+	});
 };

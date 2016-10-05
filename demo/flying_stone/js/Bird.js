@@ -33,7 +33,7 @@ function Bird () {
 
 Bird.prototype.getRandomOrbit = function () {
 	var self = this,
-		minY = 80,
+		minY = 100,
 		amplitude = 40 + Math.floor(Math.random() * 80),
 		offsetY = Math.floor(Math.random() * 40);
 

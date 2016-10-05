@@ -17,7 +17,7 @@ window.onload = function () {
 };
 
 var dataList = {};
-var stageLayer;
+var stageLayer, curtainLayer;
 
 function main () {
 	LGlobal.screen(LGlobal.FULL_SCREEN);
@@ -31,6 +31,7 @@ function loadRes () {
 		{path : "./js/BeginningLayer.js"},
 		{path : "./js/GameLayer.js"},
 		{path : "./js/PauseButton.js"},
+		{path : "./js/PauseMenu.js"},
 		{path : "./js/Runner.js"},
 		{path : "./js/Bird.js"},
 		{path : "./js/Stone.js"},
@@ -64,6 +65,9 @@ function loadRes () {
 				stageLayer = new LSprite();
 				addChild(stageLayer);
 
+				curtainLayer = new LSprite();
+				addChild(curtainLayer);
+
 				var fps = new FPS();
 				addChild(fps);
 
@@ -72,6 +76,26 @@ function loadRes () {
 			timer.start();
 		}
 	);
+}
+
+function sceneTransition (callback) {
+	var curtainSh = new LShape();
+	curtainSh.alpha = 0;
+	curtainSh.graphics.drawRect(0, "", [0, 0, LGlobal.width, LGlobal.height], true, "#000000");
+	curtainLayer.addChild(curtainSh);
+
+	LTweenLite.to(curtainSh, 0.5, {
+		alpha : 1
+	}).to(curtainSh, 0.5, {
+		delay : 0.5,
+		alpha : 0,
+		onStart : function () {
+			callback();
+		},
+		onComplete : function () {
+			curtainSh.remove();
+		}
+	});
 }
 
 function addBeginningLayer () {
