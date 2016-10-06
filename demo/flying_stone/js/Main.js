@@ -36,6 +36,8 @@ function loadRes () {
 		{path : "./js/Bird.js"},
 		{path : "./js/Stone.js"},
 		{path : "./js/Explosion.js"},
+		{path : "./js/ShareUtils.js"},
+		{path : "./js/ShareBox.js"},
 
 		{name : "bg", path : "./images/bg.png"},
 		{name : "btn_pause_sheet", path : "./images/btn_pause_sheet.png"},
@@ -44,7 +46,9 @@ function loadRes () {
 		{name : "bird2", path : "./images/bird2.png"},
 		{name : "bird3", path : "./images/bird3.png"},
 		{name : "stone", path : "./images/stone.png"},
-		{name : "explosion", path : "./images/explosion.png"}
+		{name : "explosion", path : "./images/explosion.png"},
+		{name : "icon_qzone", path : "./images/icon_qzone.png"},
+		{name : "icon_weibo", path : "./images/icon_weibo.png"}
 	];
 
 	var loadingBar = new SinLoadingBar();

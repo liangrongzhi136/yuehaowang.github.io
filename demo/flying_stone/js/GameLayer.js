@@ -145,7 +145,11 @@ GameLayer.prototype.update = function (e) {
 		if (self.time <= 0) {
 			self.gameOverState = 1;
 
-			LTweenLite.remove(self.timeTxtTween);
+			if (self.timeTxtTween) {
+				LTweenLite.remove(self.timeTxtTween);
+
+				self.timeTxtTween = null;
+			}
 		}
 
 		self.checkWhetherTimeWillSoonBeUp();
@@ -358,6 +362,8 @@ GameLayer.prototype.gameOver = function () {
 	) {
 		self.gameOverState = 2;
 
+		/** Create game over interface */
+
 		var hintTxt = new LTextField();
 		hintTxt.size = 40;
 		hintTxt.weight = "bolder";
@@ -376,23 +382,33 @@ GameLayer.prototype.gameOver = function () {
 		replayBtn.x = (LGlobal.width - btnR * 2) / 2;
 		replayBtn.y = LGlobal.height;
 		self.overLayer.addChild(replayBtn);
-
 		replayBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
 			self.destroy(0);
 		});
 
+		var shareLayer = new ShareBox(self.point);
+		shareLayer.x = (LGlobal.width - shareLayer.getWidth()) / 2;
+		shareLayer.y = LGlobal.height;
+		self.overLayer.addChild(shareLayer);
+
+
+		/** Attach animation */
+
 		LTweenLite.to(hintTxt, 0.8, {
-			y : 160,
+			y : 100,
 			ease : LEasing.Back.easeInOut
 		});
 
 		LTweenLite.to(replayBtn, 0.8, {
-			y : 420,
+			y : 350,
 			ease : LEasing.Back.easeInOut
+		}).to(shareLayer, 0.3, {
+			y : 590,
+			ease : LEasing.Quad.easeOut
 		});
 
 		LTweenLite.to(self.pointTxt, 0.8, {
-			y : 250,
+			y : 190,
 			size : 90,
 			ease : LEasing.Back.easeInOut,
 			onStart : function () {

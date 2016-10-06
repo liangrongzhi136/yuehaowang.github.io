@@ -10,9 +10,10 @@ function PauseMenu () {
 PauseMenu.BACK_BUTTON_NAME = "back_btn";
 PauseMenu.REPLAY_BUTTON_NAME = "replay_btn";
 
-PauseMenu.ButtonStyle = {
+PauseMenu.ButtonInfo = {
 	INIT_SCALE : 0.5,
-	INIT_ALPHA : 0.2
+	INIT_ALPHA : 0.2,
+	ROTATE_ANGLE : 720,
 };
 
 PauseMenu.prototype.showMenu = function () {
@@ -56,7 +57,7 @@ PauseMenu.prototype.showMenu = function () {
 			alpha : 1,
 			scaleX : 1,
 			scaleY : 1,
-			rotate : -360 * 5
+			rotate : -PauseMenu.ButtonInfo.ROTATE_ANGLE
 		},
 		{
 			x : LGlobal.width / 2,
@@ -64,7 +65,7 @@ PauseMenu.prototype.showMenu = function () {
 			alpha : 1,
 			scaleX : 1,
 			scaleY : 1,
-			rotate : 360 * 5
+			rotate : PauseMenu.ButtonInfo.ROTATE_ANGLE
 		}
 	]);
 };
@@ -79,10 +80,10 @@ PauseMenu.prototype.hideMenu = function () {
 		{
 			x : -backBtn.getWidth() / 2,
 			ease : LEasing.Back.easeIn,
-			alpha : PauseMenu.ButtonStyle.INIT_ALPHA,
-			scaleX : PauseMenu.ButtonStyle.INIT_SCALE,
-			scaleY : PauseMenu.ButtonStyle.INIT_SCALE,
-			rotate : 360 * 5,
+			alpha : PauseMenu.ButtonInfo.INIT_ALPHA,
+			scaleX : PauseMenu.ButtonInfo.INIT_SCALE,
+			scaleY : PauseMenu.ButtonInfo.INIT_SCALE,
+			rotate : PauseMenu.ButtonInfo.ROTATE_ANGLE,
 			onComplete : function () {
 				backBtn.remove();
 			}
@@ -90,10 +91,10 @@ PauseMenu.prototype.hideMenu = function () {
 		{
 			x : LGlobal.width + replayBtn.getWidth() / 2,
 			ease : LEasing.Back.easeIn,
-			alpha : PauseMenu.ButtonStyle.INIT_ALPHA,
-			scaleX : PauseMenu.ButtonStyle.INIT_SCALE,
-			scaleY : PauseMenu.ButtonStyle.INIT_SCALE,
-			rotate : -360 * 5,
+			alpha : PauseMenu.ButtonInfo.INIT_ALPHA,
+			scaleX : PauseMenu.ButtonInfo.INIT_SCALE,
+			scaleY : PauseMenu.ButtonInfo.INIT_SCALE,
+			rotate : -PauseMenu.ButtonInfo.ROTATE_ANGLE,
 			onComplete : function () {
 				replayBtn.remove();
 			}
@@ -155,9 +156,9 @@ PauseMenu.prototype.createBtn = function (txt) {
 	var btnR = 85;
 
 	var btnContainer = new LSprite();
-	btnContainer.alpha = PauseMenu.ButtonStyle.INIT_ALPHA;
-	btnContainer.scaleX = PauseMenu.ButtonStyle.INIT_SCALE;
-	btnContainer.scaleY = PauseMenu.ButtonStyle.INIT_SCALE;
+	btnContainer.alpha = PauseMenu.ButtonInfo.INIT_ALPHA;
+	btnContainer.scaleX = PauseMenu.ButtonInfo.INIT_SCALE;
+	btnContainer.scaleY = PauseMenu.ButtonInfo.INIT_SCALE;
 
 	var btn = new RoundButton(txt, btnR, 30);
 	btn.x = -btnR;
