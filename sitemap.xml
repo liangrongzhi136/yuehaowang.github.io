@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yuehaowang.github.io/2016/12/24/new-game-flying-stone/</loc>
+    <lastmod>2016-12-24T15:52:22.527Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/</loc>
+    <lastmod>2016-12-24T14:40:43.015Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yuehaowang.github.io/2016/08/09/develop-puzzle-within-2h/</loc>
-    <lastmod>2016-08-09T14:30:50.881Z</lastmod>
+    <lastmod>2016-12-24T11:25:17.173Z</lastmod>
   </url>
   
   <url>
@@ -39,11 +49,6 @@
   <url>
     <loc>http://yuehaowang.github.io/2016/03/26/js-calcu-pi/</loc>
     <lastmod>2016-04-29T11:12:26.358Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/</loc>
-    <lastmod>2016-04-29T09:47:22.425Z</lastmod>
   </url>
   
   <url>
