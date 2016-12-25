@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2016-12-24T15:52:22.527Z</updated>
+  <updated>2016-12-25T14:22:36.877Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -15,14 +15,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[圣诞新游戏Flying Stone发布]]></title>
-    <link href="http://yuehaowang.github.io/2016/12/24/new-game-flying-stone/"/>
-    <id>http://yuehaowang.github.io/2016/12/24/new-game-flying-stone/</id>
-    <published>2016-12-23T16:00:00.000Z</published>
-    <updated>2016-12-24T15:52:22.527Z</updated>
+    <title><![CDATA[圣诞新作Flying Stone发布]]></title>
+    <link href="http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/"/>
+    <id>http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/</id>
+    <published>2016-12-24T16:00:00.000Z</published>
+    <updated>2016-12-25T14:22:36.877Z</updated>
     <content type="html"><![CDATA[<h1 id="u6E38_u620F_u7B80_u4ECB"><a href="#u6E38_u620F_u7B80_u4ECB" class="headerlink" title="游戏简介"></a>游戏简介</h1><p><strong>Flying Stone</strong>是一款益智类物理游戏。游戏中，玩家通过轻敲屏幕，抛出系在旋转杆上的石头来攻击飞出的小鸟，以此得分。不同难度的小鸟，击中后得分也有所不同。游戏限时90秒，游戏结束后会上传你的得分，并得到你的全世界排行。</p>
 <p><strong>本游戏目前支持Android版和在线版。</strong></p>
-<p><img src="/images/in_posts/flying_stone_poster.png" alt="Flying Stone"></p>
+<p><img src="/images/demo/flying_stone_poster.png" alt="Flying Stone"></p>
 <h1 id="u5982_u4F55_u5F00_u59CB"><a href="#u5982_u4F55_u5F00_u59CB" class="headerlink" title="如何开始"></a>如何开始</h1><p>访问游戏主页，你可以在其中找到所需的版本：</p>
 <p><a href="http://wyh.wjjsoft.com/pages/flying_stone/" target="_blank" rel="external">http://wyh.wjjsoft.com/pages/flying_stone/</a></p>
 <a id="more"></a>
@@ -30,12 +30,13 @@
 <p><img src="/images/in_posts/flying_bird_qrcode.png" alt="Flying Stone游戏主页二维码"></p>
 <h1 id="u6E38_u620F_u622A_u56FE"><a href="#u6E38_u620F_u622A_u56FE" class="headerlink" title="游戏截图"></a>游戏截图</h1><p>以下是本游戏的游戏截图，敬请欣赏：</p>
 <p><img src="/images/in_posts/flying_stone_ss_1.png" alt="Flying Stone游戏截图之一"><br><img src="/images/in_posts/flying_stone_ss_2.png" alt="Flying Stone游戏截图之二"><br><img src="/images/in_posts/flying_stone_ss_3.png" alt="Flying Stone游戏截图之三"><br><img src="/images/in_posts/flying_stone_ss_4.png" alt="Flying Stone游戏截图之四"><br><img src="/images/in_posts/flying_stone_ss_5.png" alt="Flying Stone游戏截图之五"></p>
-<h1 id="u5236_u4F5C_u540E_u8BB0"><a href="#u5236_u4F5C_u540E_u8BB0" class="headerlink" title="制作后记"></a>制作后记</h1><p>开发这款游戏，足足花了我将近2.5个月的时间，这2.5个月并不是整整的2.5个月，毕竟在下平时要上学，只能利用周六和周日晚上将近4个小时的开发。各位可别小看这一款游戏，用到的技术可是从前端的HTML5到移动端Android再到后端的CGI，而且这一切都由在下一人开发，所以开发这样的小游戏耗时极久。不过好在开发过程中，我从中又学到了或者复习了不少技术，比如第一次从事Java Android开发，重拾C++，接触CGI编程等……可见收获不小。<br>此外，我还要感谢伟大的互联网，她为我提供了大量的游戏素材和丰富的学习资源，与此同时我也要向免费提供素材的网友以及开源库件的开发者们表示衷心的感谢。</p>
+<h1 id="u5236_u4F5C_u540E_u8BB0"><a href="#u5236_u4F5C_u540E_u8BB0" class="headerlink" title="制作后记"></a>制作后记</h1><p>开发这款游戏，足足花了我将近2.5个月的时间，这2.5个月并不是整整的2.5个月，毕竟在下平时要上学，只能利用周六和周日晚上将近4个小时的开发。各位可别小看这一款游戏，用到的技术可是从前端的HTML5到移动端Android再到后端的CGI，而且这一切都由在下一人完成，所以开发这样的小游戏耗不少时间。不过好在开发过程中，我又学到了或者复习了不少技术，比如第一次从事Java Android开发，重拾C++，接触CGI编程等……可见收获不小。<br>此外，我还要感谢伟大的互联网，她为我提供了大量的游戏素材和丰富的学习资源，与此同时我也要向免费提供素材的网友以及开源库件的开发者们表示衷心的感谢。</p>
+<p><strong>如果游戏异常，请及时联系我，谢谢～</strong></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="u6E38_u620F_u7B80_u4ECB"><a href="#u6E38_u620F_u7B80_u4ECB" class="headerlink" title="游戏简介"></a>游戏简介</h1><p><strong>Flying Stone</strong>是一款益智类物理游戏。游戏中，玩家通过轻敲屏幕，抛出系在旋转杆上的石头来攻击飞出的小鸟，以此得分。不同难度的小鸟，击中后得分也有所不同。游戏限时90秒，游戏结束后会上传你的得分，并得到你的全世界排行。</p>
 <p><strong>本游戏目前支持Android版和在线版。</strong></p>
-<p><img src="/images/in_posts/flying_stone_poster.png" alt="Flying Stone"></p>
+<p><img src="/images/demo/flying_stone_poster.png" alt="Flying Stone"></p>
 <h1 id="u5982_u4F55_u5F00_u59CB"><a href="#u5982_u4F55_u5F00_u59CB" class="headerlink" title="如何开始"></a>如何开始</h1><p>访问游戏主页，你可以在其中找到所需的版本：</p>
 <p><a href="http://wyh.wjjsoft.com/pages/flying_stone/">http://wyh.wjjsoft.com/pages/flying_stone/</a></p>]]>
     
