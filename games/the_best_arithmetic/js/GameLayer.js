@@ -437,6 +437,10 @@ GameLayer.prototype.addGameOverBtns = function (isWin) {
 		s.overLayer.addChild(shareBtn);
 
 		shareBtn.addEventListener(LMouseEvent.MOUSE_UP, function () {
+			alert("mending...");
+
+			return;
+
 			s.remove();
 
 			shareGrade(s.level + 1, s.time);
