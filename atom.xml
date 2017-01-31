@@ -4,7 +4,7 @@
   <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2017-01-31T16:22:23.032Z</updated>
+  <updated>2017-01-31T16:41:07.878Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yuehaowang.github.io/2017/01/31/sat_explanation/"/>
     <id>http://yuehaowang.github.io/2017/01/31/sat_explanation/</id>
     <published>2017-01-30T16:00:00.000Z</published>
-    <updated>2017-01-31T16:22:23.032Z</updated>
+    <updated>2017-01-31T16:41:07.878Z</updated>
     <content type="html"><![CDATA[<p><strong>本文翻译自<a href="http://www.sevenson.com.au/" target="_blank" rel="external">@sevenson</a>的文章<a href="http://www.sevenson.com.au/actionscript/sat/" target="_blank" rel="external">Separating Axis Theorem (SAT) Explanation</a> 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。</strong><br><strong>本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！</strong></p>
 <p><strong><em>正文如下：</em></strong></p>
 <p><img src="/images/in_posts/sat_1.jpg" alt="多边形碰撞"></p>
@@ -85,6 +85,8 @@
 <p>我想，我应该把我所学到的分享给大家，希望大家不会在这方面被坑得很惨：）</p>]]>
     
     </summary>
+    
+      <category term="数学" scheme="http://yuehaowang.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="算法" scheme="http://yuehaowang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
