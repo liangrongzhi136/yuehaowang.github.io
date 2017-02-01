@@ -142,20 +142,16 @@ function getRandomBlockList () {
 	/** 计算逆序和 */
 	var reverseAmount = 0;
 
-	for (var i = 0, l = blockList.length, preBlock = null; i < l; i++) {
-		if (!preBlock) {
-			preBlock = blockList[0];
-
-			continue;
-		}
-
+	for (var i = 0, l = blockList.length; i < l; i++) {
 		var currentBlock = blockList[i];
 
-		if (currentBlock.index < preBlock.index) {
-			reverseAmount++;
-		}
+		for (var j = i + 1; j < l; j++) {
+			var comparedBlock = blockList[j];
 
-		preBlock = currentBlock;
+			if (comparedBlock.index < currentBlock.index) {
+				reverseAmount++;
+			}
+		}
 	}
 
 	/** 检测打乱后是否可还原 */

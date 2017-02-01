@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Yorhom's Playground]]></title>
-  <subtitle><![CDATA[专注于游戏开发，移动开发，Web开发]]></subtitle>
+  <subtitle><![CDATA[游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2017-02-01T12:31:52.062Z</updated>
+  <updated>2017-02-01T14:17:59.113Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yuehaowang.github.io/2017/01/31/sat-explanation/"/>
     <id>http://yuehaowang.github.io/2017/01/31/sat-explanation/</id>
     <published>2017-01-30T16:00:00.000Z</published>
-    <updated>2017-02-01T12:31:52.062Z</updated>
+    <updated>2017-02-01T14:17:59.113Z</updated>
     <content type="html"><![CDATA[<p><strong>本文翻译自<a href="http://www.sevenson.com.au/" target="_blank" rel="external">@sevenson</a>的文章<a href="http://www.sevenson.com.au/actionscript/sat/" target="_blank" rel="external">Separating Axis Theorem (SAT) Explanation</a> 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。</strong><br><strong>本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！</strong></p>
 <p><strong><em>正文如下：</em></strong></p>
 <p><img src="/images/in_posts/sat_1.jpg" alt="多边形碰撞"></p>
@@ -101,7 +101,7 @@
     <link href="http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/"/>
     <id>http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/</id>
     <published>2016-12-24T16:00:00.000Z</published>
-    <updated>2016-12-25T14:22:36.877Z</updated>
+    <updated>2017-02-01T14:44:05.445Z</updated>
     <content type="html"><![CDATA[<h1 id="u6E38_u620F_u7B80_u4ECB"><a href="#u6E38_u620F_u7B80_u4ECB" class="headerlink" title="游戏简介"></a>游戏简介</h1><p><strong>Flying Stone</strong>是一款益智类物理游戏。游戏中，玩家通过轻敲屏幕，抛出系在旋转杆上的石头来攻击飞出的小鸟，以此得分。不同难度的小鸟，击中后得分也有所不同。游戏限时90秒，游戏结束后会上传你的得分，并得到你的全世界排行。</p>
 <p><strong>本游戏目前支持Android版和在线版。</strong></p>
 <p><img src="/images/demo/flying_stone_poster.png" alt="Flying Stone"></p>
@@ -145,7 +145,7 @@
     <link href="http://yuehaowang.github.io/2016/08/09/develop-puzzle-within-2h/"/>
     <id>http://yuehaowang.github.io/2016/08/09/develop-puzzle-within-2h/</id>
     <published>2016-08-08T16:00:00.000Z</published>
-    <updated>2016-12-24T11:25:17.173Z</updated>
+    <updated>2017-02-01T14:42:57.525Z</updated>
     <content type="html"><![CDATA[<p>初学lufylegend.js之日，我用lufylegend.js开发了第一个HTML5小游戏——拼图游戏，还写了篇博文来炫耀一下：<a href="http://blog.csdn.net/yorhomwang/article/details/8546053" target="_blank" rel="external">HTML5小游戏《智力大拼图》发布，挑战你的思维风暴</a>。不过当时初学游戏开发，经验浅薄，所以没有好好专研游戏里的算法和代码的缺陷，导致游戏出现了很多bug，甚至拼图打乱后很可能无法复原。最近经常有朋友问起这个游戏，希望我能把代码里的bug改一下方便初学者学习，顺便我也打算测试一下自己写这种小游戏的速度，所以就抽出了一些时间将这个游戏从头到尾重新写了一遍，计算了一下用时，从准备、修改素材到最后完成游戏，一共用了大约2h的时间。</p>
 <p>以下是游戏地址：</p>
 <p><strong><a href="http://yuehaowang.github.io/games/puzzle/">http://yuehaowang.github.io/games/puzzle/</a></strong></p>
@@ -241,7 +241,7 @@
     <link href="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/"/>
     <id>http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/</id>
     <published>2016-07-21T16:00:00.000Z</published>
-    <updated>2016-07-23T14:04:44.060Z</updated>
+    <updated>2017-02-01T14:41:39.253Z</updated>
     <content type="html"><![CDATA[<p>最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：</p>
 <blockquote>
 <p>用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？<br><img src="/images/in_posts/picture_of_couting_principle_math_question.jpg" alt="题目配图"></p>
@@ -296,7 +296,7 @@
     <link href="http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/"/>
     <id>http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/</id>
     <published>2016-05-20T16:00:00.000Z</published>
-    <updated>2016-07-23T13:44:20.090Z</updated>
+    <updated>2017-02-01T14:42:19.933Z</updated>
     <content type="html"><![CDATA[<p>初三将近毕业的时候老爸给我买了几本数学相关的书籍。还把他的大学教材翻出来给我看，希望我去提前学习高等数学。很遗憾，当时的我对于这些东西完全不感兴趣，所以就不屑一顾，往书架上一扔就是两年。不久前，自己在数学教科书上看到了积分。书中运用积分的知识求得了一个曲边形的面积。当时我就傻眼了，什么！数学居然可以这么神奇。我这才意识到自己的无知，并且激起了我强烈的研究数学的欲望。这段时间里，我相继学习了导数和定积分，越发觉得数学的高深，决定提前学习大学里的高等数学。</p>
 <p>大学课程中，第一个难题就是极限。有了它，才有导数、积分……</p>
 <p>经过一个半月的课余时间学习，我大致地掌握了极限的一些知识。于是我决定使用它来解决一个我在导数学习过程中的一个问题：证明sin’x = cosx。</p>
@@ -334,7 +334,7 @@
     <link href="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/"/>
     <id>http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/</id>
     <published>2016-04-23T16:00:00.000Z</published>
-    <updated>2016-12-24T14:40:43.015Z</updated>
+    <updated>2017-02-01T14:45:03.354Z</updated>
     <content type="html"><![CDATA[<p>最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。<br>课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，用于演示波的叠加。截图如下：</p>
 <p><img src="/images/in_posts/wave_superposition_demo1.jpg" alt="波的叠加演示 截图之一"></p>
 <a id="more"></a>
@@ -454,7 +454,7 @@
     <link href="http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/"/>
     <id>http://yuehaowang.github.io/2016/02/16/python-game-dev-get-fruits/</id>
     <published>2016-02-15T16:00:00.000Z</published>
-    <updated>2016-08-05T15:38:48.392Z</updated>
+    <updated>2017-02-01T14:44:30.841Z</updated>
     <content type="html"><![CDATA[<p>我研发的Python游戏引擎Pylash已经更新到1.4.0了。现在我们就来使用它完成一个极其简单的小游戏：接水果。以下是游戏截图：</p>
 <p><img src="/images/in_posts/get_fruits.png" alt="接水果 游戏截图"></p>
 <p>游戏操作说明：点击屏幕左右两边或者使用键盘方向键控制人物移动，使人物与水果接触得分，碰到非水果的物品，如碎玻璃，就会game over。</p>
@@ -566,7 +566,7 @@
     <link href="http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/"/>
     <id>http://yuehaowang.github.io/2016/02/10/game-screen-scrolling/</id>
     <published>2016-02-09T16:00:00.000Z</published>
-    <updated>2016-08-09T12:57:07.185Z</updated>
+    <updated>2017-02-01T14:43:38.501Z</updated>
     <content type="html"><![CDATA[<h1 id="u4EC0_u4E48_u662F_u5377_u8F74"><a href="#u4EC0_u4E48_u662F_u5377_u8F74" class="headerlink" title="什么是卷轴"></a>什么是卷轴</h1><p>玩过RPG或者横版格斗的同学应该知道，人物走到屏幕中央后，由于地图过大，地图会进行移动，人物则相对静止不动。这个就是传说中的卷轴。例如下图是我的游戏“三国战线”里的卷轴：</p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo1.png" alt="三国战线卷轴 截图之一"></p>
 <p><img src="/images/in_posts/game_screen_scrolling_demo2.png" alt="三国战线卷轴 截图之二"></p>
