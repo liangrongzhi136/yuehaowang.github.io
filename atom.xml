@@ -4,7 +4,7 @@
   <subtitle><![CDATA[游戏开发，移动开发，Web开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuehaowang.github.io/"/>
-  <updated>2017-02-01T14:44:05.445Z</updated>
+  <updated>2017-02-04T14:20:19.286Z</updated>
   <id>http://yuehaowang.github.io/</id>
   
   <author>
@@ -13,6 +13,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[【译】碰撞检测之分离轴定理算法讲解]]></title>
+    <link href="http://yuehaowang.github.io/2017/01/31/sat-explanation/"/>
+    <id>http://yuehaowang.github.io/2017/01/31/sat-explanation/</id>
+    <published>2017-01-30T16:00:00.000Z</published>
+    <updated>2017-02-04T14:20:19.286Z</updated>
+    <content type="html"><![CDATA[<p><strong>本文翻译自<a href="http://www.sevenson.com.au/" target="_blank" rel="external">@sevenson</a>的文章<a href="http://www.sevenson.com.au/actionscript/sat/" target="_blank" rel="external">Separating Axis Theorem (SAT) Explanation</a> 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。</strong><br><strong>本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！</strong></p>
+<hr>
+<p><strong><em>正文如下：</em></strong></p>
+<p><img src="/images/in_posts/sat_1.jpg" alt="多边形碰撞"></p>
+<p>分离轴定理（英文简称SAT）是一项用于检测凸多边形碰撞的技术。</p>
+<p>我绝不是这个方面的专家，但当检测碰撞的需求出现在我面前之后，我做了大量的阅读并最终在ActionScript 3中实现了它。</p>
+<p>我想，我应该把我所学到的分享给大家，希望大家不会在这方面被坑得很惨：）</p>
+<a id="more"></a>
+<p>当我发现我需要在flash中检测多边形碰撞时，我碰巧地遇到了一个叫“分离轴定理”的方法。但唯一的问题是，为了真正地掌握它，我可费了不少功夫。</p>
+<p>在阅读了大量有关碰撞检测的资料，并参看了一些代码示例后，这个方法总算被我领悟了。</p>
+<p>为了帮助其他那些不精通数学的开发者，我想我应该写下这一篇能快速阐明这个算法工作原理的简短介绍。我还在下文引入了一个使用分离轴定理实现的demo，以及供大家下载并使用的ActionScript 3源代码。<strong>（译者：demo和源代码请到原文中查看和下载）</strong></p>
+<p>注意：分离轴定理需要一点数学向量的知识，所以在深究这个算法前，你最好复习一下这方面的内容。</p>
+<h1 id="u7B97_u6CD5_u7B80_u8FF0"><a href="#u7B97_u6CD5_u7B80_u8FF0" class="headerlink" title="算法简述"></a>算法简述</h1><p>从根本上来讲，分离轴定理（以及其他碰撞算法）的用途就是去检测并判断两个图形之间是否有间隙。分离轴定理中用到的方法使算法本身显得十分独特。</p>
+<p>我所听到过分离轴定理的最好类比方式是这样的：</p>
+<p>假想你拿一个电筒从不同的角度照射到两个图形上，那么会有怎样的一系列的阴影投射到它们之后的墙壁上呢？</p>
+<p><img src="/images/in_posts/sat_2.jpg" alt="投影问题"></p>
+<p>如果你用这个方式从每一个角度上对这两个图形进行处理，并都找不到任何的间隙，那么这两个图形就一定接触。如果你找到了一个间隙，那么这两个图形就显而易见地没有接触。</p>
+<p>从编程的角度来讲，从每个可能的角度上去检测会使处理变得十分密集。不过幸运的是，由于多边形的性质，你只需要检测其中几个关键的角度。</p>
+<p>你需要检测的角度数量就正是这个多边形的边数。也就是说，你所需检测的角度最大数量就是你要检测碰撞的两个多边形边数之和。举个例子，两个五边形就需要检测10个角度。</p>
+<p><img src="/images/in_posts/sat_3.jpg" alt="角度选取"></p>
+<h1 id="u5982_u4F55_u5728_u4EE3_u7801_u4E2D_u5B9E_u73B0"><a href="#u5982_u4F55_u5728_u4EE3_u7801_u4E2D_u5B9E_u73B0" class="headerlink" title="如何在代码中实现"></a>如何在代码中实现</h1><p>这是一个简易但比较啰嗦的方法，以下是基本的步骤：</p>
+<p><strong>步骤一：</strong>从需要检测的多边形中取出一条边，并找出它的法向量（垂直于它的向量），这个向量将会是我们的一个“投影轴”。</p>
+<p><img src="/images/in_posts/sat_4.jpg" alt="步骤一图解"></p>
+<p><strong>步骤二：</strong>循环获取第一个多边形的每个点，并将它们投影到这个轴上。（记录这个多边形投影到轴上的最高和最低点）</p>
+<p><img src="/images/in_posts/sat_5.jpg" alt="步骤二图解"></p>
+<p><strong>步骤三：</strong>对第二个多边形做同样的处理。</p>
+<p><img src="/images/in_posts/sat_6.jpg" alt="步骤二图解"></p>
+<p><strong>步骤四：</strong>分别得到这两个多边形的投影，并检测这两段投影是否重叠。</p>
+<p><img src="/images/in_posts/sat_7.jpg" alt="步骤二图解"></p>
+<p>如果你发现了这两个投影到轴上的“阴影”有间隙，那么这两个图形一定没有相交。但如果没有间隙，那么它们则可能接触，你需要继续检测直到把两个多边形的每条边都检测完。如果你检测完每条边后，都没有发现任何间隙，那么它们是相互碰撞的。</p>
+<p>这个算法基本就是如此的。</p>
+<p>顺带提一下，如果你记录了哪个轴上的投影重叠值最小（以及重叠了多少），那么你就能用这个值来分开这两个图形。</p>
+<h2 id="u90A3_u4E48_u5982_u4F55_u5904_u7406_u5706_u5462_uFF1F"><a href="#u90A3_u4E48_u5982_u4F55_u5904_u7406_u5706_u5462_uFF1F" class="headerlink" title="那么如何处理圆呢？"></a>那么如何处理圆呢？</h2><p>在分离轴定理中，检测圆与检测多边形相比，会有点点奇异，但仍然是可以实现的。</p>
+<p>最值得注意的是，圆是没有任何的边，所以是没有明显的用于投影的轴。但它有一条“不是很明显的”的投影轴。这条轴就是途经圆心和多边形上离圆心最近的顶点的直线。</p>
+<p><img src="/images/in_posts/sat_8.jpg" alt="圆的投影轴"></p>
+<p>在这以后就是按套路遍历另一个多边形的每条投影轴，并检测是否有投影重叠。</p>
+<p>噢，对了，万一你想知道如何把圆投影到轴上，那你只用简单地把圆心投影上去，然后加上和减去半径就能得到投影长度了。</p>
+<h1 id="u4F18_u70B9_u4E0E_u4E0D_u8DB3"><a href="#u4F18_u70B9_u4E0E_u4E0D_u8DB3" class="headerlink" title="优点与不足"></a>优点与不足</h1><p>和其他的碰撞检测技术一样，分离轴定理算法有它自己的优点和不足。以下是其一些优点和不足的简要概述：</p>
+<h2 id="u4F18_u70B9"><a href="#u4F18_u70B9" class="headerlink" title="优点"></a>优点</h2><p>（译者：原来老外也喜欢先谈优点啊～&gt;～）</p>
+<ul>
+<li>分离轴定理算法十分得快——它完美地使用了基本的数学向量知识。只要间隙一旦被检测出来，那么你就能马上得出结果，消除不必要的运算。</li>
+<li>分离轴定理算法十分得准——至少据我所知是这样的。（译者：突然感觉作者好不靠谱啊，囧……）</li>
+</ul>
+<h2 id="u4E0D_u8DB3"><a href="#u4E0D_u8DB3" class="headerlink" title="不足"></a>不足</h2><ul>
+<li>分离轴定理算法只适用于凸多边形——复杂的图形（译者：指的是凹多边形，比如五角星）无法使用此方法，除非你把它们分成一些小的凸多边形，然后依次检验这些小的多边形。</li>
+<li>分离轴定理算法无法告诉你是那条边发生的碰撞——仅仅是告诉你重叠了多少和分开它们所需的最短距离。</li>
+</ul>
+<p>可能这个算法会有更多优点和不足之处，但是我想这应该是最主要的几个了。</p>
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>我希望这篇文章能帮助你了解到分离轴定理算法。我已经尽可能地不提供过多的信息并讲解得十分简明了。（我绝不是数学方面的专家，所以如果我遗漏了什么，我深表歉意）</p>
+<p>以下是一些帮助我理解分离轴定理算法的页面：</p>
+<ul>
+<li><a href="http://www.harveycartel.org/metanet/tutorials/tutorialA.html" target="_blank" rel="external">harverycartel.org</a>——有更多详细的表述以及很多很酷的示例。我在这个页面上学到了很多。</li>
+<li><a href="http://gpwiki.org/index.php/VB:Tutorials:Building_A_Physics_Engine:Basic_Intersection_Detection" target="_blank" rel="external">GPWiki.org</a>——有不错的讲解和代码示例，我用这些代码作为编写自己代码的基础。</li>
+<li><a href="http://www.tonypa.pri.ee/vectors/index.html" target="_blank" rel="external">Tony Pa</a>——向量教程，学习向量的不错资源。</li>
+<li><a href="http://www.gamedev.net/community/forums/topic.asp?topic_id=251638" target="_blank" rel="external">GameDev.net forum</a>——一个论坛成员写的分离轴定理碰撞检测系统，带给了我一些计算方面的想法。</li>
+</ul>
+<hr>
+<p><strong><em>以下是译者补充的内容</em></strong></p>
+<p>我将文中的算法用JavaScript实现了一遍，大家有兴趣的话，可以到下面提供的链接中下载源代码或查看在线demo。</p>
+<h3 id="u6E90_u4EE3_u7801_u4E0B_u8F7D"><a href="#u6E90_u4EE3_u7801_u4E0B_u8F7D" class="headerlink" title="源代码下载"></a><a href="/downloads/sat_js.zip">源代码下载</a></h3><h3 id="u67E5_u770B_u5728_u7EBFDemo"><a href="#u67E5_u770B_u5728_u7EBFDemo" class="headerlink" title="查看在线Demo"></a><a href="/demo/sat_js/index.html">查看在线Demo</a></h3>]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>本文翻译自<a href="http://www.sevenson.com.au/">@sevenson</a>的文章<a href="http://www.sevenson.com.au/actionscript/sat/">Separating Axis Theorem (SAT) Explanation</a> 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。</strong><br><strong>本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！</strong></p>
+<hr>
+<p><strong><em>正文如下：</em></strong></p>
+<p><img src="/images/in_posts/sat_1.jpg" alt="多边形碰撞"></p>
+<p>分离轴定理（英文简称SAT）是一项用于检测凸多边形碰撞的技术。</p>
+<p>我绝不是这个方面的专家，但当检测碰撞的需求出现在我面前之后，我做了大量的阅读并最终在ActionScript 3中实现了它。</p>
+<p>我想，我应该把我所学到的分享给大家，希望大家不会在这方面被坑得很惨：）</p>]]>
+    
+    </summary>
+    
+      <category term="数学" scheme="http://yuehaowang.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="算法" scheme="http://yuehaowang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="译文" scheme="http://yuehaowang.github.io/tags/%E8%AF%91%E6%96%87/"/>
+    
+      <category term="译文" scheme="http://yuehaowang.github.io/categories/%E8%AF%91%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[圣诞新作Flying Stone发布]]></title>
