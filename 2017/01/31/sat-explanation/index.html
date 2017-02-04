@@ -20,7 +20,7 @@
 
 分离轴定理（英文简称SAT）是一">
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/sat_1.jpg">
-<meta property="og:updated_time" content="2017-02-04T14:20:19.286Z">
+<meta property="og:updated_time" content="2017-02-04T16:24:23.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【译】碰撞检测之分离轴定理算法讲解">
 <meta name="twitter:description" content="本文翻译自@sevenson的文章Separating Axis Theorem (SAT) Explanation 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！
@@ -287,9 +287,9 @@
 <p><strong>步骤二：</strong>循环获取第一个多边形的每个点，并将它们投影到这个轴上。（记录这个多边形投影到轴上的最高和最低点）</p>
 <p><img src="/images/in_posts/sat_5.jpg" alt="步骤二图解"></p>
 <p><strong>步骤三：</strong>对第二个多边形做同样的处理。</p>
-<p><img src="/images/in_posts/sat_6.jpg" alt="步骤二图解"></p>
+<p><img src="/images/in_posts/sat_6.jpg" alt="步骤三图解"></p>
 <p><strong>步骤四：</strong>分别得到这两个多边形的投影，并检测这两段投影是否重叠。</p>
-<p><img src="/images/in_posts/sat_7.jpg" alt="步骤二图解"></p>
+<p><img src="/images/in_posts/sat_7.jpg" alt="步骤四图解"></p>
 <p>如果你发现了这两个投影到轴上的“阴影”有间隙，那么这两个图形一定没有相交。但如果没有间隙，那么它们则可能接触，你需要继续检测直到把两个多边形的每条边都检测完。如果你检测完每条边后，都没有发现任何间隙，那么它们是相互碰撞的。</p>
 <p>这个算法基本就是如此的。</p>
 <p>顺带提一下，如果你记录了哪个轴上的投影重叠值最小（以及重叠了多少），那么你就能用这个值来分开这两个图形。</p>
