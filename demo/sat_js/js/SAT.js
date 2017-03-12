@@ -85,21 +85,6 @@ var SAT = (function () {
 		return true;
 	}
 
-	function isGap (axises, a, b) {
-		for (var i = 0, len = axises.length; i < len; i++) {
-			var axis = axises[i];
-
-			var proA = a.getProjection(axis),
-				proB = b.getProjection(axis);
-
-			if (isOverlay(proA, proB)) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
 	function isOverlay (proA, proB) {
 		if (proA.min < proB.min) {
 			min = proA.min;
