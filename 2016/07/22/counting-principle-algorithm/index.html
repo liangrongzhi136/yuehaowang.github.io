@@ -3,54 +3,44 @@
 <head>
     <meta charset="utf-8">
     
-    <title>算法研究：利用Python解决数学计数原理问题 | Yorhom&#39;s Game Lab</title>
+    <title>算法研究：利用Python解决数学计数原理问题 | Yorhom&#39;s Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：
-
-用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？
-
-当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
+    <meta name="description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：  用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？  当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
+<meta name="keywords" content="数学,算法,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法研究：利用Python解决数学计数原理问题">
 <meta property="og:url" content="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/index.html">
-<meta property="og:site_name" content="Yorhom's Game Lab">
-<meta property="og:description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：
-
-用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？
-
-当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
+<meta property="og:site_name" content="Yorhom&#39;s Lab">
+<meta property="og:description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：  用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？  当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/picture_of_couting_principle_math_question.jpg">
-<meta property="og:updated_time" content="2017-02-01T14:41:39.253Z">
+<meta property="og:updated_time" content="2017-02-01T14:41:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法研究：利用Python解决数学计数原理问题">
-<meta name="twitter:description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：
-
-用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？
-
-当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
+<meta name="twitter:description" content="最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：  用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？  当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案">
+<meta name="twitter:image" content="http://yuehaowang.github.io/images/in_posts/picture_of_couting_principle_math_question.jpg">
     
 
     
-        <link rel="alternate" href="atom.xml" title="Yorhom&#39;s Game Lab" type="application/atom+xml" />
+        <link rel="alternate" href="atom.xml" title="Yorhom&#39;s Lab" type="application/atom+xml" />
     
 
     
         <link rel="icon" href="/favicon.png" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css" type="text/css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css" type="text/css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css" type="text/css">
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css" type="text/css">
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
@@ -66,7 +56,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">Yorhom&#39;s Game Lab</span>
+                <span class="site-title">Yorhom&#39;s Lab</span>
             </a>
             <nav id="main-nav">
                 
@@ -126,7 +116,7 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -172,11 +162,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                11
+                12
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                14
+                15
                 <span>标签</span>
             </div>
         </div>
@@ -268,23 +258,23 @@
 <p>当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案。</p>
 <p>由于Python写起来比较方便而且本人比较喜欢Python的语法，所以研究算法时我通常采用Python，此次也不例外。以下就是整个算法的实现过程。</p>
 <a id="more"></a>
-<h1 id="u4E24_u79CD_u7B97_u6CD5"><a href="#u4E24_u79CD_u7B97_u6CD5" class="headerlink" title="两种算法"></a>两种算法</h1><p>我一共想出了两种用于解决本题的算法：</p>
+<h1 id="两种算法"><a href="#两种算法" class="headerlink" title="两种算法"></a>两种算法</h1><p>我一共想出了两种用于解决本题的算法：</p>
 <ul>
 <li><strong><em>算法一：</em></strong>将所有的涂色情况通过程序的循环计算出来，然后通过程序的条件判断去除掉不合题意的所有情况，最后得到最终结果。</li>
 <li><strong><em>算法二：</em></strong>从其中任意一个端点（p0）入手，由于其它所有端点都没有涂色，所以它可以涂四种颜色。将这四种颜色通过循环分别涂在这个端点上，每涂上一种颜色后，获取与它相临的<strong>一个</strong>端点（p1），并获取它可以涂上的颜色，然后通过循环将<strong>可用颜色</strong>涂上（及不能涂上与p0相同的颜色），每涂上一种颜色，又将p1相邻的<strong>未涂色</strong>的点涂色（及除p0外其他的相邻端点）。每个点被涂色后都采用同样的方法将相邻的点涂色，以此类推，涂完最后一个点，就记一次情况。所有的递归都完成后，就获得了所有情况。</li>
 </ul>
 <p>算法一很直接很粗暴，所以我采用了算法二来解决上述问题。接下来就是具体的代码了。</p>
-<h1 id="u7B97_u6CD5_u5B9E_u73B0"><a href="#u7B97_u6CD5_u5B9E_u73B0" class="headerlink" title="算法实现"></a>算法实现</h1><p>我写了大约90行Python代码来实现这个算法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">colorList = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">pointList = []</span><br><span class="line">amount = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">		super(Point, self).__init__()</span><br><span class="line">		</span><br><span class="line">		self.neibors = []</span><br><span class="line">		self.color = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">paint</span><span class="params">(self, c)</span>:</span></span><br><span class="line">		self.color = c</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">clean</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.color = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getLeftOverColors</span><span class="params">(self)</span>:</span></span><br><span class="line">		copyOfColorList = colorList[<span class="number">0</span> : <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> neibor <span class="keyword">in</span> self.neibors:</span><br><span class="line">			nc = neibor.color</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> nc <span class="keyword">in</span> copyOfColorList:</span><br><span class="line">				copyOfColorList.remove(nc)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> copyOfColorList</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> pointList</span><br><span class="line"></span><br><span class="line">	p0 = Point()</span><br><span class="line">	p1 = Point()</span><br><span class="line">	p2 = Point()</span><br><span class="line">	p3 = Point()</span><br><span class="line">	p4 = Point()</span><br><span class="line">	p5 = Point()</span><br><span class="line"></span><br><span class="line">	p0.neibors = [p1, p2, p4]</span><br><span class="line">	p1.neibors = [p0, p2, p5]</span><br><span class="line">	p2.neibors = [p0, p1, p3]</span><br><span class="line">	p3.neibors = [p2, p4, p5]</span><br><span class="line">	p4.neibors = [p0, p3, p5]</span><br><span class="line">	p5.neibors = [p4, p3, p1]</span><br><span class="line"></span><br><span class="line">	pointList = [p0, p1, p2, p3, p4, p5]</span><br><span class="line"></span><br><span class="line">	paintPoint(p0)</span><br><span class="line"></span><br><span class="line">	print(amount)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">paintPoint</span><span class="params">(p)</span>:</span></span><br><span class="line">	<span class="keyword">global</span> amount</span><br><span class="line"></span><br><span class="line">	colors = p.getLeftOverColors()</span><br><span class="line">	lastOne = isLastOne()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> c <span class="keyword">in</span> colors:</span><br><span class="line">		p.paint(c)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> lastOne:</span><br><span class="line">			amount += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> currentNeibor <span class="keyword">in</span> p.neibors:</span><br><span class="line">				<span class="keyword">if</span> currentNeibor.color == <span class="keyword">None</span>:</span><br><span class="line">					paintPoint(currentNeibor)</span><br><span class="line"></span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">	p.clean()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isLastOne</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> pointList</span><br><span class="line"></span><br><span class="line">	paintedNum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> p <span class="keyword">in</span> pointList:</span><br><span class="line">		<span class="keyword">if</span> p.color != <span class="keyword">None</span>:</span><br><span class="line">			paintedNum += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> paintedNum == <span class="number">5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure></p>
+<h1 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h1><p>我写了大约90行Python代码来实现这个算法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">colorList = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">pointList = []</div><div class="line">amount = <span class="number">0</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">		super(Point, self).__init__()</div><div class="line">		</div><div class="line">		self.neibors = []</div><div class="line">		self.color = <span class="keyword">None</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">paint</span><span class="params">(self, c)</span>:</span></div><div class="line">		self.color = c</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">clean</span><span class="params">(self)</span>:</span></div><div class="line">		self.color = <span class="keyword">None</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getLeftOverColors</span><span class="params">(self)</span>:</span></div><div class="line">		copyOfColorList = colorList[<span class="number">0</span> : <span class="number">4</span>]</div><div class="line"></div><div class="line">		<span class="keyword">for</span> neibor <span class="keyword">in</span> self.neibors:</div><div class="line">			nc = neibor.color</div><div class="line"></div><div class="line">			<span class="keyword">if</span> nc <span class="keyword">in</span> copyOfColorList:</div><div class="line">				copyOfColorList.remove(nc)</div><div class="line"></div><div class="line">		<span class="keyword">return</span> copyOfColorList</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="keyword">global</span> pointList</div><div class="line"></div><div class="line">	p0 = Point()</div><div class="line">	p1 = Point()</div><div class="line">	p2 = Point()</div><div class="line">	p3 = Point()</div><div class="line">	p4 = Point()</div><div class="line">	p5 = Point()</div><div class="line"></div><div class="line">	p0.neibors = [p1, p2, p4]</div><div class="line">	p1.neibors = [p0, p2, p5]</div><div class="line">	p2.neibors = [p0, p1, p3]</div><div class="line">	p3.neibors = [p2, p4, p5]</div><div class="line">	p4.neibors = [p0, p3, p5]</div><div class="line">	p5.neibors = [p4, p3, p1]</div><div class="line"></div><div class="line">	pointList = [p0, p1, p2, p3, p4, p5]</div><div class="line"></div><div class="line">	paintPoint(p0)</div><div class="line"></div><div class="line">	print(amount)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">paintPoint</span><span class="params">(p)</span>:</span></div><div class="line">	<span class="keyword">global</span> amount</div><div class="line"></div><div class="line">	colors = p.getLeftOverColors()</div><div class="line">	lastOne = isLastOne()</div><div class="line"></div><div class="line">	<span class="keyword">for</span> c <span class="keyword">in</span> colors:</div><div class="line">		p.paint(c)</div><div class="line"></div><div class="line">		<span class="keyword">if</span> lastOne:</div><div class="line">			amount += <span class="number">1</span></div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="keyword">for</span> currentNeibor <span class="keyword">in</span> p.neibors:</div><div class="line">				<span class="keyword">if</span> currentNeibor.color == <span class="keyword">None</span>:</div><div class="line">					paintPoint(currentNeibor)</div><div class="line"></div><div class="line">					<span class="keyword">break</span></div><div class="line"></div><div class="line">	p.clean()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isLastOne</span><span class="params">()</span>:</span></div><div class="line">	<span class="keyword">global</span> pointList</div><div class="line"></div><div class="line">	paintedNum = <span class="number">0</span></div><div class="line"></div><div class="line">	<span class="keyword">for</span> p <span class="keyword">in</span> pointList:</div><div class="line">		<span class="keyword">if</span> p.color != <span class="keyword">None</span>:</div><div class="line">			paintedNum += <span class="number">1</span></div><div class="line"></div><div class="line">	<span class="keyword">return</span> paintedNum == <span class="number">5</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">	main()</div></pre></td></tr></table></figure></p>
 <p>以下是对各段代码的介绍。</p>
-<h3 id="u5168_u5C40_u53D8_u91CF"><a href="#u5168_u5C40_u53D8_u91CF" class="headerlink" title="全局变量"></a>全局变量</h3><ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><ul>
 <li><code>colorList</code>：颜色列表</li>
 <li><code>pointList</code>：存放六个点的列表</li>
 <li><code>amount</code> : 涂色方案的种数</li>
 </ul>
-<h3 id="Point_u7C7B"><a href="#Point_u7C7B" class="headerlink" title="Point类"></a>Point类</h3><p>用于储存各个点的信息，如点的颜色（<code>color</code>属性，<code>None</code>代表无颜色）、相邻的点（’neibors’属性）。以及提供<code>paint</code>方法用于将点标记颜色；<code>clean</code>方法用于去除颜色；<code>getLeftOverColors</code>方法用于获取可用颜色，及获取相邻点没有使用的颜色。</p>
-<h3 id="main_u51FD_u6570"><a href="#main_u51FD_u6570" class="headerlink" title="main函数"></a>main函数</h3><p>程序开始运行时调用的函数，其中构造了所需的六个点，以及分别为这六个点明确了相邻的三个点。注意，由于这里的点只有相邻和不相邻的位置关系，所以不需要在意这些点到底在三棱柱里对应哪个位置，任意设定这些点的位置对结果来说并没有影响，只需注意它们之间的相邻关系即可。</p>
-<h3 id="isLastOne_u51FD_u6570"><a href="#isLastOne_u51FD_u6570" class="headerlink" title="isLastOne函数"></a>isLastOne函数</h3><p>判断是不是最后一个未涂色的点。</p>
-<h3 id="paintPoint_u51FD_u6570"><a href="#paintPoint_u51FD_u6570" class="headerlink" title="paintPoint函数"></a>paintPoint函数</h3><p>用于对作为参数传入的点进行着色。其中首先通过调用该点的<code>getLeftOverColors</code>方法获取可用颜色，然后按照上文算法中介绍的，通过遍历可用颜色列表，为该点着色，如果该点不是最后一个点（通过<code>isLastOne</code>函数判断），就递归调用<code>paintPoint</code>函数为相邻的一个未着色的点着色，如果是，则将记下一次涂色方案。</p>
+<h3 id="Point类"><a href="#Point类" class="headerlink" title="Point类"></a>Point类</h3><p>用于储存各个点的信息，如点的颜色（<code>color</code>属性，<code>None</code>代表无颜色）、相邻的点（’neibors’属性）。以及提供<code>paint</code>方法用于将点标记颜色；<code>clean</code>方法用于去除颜色；<code>getLeftOverColors</code>方法用于获取可用颜色，及获取相邻点没有使用的颜色。</p>
+<h3 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h3><p>程序开始运行时调用的函数，其中构造了所需的六个点，以及分别为这六个点明确了相邻的三个点。注意，由于这里的点只有相邻和不相邻的位置关系，所以不需要在意这些点到底在三棱柱里对应哪个位置，任意设定这些点的位置对结果来说并没有影响，只需注意它们之间的相邻关系即可。</p>
+<h3 id="isLastOne函数"><a href="#isLastOne函数" class="headerlink" title="isLastOne函数"></a>isLastOne函数</h3><p>判断是不是最后一个未涂色的点。</p>
+<h3 id="paintPoint函数"><a href="#paintPoint函数" class="headerlink" title="paintPoint函数"></a>paintPoint函数</h3><p>用于对作为参数传入的点进行着色。其中首先通过调用该点的<code>getLeftOverColors</code>方法获取可用颜色，然后按照上文算法中介绍的，通过遍历可用颜色列表，为该点着色，如果该点不是最后一个点（通过<code>isLastOne</code>函数判断），就递归调用<code>paintPoint</code>函数为相邻的一个未着色的点着色，如果是，则将记下一次涂色方案。</p>
 <p><strong>运行代码，得到结果 - 264：</strong></p>
 <p><img src="/images/in_posts/counting_principle_result.png" alt="运行结果"></p>
 <p>Ok，于是这道题就在我们的计算机的帮助下，被成功解决掉了～</p>
@@ -311,7 +301,7 @@
 
 </div>
 
-    <a data-url="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/" data-id="ciymz75c8000039fzf3zizjhm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/" data-id="cj56jfkqo000370tcqzh5hnn6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -433,6 +423,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/07/16/simple_http_server_with_nodejs/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
+                            <p class="item-title"><a href="/2017/07/16/simple_http_server_with_nodejs/" class="title">NodeJs开发简易的Http本地服务器</a></p>
+                            <p class="item-date"><time datetime="2017-07-15T16:00:00.000Z" itemprop="datePublished">2017-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/01/31/sat-explanation/" class="thumbnail">
     
     
@@ -455,7 +464,7 @@
                             <a href="/2016/12/25/new-game-flying-stone/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/demo/flying_stone_poster.png)" alt="圣诞新作Flying Stone发布" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/demo/flying_stone_poster.png)" alt="分享新作 - 虐心小游戏Flying Stone" class="thumbnail-image"></span>
     
 </a>
 
@@ -463,7 +472,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/App发布/">App发布</a></p>
-                            <p class="item-title"><a href="/2016/12/25/new-game-flying-stone/" class="title">圣诞新作Flying Stone发布</a></p>
+                            <p class="item-title"><a href="/2016/12/25/new-game-flying-stone/" class="title">分享新作 - 虐心小游戏Flying Stone</a></p>
                             <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
                         </div>
                     </li>
@@ -506,25 +515,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/05/21/derivative-of-sinx/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/in_posts/derivative_of_sinx1.png)" alt="证明：sin&#39;x = cosx" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/其他/">其他</a></p>
-                            <p class="item-title"><a href="/2016/05/21/derivative-of-sinx/" class="title">证明：sin&#39;x = cosx</a></p>
-                            <p class="item-date"><time datetime="2016-05-20T16:00:00.000Z" itemprop="datePublished">2016-05-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -534,7 +524,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/App发布/">App发布</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/译文/">译文</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/App发布/">App发布</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/译文/">译文</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -543,7 +533,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/App/" style="font-size: 12.5px;">App</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Pylash/" style="font-size: 10px;">Pylash</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/canvas/" style="font-size: 17.5px;">canvas</a> <a href="/tags/lufylegend/" style="font-size: 17.5px;">lufylegend</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/数学/" style="font-size: 17.5px;">数学</a> <a href="/tags/游戏开发/" style="font-size: 15px;">游戏开发</a> <a href="/tags/物理模拟/" style="font-size: 10px;">物理模拟</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a>
+            <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/App/" style="font-size: 12.5px;">App</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Pylash/" style="font-size: 10px;">Pylash</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/canvas/" style="font-size: 17.5px;">canvas</a> <a href="/tags/lufylegend/" style="font-size: 17.5px;">lufylegend</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/数学/" style="font-size: 17.5px;">数学</a> <a href="/tags/游戏开发/" style="font-size: 15px;">游戏开发</a> <a href="/tags/物理模拟/" style="font-size: 10px;">物理模拟</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a>
         </div>
     </div>
 
@@ -587,7 +577,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2017 Yorhom<br>
+            &copy; 2017 Yuehao<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>
@@ -599,24 +589,24 @@
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js" type="text/javascript"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js" type="text/javascript"></script>
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js" type="text/javascript"></script>
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
 
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>

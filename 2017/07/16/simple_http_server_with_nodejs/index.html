@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>NodeJs开发简易的Http本地服务器 | Yorhom&#39;s Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
+<meta name="keywords" content="JavaScript,NodeJs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJs开发简易的Http本地服务器">
+<meta property="og:url" content="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/index.html">
+<meta property="og:site_name" content="Yorhom&#39;s Lab">
+<meta property="og:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver1.png">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver2.png">
+<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver3.png">
+<meta property="og:updated_time" content="2017-07-16T14:40:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJs开发简易的Http本地服务器">
+<meta name="twitter:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
+<meta name="twitter:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver1.png">
+    
+
+    
+        <link rel="alternate" href="atom.xml" title="Yorhom&#39;s Lab" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Yorhom&#39;s Lab</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/showcase">作品展示</a>
+                
+                    <a class="main-nav-link" href="/about">关于我</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/showcase">作品展示</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于我</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/avatar.png" />
+            <h2 id="name">Yorhom</h2>
+            <h3 id="title">std::vector&lt;Tech&gt; me;</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>中国 四川 成都</span>
+            <a id="follow" target="_blank" href="https://weibo.com/yorhomwang/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                12
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                15
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/yuehaowang/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/yorhomwang/" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yuehaowang/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-simple_http_server_with_nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            NodeJs开发简易的Http本地服务器
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/07/16/simple_http_server_with_nodejs/">
+            <time datetime="2017-07-15T16:00:00.000Z" itemprop="datePublished">2017-07-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/NodeJs/">NodeJs</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。</p>
+<p>网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。</p>
+<p><img src="/images/in_posts/run_nodejs_fileserver1.png" alt="运行效果图之一"></p>
+<p>（成功开启服务器后的效果如上图所示）</p>
+<a id="more"></a>
+<p>首先创建一个<code>.js</code>文件，文件名可以自定，这里我命名为fileServer.js。写入以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>),</div><div class="line">	url = <span class="built_in">require</span>(<span class="string">"url"</span>),</div><div class="line">	fs = <span class="built_in">require</span>(<span class="string">"fs"</span>),</div><div class="line">	http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> rootPath = path.resolve(process.argv[<span class="number">2</span>] || <span class="string">"."</span>);</div><div class="line"><span class="keyword">var</span> port = <span class="built_in">Number</span>(process.argv[<span class="number">3</span>]) || <span class="number">8080</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> u = request.url,</div><div class="line">		pathName = url.parse(u).pathname;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"\n &gt;&gt;&gt; "</span> + request.method + <span class="string">": "</span> + u + <span class="string">" &lt;&lt;&lt; \n"</span>);</div><div class="line"></div><div class="line">	fileServer(pathName, response);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fileServer</span>(<span class="params">pathName, response</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> filePath = path.join(rootPath, pathName);</div><div class="line"></div><div class="line">	readPath(filePath, response);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readPath</span> (<span class="params">filePath, response</span>) </span>&#123;</div><div class="line">	fs.stat(filePath, <span class="function"><span class="keyword">function</span> (<span class="params">err, stats</span>) </span>&#123;</div><div class="line">		<span class="keyword">if</span> (!err) &#123;</div><div class="line">			<span class="keyword">if</span> (stats.isDirectory()) &#123;</div><div class="line">				filePath = filePath + <span class="string">"index.html"</span>;</div><div class="line"></div><div class="line">				readPath(filePath, response);</div><div class="line"></div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (!stats.isFile()) &#123;</div><div class="line">				responseStatsChanged(<span class="literal">false</span>, filePath, response);</div><div class="line"></div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			responseStatsChanged(<span class="literal">true</span>, filePath, response);</div><div class="line"></div><div class="line">			fs.createReadStream(filePath).pipe(response);</div><div class="line"></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		responseStatsChanged(<span class="literal">false</span>, filePath, response);</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">responseStatsChanged</span> (<span class="params">stat, u, response</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!stat) &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"\n &gt;&gt;&gt; 404 "</span> + u + <span class="string">" &lt;&lt;&lt; \n"</span>);</div><div class="line"></div><div class="line">		response.writeHead(<span class="number">404</span>);</div><div class="line"></div><div class="line">		response.end(<span class="string">"&lt;h1&gt;404 Not Found&lt;/h1&gt;"</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"\n &gt;&gt;&gt; 200 "</span> + u + <span class="string">" &lt;&lt;&lt; \n"</span>);</div><div class="line"></div><div class="line">		response.writeHead(<span class="number">200</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"\n &gt;&gt;&gt; Server is running at http://127.0.0.1:"</span> + port + <span class="string">"/ . &lt;&lt;&lt; \n"</span>);</div></pre></td></tr></table></figure>
+<p>主要用了<code>path</code>，<code>url</code>，<code>fs</code>，<code>http</code>这几个模块。大致流程为：</p>
+<ol>
+<li>获取命令行运行参数（一个目录地址，此后浏览器访问地址都是以此为根目录的，默认为fileServer.js所在目录）</li>
+<li>利用<code>http</code>模块创建Http服务器</li>
+<li>收到请求后，调用<code>fileServer</code>函数，通过<code>path.join</code>获取文件的绝对地址</li>
+<li>调用<code>readPath</code>函数读取文件地址（如果地址所指是一个目录，那就读取目录下的<code>index.html</code>文件）</li>
+<li>读取失败，response写入404；读取成功，response写入200，将读取的数据流入response</li>
+</ol>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">接下来，运行我们服务器（使用默认的fileServer.js所在目录为根目录）：</div><div class="line">```bash</div><div class="line">$ <span class="keyword">node</span> <span class="title">./fileServer</span>.js</div></pre></td></tr></table></figure>
+<p>如果得到了与文首截图相似的输出效果，那说明服务器已经开启成功了。之后我们要测试我们的服务器。在我们创建的fileServer.js所在目录下创建一个index.html。写入代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Test local server successfully!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>浏览器输入<code>http://localhost:8080/index.html</code>，然后进入网页，得到结果：</p>
+<p><img src="/images/in_posts/run_nodejs_fileserver2.png" alt="运行效果图之二"></p>
+<p>同时我们的命令行也有输出：</p>
+<p><img src="/images/in_posts/run_nodejs_fileserver3.png" alt="运行效果图之二"></p>
+<p>可以看到，我们的本地服务器已经在正常地工作了。不过上面提供的代码很简陋，使用起来会有局限，例如：1, 直接输入目录名，如<code>localhost:8080/dirname</code>，将会得到404结果，必须输入<code>localhost:8080/dirname/</code>才能自动读取<code>localhost:8080/dirname/index.html</code>文件。2, 只提供404和200两种status，当然这个方面大家可以根据所需自行拓展～</p>
+<p><strong>最后，如果是使用linux或者OS X的同学，可以把运行fileServer.js的命令写到一个shell文件里，然后放到<code>usr/local/bin/</code>下，这样一来，在运行我们的服务器时就不需要输入很长的命令了。</strong></p>
+
+
+
+
+
+	<div style="margin-top: 60px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
+		<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
+		<a href="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/">http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/</a>
+	</div>
+
+
+
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/" data-id="cj56t78u2000074tcfzuy7gfn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/31/sat-explanation/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">【译】碰撞检测之分离轴定理算法讲解</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="uyan_frame"></div>
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/07/16/simple_http_server_with_nodejs/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
+                            <p class="item-title"><a href="/2017/07/16/simple_http_server_with_nodejs/" class="title">NodeJs开发简易的Http本地服务器</a></p>
+                            <p class="item-date"><time datetime="2017-07-15T16:00:00.000Z" itemprop="datePublished">2017-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/31/sat-explanation/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/in_posts/sat_1.jpg)" alt="【译】碰撞检测之分离轴定理算法讲解" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/译文/">译文</a></p>
+                            <p class="item-title"><a href="/2017/01/31/sat-explanation/" class="title">【译】碰撞检测之分离轴定理算法讲解</a></p>
+                            <p class="item-date"><time datetime="2017-01-30T16:00:00.000Z" itemprop="datePublished">2017-01-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/new-game-flying-stone/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/demo/flying_stone_poster.png)" alt="分享新作 - 虐心小游戏Flying Stone" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/App发布/">App发布</a></p>
+                            <p class="item-title"><a href="/2016/12/25/new-game-flying-stone/" class="title">分享新作 - 虐心小游戏Flying Stone</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/09/develop-puzzle-within-2h/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/in_posts/my_puzzle_record.png)" alt="挑战速度，2小时完成HTML5拼图小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
+                            <p class="item-title"><a href="/2016/08/09/develop-puzzle-within-2h/" class="title">挑战速度，2小时完成HTML5拼图小游戏</a></p>
+                            <p class="item-date"><time datetime="2016-08-08T16:00:00.000Z" itemprop="datePublished">2016-08-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/22/counting-principle-algorithm/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/in_posts/picture_of_couting_principle_math_question.jpg)" alt="算法研究：利用Python解决数学计数原理问题" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/07/22/counting-principle-algorithm/" class="title">算法研究：利用Python解决数学计数原理问题</a></p>
+                            <p class="item-date"><time datetime="2016-07-21T16:00:00.000Z" itemprop="datePublished">2016-07-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/App发布/">App发布</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/译文/">译文</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/App/" style="font-size: 12.5px;">App</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Pylash/" style="font-size: 10px;">Pylash</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/canvas/" style="font-size: 17.5px;">canvas</a> <a href="/tags/lufylegend/" style="font-size: 17.5px;">lufylegend</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/数学/" style="font-size: 17.5px;">数学</a> <a href="/tags/游戏开发/" style="font-size: 15px;">游戏开发</a> <a href="/tags/物理模拟/" style="font-size: 10px;">物理模拟</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io/">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://lufylegend.com/">lufylegend</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ladeng6666.com/blog/">ladeng6666</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰的官方网站</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.xsec.io/">Netxfly&#39;s Blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Yuehao<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128376"></script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
