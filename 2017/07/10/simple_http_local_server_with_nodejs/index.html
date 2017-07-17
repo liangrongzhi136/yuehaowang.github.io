@@ -9,17 +9,15 @@
 <meta name="keywords" content="JavaScript,NodeJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeJs开发简易的Http本地服务器">
-<meta property="og:url" content="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/index.html">
+<meta property="og:url" content="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/index.html">
 <meta property="og:site_name" content="Yorhom&#39;s Lab">
 <meta property="og:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver1.png">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver2.png">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver3.png">
-<meta property="og:updated_time" content="2017-07-16T14:40:03.000Z">
+<meta property="og:image" content="http://yuehaowang.github.io/images/thumbnails/simple_http_local_server_with_nodejs.png">
+<meta property="og:updated_time" content="2017-07-17T03:59:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJs开发简易的Http本地服务器">
 <meta name="twitter:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
-<meta name="twitter:image" content="http://yuehaowang.github.io/images/in_posts/run_nodejs_fileserver1.png">
+<meta name="twitter:image" content="http://yuehaowang.github.io/images/thumbnails/simple_http_local_server_with_nodejs.png">
     
 
     
@@ -210,7 +208,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-simple_http_server_with_nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-simple_http_local_server_with_nodejs" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -227,8 +225,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/07/16/simple_http_server_with_nodejs/">
-            <time datetime="2017-07-15T16:00:00.000Z" itemprop="datePublished">2017-07-16</time>
+        <a href="/2017/07/10/simple_http_local_server_with_nodejs/">
+            <time datetime="2017-07-09T16:00:00.000Z" itemprop="datePublished">2017-07-10</time>
         </a>
     </div>
 
@@ -268,12 +266,12 @@
 <li>调用<code>readPath</code>函数读取文件地址（如果地址所指是一个目录，那就读取目录下的<code>index.html</code>文件）</li>
 <li>读取失败，response写入404；读取成功，response写入200，将读取的数据流入response</li>
 </ol>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">接下来，运行我们服务器（使用默认的fileServer.js所在目录为根目录）：</div><div class="line">```bash</div><div class="line">$ <span class="keyword">node</span> <span class="title">./fileServer</span>.js</div></pre></td></tr></table></figure>
+<p>接下来，运行我们服务器（使用默认的fileServer.js所在目录为根目录）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node ./fileServer.js</div></pre></td></tr></table></figure></p>
 <p>如果得到了与文首截图相似的输出效果，那说明服务器已经开启成功了。之后我们要测试我们的服务器。在我们创建的fileServer.js所在目录下创建一个index.html。写入代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Test local server successfully!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>浏览器输入<code>http://localhost:8080/index.html</code>，然后进入网页，得到结果：</p>
 <p><img src="/images/in_posts/run_nodejs_fileserver2.png" alt="运行效果图之二"></p>
-<p>同时我们的命令行也有输出：</p>
+<p>同时我们的终端也有输出：</p>
 <p><img src="/images/in_posts/run_nodejs_fileserver3.png" alt="运行效果图之二"></p>
 <p>可以看到，我们的本地服务器已经在正常地工作了。不过上面提供的代码很简陋，使用起来会有局限，例如：1, 直接输入目录名，如<code>localhost:8080/dirname</code>，将会得到404结果，必须输入<code>localhost:8080/dirname/</code>才能自动读取<code>localhost:8080/dirname/index.html</code>文件。2, 只提供404和200两种status，当然这个方面大家可以根据所需自行拓展～</p>
 <p><strong>最后，如果是使用linux或者OS X的同学，可以把运行fileServer.js的命令写到一个shell文件里，然后放到<code>usr/local/bin/</code>下，这样一来，在运行我们的服务器时就不需要输入很长的命令了。</strong></p>
@@ -284,7 +282,7 @@
 
 	<div style="margin-top: 60px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
 		<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
-		<a href="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/">http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/</a>
+		<a href="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/">http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/</a>
 	</div>
 
 
@@ -299,7 +297,7 @@
 
 </div>
 
-    <a data-url="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/" data-id="cj56t78u2000074tcfzuy7gfn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/" data-id="cj57mj60j0000yetcphymdl0s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -367,7 +365,7 @@
 
             
     
-        <a href="http://yuehaowang.github.io/2017/07/16/simple_http_server_with_nodejs/#comments" class="article-comment-link">评论</a>
+        <a href="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/#comments" class="article-comment-link">评论</a>
     
 
         </footer>
@@ -412,10 +410,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/07/16/simple_http_server_with_nodejs/" class="thumbnail">
+                            <a href="/2017/07/10/simple_http_local_server_with_nodejs/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumbnails/simple_http_local_server_with_nodejs.png)" alt="NodeJs开发简易的Http本地服务器" class="thumbnail-image"></span>
     
 </a>
 
@@ -423,8 +421,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
-                            <p class="item-title"><a href="/2017/07/16/simple_http_server_with_nodejs/" class="title">NodeJs开发简易的Http本地服务器</a></p>
-                            <p class="item-date"><time datetime="2017-07-15T16:00:00.000Z" itemprop="datePublished">2017-07-16</time></p>
+                            <p class="item-title"><a href="/2017/07/10/simple_http_local_server_with_nodejs/" class="title">NodeJs开发简易的Http本地服务器</a></p>
+                            <p class="item-date"><time datetime="2017-07-09T16:00:00.000Z" itemprop="datePublished">2017-07-10</time></p>
                         </div>
                     </li>
                 
