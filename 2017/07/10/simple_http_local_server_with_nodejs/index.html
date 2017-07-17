@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Yorhom&#39;s Lab">
 <meta property="og:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
 <meta property="og:image" content="http://yuehaowang.github.io/images/thumbnails/simple_http_local_server_with_nodejs.png">
-<meta property="og:updated_time" content="2017-07-17T03:59:58.000Z">
+<meta property="og:updated_time" content="2017-07-17T04:10:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJs开发简易的Http本地服务器">
 <meta name="twitter:description" content="第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。 网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。  （成功开启服">
@@ -272,7 +272,7 @@
 <p>浏览器输入<code>http://localhost:8080/index.html</code>，然后进入网页，得到结果：</p>
 <p><img src="/images/in_posts/run_nodejs_fileserver2.png" alt="运行效果图之二"></p>
 <p>同时我们的终端也有输出：</p>
-<p><img src="/images/in_posts/run_nodejs_fileserver3.png" alt="运行效果图之二"></p>
+<p><img src="/images/in_posts/run_nodejs_fileserver3.png" alt="运行效果图之三"></p>
 <p>可以看到，我们的本地服务器已经在正常地工作了。不过上面提供的代码很简陋，使用起来会有局限，例如：1, 直接输入目录名，如<code>localhost:8080/dirname</code>，将会得到404结果，必须输入<code>localhost:8080/dirname/</code>才能自动读取<code>localhost:8080/dirname/index.html</code>文件。2, 只提供404和200两种status，当然这个方面大家可以根据所需自行拓展～</p>
 <p><strong>最后，如果是使用linux或者OS X的同学，可以把运行fileServer.js的命令写到一个shell文件里，然后放到<code>usr/local/bin/</code>下，这样一来，在运行我们的服务器时就不需要输入很长的命令了。</strong></p>
 
