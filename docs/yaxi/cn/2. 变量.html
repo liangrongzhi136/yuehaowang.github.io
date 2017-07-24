@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>2. 变量</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">Yaxi 中文文档</b>
+				</div>
+			</nav>
+		</div>
+
+
+		<div id="content" class="uk-container uk-margin-medium">
+			<h1 id="">变量</h1>
+<h2 id="-1">数据类型</h2>
+<p>yaxi提供了以下几种数据类型：</p>
+<ol>
+<li><code>int</code> 整型。可以是[-2147483648, 2147483647]内的任意整数。</li>
+<li><code>float</code> 浮点数。用于表示小数。</li>
+<li><code>bool</code> 布尔值。只能是true或false。</li>
+<li><code>str</code> 字符串。用于储存一个字符串。</li>
+</ol>
+<h2 id="-2">定义变量</h2>
+<p>在yaxi中定义变量请使用以下的代码：</p>
+<pre><code>int a = 1
+float b = 1.0
+str c = "Yaxi"
+</code></pre>
+<blockquote>
+  <p>值得注意的是，定义变量的时候不能使用关键字作为变量名，yaxi中的所有关键字请在“概况”一章查看。除了这一限制，变量名也不能与其他变量以及函数重名（关于函数请见“使用函数”一章）。</p>
+  <p>另外还需注意的是，定义字符串的时候，字符串内容要在一对单引号<code>'</code>或引号<code>"</code>之间。但是如果使用<code>str s1 = "You are "a man"!!!"</code>或者<code>str s1 = 'You are 'a man'!!!'</code>这样的方式定义字符串，就会引起麻烦，因为定义字符串时，双引号之间不能再有双引号，单引号之间也不能再有单引号。解决方案分为两类：1, 将双引号内的双引号改用单引号，单引号内的单引号改用双引号；2, 使用<code>\</code>转意符号，使用如下：<code>str s1 = "You are \"a man\"!!!"</code></p>
+</blockquote>
+<p>当然，定义变量的时候，你也可以使用数学表达式，例如：</p>
+<pre><code>int a = 1 + 2
+</code></pre>
+<blockquote>
+  <p><strong>提示</strong> 关于变量的操作，后文会有提及。</p>
+</blockquote>
+<p>当然你也可以在变量定义的时候不进行赋值操作，那么变量将以默认值进行赋值：</p>
+<pre><code>int a  // 0
+str s  // ""
+bool b  // false
+float f  // 0.0
+</code></pre>
+<h2 id="-3">使用变量</h2>
+<p>在使用变量时需要用到<code>@</code>标识符：</p>
+<pre><code>str s = "Hello, Yaxi"
+
+@print(@s)
+</code></pre>
+<p>改动变量时，同样如此：</p>
+<pre><code>int a = 1
+
+@a = 3
+</code></pre>
+<h2 id="-4">变量的操作</h2>
+<p>变量的操作主要会用到数学表达式以及逻辑表达式，表达式是一个可以返回数据的式子，比如<code>1 + 2</code>返回<code>3</code>，<code>2 &lt; 3</code>返回<code>true</code>。不同数据类型的操作存在差异，以下就是几种数据类型常用操作的介绍。</p>
+<h3 id="-5">整型和浮点数的数学运算</h3>
+<p>整型和浮点数的运算除了支持<code>+ - * /</code>操作外，还有可以使用<code>%</code>进行取余数运算，参考下面的代码：</p>
+<pre><code>int a = 9 + 13 // result: 22
+int b = 1 / 3 // result: 0
+float c = 1 / 3    // result: 0.333333
+int d = 23 % 2 // result: 1
+</code></pre>
+<h3 id="-6">字符串的操作</h3>
+<p>字符串操作相对比较单一，只有加法。而加法则是直接将两个字符串相拼接。如下：</p>
+<pre><code>str s1 = "1" + "2" // result: "12"
+str s2 = "Hello " + "yaxi" // result: "Hello yaxi"
+</code></pre>
+<h3 id="-7">布尔型变量的操作</h3>
+<p>布尔型变量主要用于逻辑操作，支持以下运算符号：</p>
+<ul>
+<li><code>!</code> 类似于数学中命题的否定，即<code>!true = false</code>，<code>!false = true</code> </li>
+<li><code>||</code> 类似于数学中的“或”，即<code>true || true = true</code>，<code>true || false = true</code>，<code>false || false = false</code></li>
+<li><code>&amp;&amp;</code> 类似于数学中的“且”，即<code>true &amp;&amp; true = true</code>，<code>true &amp;&amp; false = false</code>，<code>false &amp;&amp; false = false</code></li>
+</ul>
+<h2 id="-8">数据类型的转换</h2>
+<p>不通数据类型之间可以进行一定的转换，也就是说，字符串可以转化为整数，反过来，整数也可以转化为字符串。当然数据转化也不仅仅只有上述两种。以下是几个种转换的示例：</p>
+<pre><code>// 数字转字符串
+str s3 = 1 + 4 // result: "5"
+// 布尔型转字符串
+str s4 = false // result: "false"
+// 字符串转整数
+int n1 = "1" + "4" // result: 14
+// 字符串转布尔型
+bool b1 = "true" // result: true
+// 字符串转浮点数
+float f1 = "1" + "0.1" // result: 10.1
+</code></pre>
+<blockquote>
+  <p>值得注意的是，有时候数据类型转化是非法的。比如将字符串<code>"yaxi"</code>转为<code>int</code>类型。由于这类的字符串不代表任何数字，所以在转化的过程中就会遇到麻烦。同理，上述类似的字符串也无法转化为<code>bool</code>类型。但一般而言，无论变量类型、变量值是多少，都可以转化为<code>str</code>类型。</p>
+</blockquote>
+<h2 id="-9">示例参考</h2>
+<p>变量相关的示例：<a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/define_var.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/define_var.yx</a></p>
+
+			<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+			<h3>Latest update: Mon Jul 24 2017</h3>
+			<h3><a href="https://github.com/yuehaowang/yaxi-lang/labels/doc%20typos">Report Typos</a> | <a href="https://github.com/yuehaowang/yaxi-lang">Github Repo</a> | Written by Yuehao with LOVE</h3>
+		</div>
+
+			
+		<div id="menu"  uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li ><a href='./0. 概况.html'><span uk-icon='icon: nut'></span> 0. 概况</a></li><li ><a href='./1. 遇见Yaxi.html'><span uk-icon='icon: nut'></span> 1. 遇见Yaxi</a></li><li class='uk-active'><a href='./2. 变量.html'><span uk-icon='icon: chevron-right'></span> 2. 变量</a></li><li ><a href='./3. 输入与输出.html'><span uk-icon='icon: nut'></span> 3. 输入与输出</a></li><li ><a href='./4. 条件判断.html'><span uk-icon='icon: nut'></span> 4. 条件判断</a></li><li ><a href='./5. 循环语句.html'><span uk-icon='icon: nut'></span> 5. 循环语句</a></li><li ><a href='./6. 使用函数.html'><span uk-icon='icon: nut'></span> 6. 使用函数</a></li><li ><a href='./7. goto语句.html'><span uk-icon='icon: nut'></span> 7. goto语句</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

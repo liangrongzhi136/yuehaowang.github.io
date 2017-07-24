@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>4. 条件判断</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">Yaxi 中文文档</b>
+				</div>
+			</nav>
+		</div>
+
+
+		<div id="content" class="uk-container uk-margin-medium">
+			<h1 id="">条件判断</h1>
+<h2 id="-1">基本用法</h2>
+<p>程序语句中。条件判断是一个非常常用的功能。使用条件判断语句，你可以实现选择性执行代码这一功能。几乎所有编程语言都有这一句法，在yaxi中，条件判断语句基本格式如下：</p>
+<pre><code>if condition
+    // condition为true，执行这部分代码
+else
+    // condition为false，执行这部分代码
+endif
+</code></pre>
+<p><code>condition</code>是一个获取布尔值的表达式。参看一下说明可以帮助你理解什么是“获取布尔值的表达式”：</p>
+<blockquote>
+  <p>在程序设计中，我们会经常遇到需要使用“是与不是”的情形，“是”在程序中叫做<code>true</code>，“不是”叫做<code>false</code>。遇到这种情况，我们会用到获取“是与不是”的一个表达式，这个表达式将会返回一个布尔型数据。最简单的一个例子是比较两个数的大小，我们可以将其简化为“是与不是”问题，假设我们想比较2与7的大小，表达式<code>2 &lt; 7</code>就将得到<code>true</code>，也就是<code>2 &lt; 7</code>这个命题成立。再例如<code>true &amp;&amp; true</code>、<code>false || true</code>这些都是获取布尔值的表达式，当然直接使用布尔型变量来获取布尔值也是可以的。</p>
+</blockquote>
+<p>在条件判断的应用场景中，一个非常经典的例子就是用于判断考试分数是否及格，以下代码可以实现这一过程：</p>
+<pre><code>// 假设分数是75
+int grade = 75
+
+if @grade &lt; 60 // 不及格情况
+    @print("及格")
+else // 及格情况 
+    @print("不及格")
+endif
+</code></pre>
+<p>由于分数是75，所以输出的内容将是“及格”。</p>
+<p>有的时候，我们不需要<code>else</code>里的内容，就可以直接这么写：</p>
+<pre><code>if condition
+    // 执行所需代码
+endif
+</code></pre>
+<blockquote>
+  <p>条件判断语句必须使用endif来标记结束，否则代码无法正常运行。</p>
+</blockquote>
+<h2 id="-2">拓展用法</h2>
+<p>有的时候条件判断会迎来多条件判断的挑战。使用基本的语法会略显麻烦，以下的用法或许可以帮你脱离困境。</p>
+<pre><code>if condition_A
+    // 条件A满足，执行这里的代码
+elseif condition_B
+    // 条件B满足，执行这里的代码
+elseif condition_C
+    // 条件C满足，执行这里的代码
+else
+    // 条件A、B、C都不满足，执行这里的代码
+endif
+</code></pre>
+<blockquote>
+  <p>值得一提的是，条件判断语句执行时，会按顺序检测条件（从上到下）， 一旦遇到条件表达式返回值是<code>true</code>的就直接运行该条件对应的代码，剩下的条件和代码都会被跳过。</p>
+</blockquote>
+<h2 id="-3">示例参考</h2>
+<p>关于条件判断的示例：<a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/ifelse.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/ifelse.yx</a></p>
+
+			<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+			<h3>Latest update: Mon Jul 24 2017</h3>
+			<h3><a href="https://github.com/yuehaowang/yaxi-lang/labels/doc%20typos">Report Typos</a> | <a href="https://github.com/yuehaowang/yaxi-lang">Github Repo</a> | Written by Yuehao with LOVE</h3>
+		</div>
+
+			
+		<div id="menu"  uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li ><a href='./0. 概况.html'><span uk-icon='icon: nut'></span> 0. 概况</a></li><li ><a href='./1. 遇见Yaxi.html'><span uk-icon='icon: nut'></span> 1. 遇见Yaxi</a></li><li ><a href='./2. 变量.html'><span uk-icon='icon: nut'></span> 2. 变量</a></li><li ><a href='./3. 输入与输出.html'><span uk-icon='icon: nut'></span> 3. 输入与输出</a></li><li class='uk-active'><a href='./4. 条件判断.html'><span uk-icon='icon: chevron-right'></span> 4. 条件判断</a></li><li ><a href='./5. 循环语句.html'><span uk-icon='icon: nut'></span> 5. 循环语句</a></li><li ><a href='./6. 使用函数.html'><span uk-icon='icon: nut'></span> 6. 使用函数</a></li><li ><a href='./7. goto语句.html'><span uk-icon='icon: nut'></span> 7. goto语句</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

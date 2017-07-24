@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>6. 使用函数</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">Yaxi 中文文档</b>
+				</div>
+			</nav>
+		</div>
+
+
+		<div id="content" class="uk-container uk-margin-medium">
+			<h1 id="">使用函数</h1>
+<p>在学中学数学的时候，我们都接触过函数吧。不过程序语言中的函数要比数学里的函数强大许多。通俗地讲，函数就是为实现某一功能而进行的封装。</p>
+<h2 id="-1">函数的定义</h2>
+<p>在yaxi中，定义函数的句法如下：</p>
+<pre><code>func func_name (params...) =&gt; returnType
+    // 函数体
+endfunc
+</code></pre>
+<p><code>func</code>是定义函数的标识符，<code>endfunc</code>是结束函数的标识符。</p>
+<p><code>func_name</code>是函数名称，与变量一样，不能使用yaxi关键字（关键字列表请在“概况”一章查看）且不能与变量名以及其他函数重名。</p>
+<p><code>params...</code>代表的是函数参数。函数的参数写在函数名后面的圆括号里，一个函数可以定义多个参数，也可以没有参数。</p>
+<p><code>returnType</code>指的函数返回值类型，也就是说，调用这个函数后，将要得到的数据是什么类型。</p>
+<p>函数体部分就是函数里的内容了，用于实现函数的功能。</p>
+<p>以下是一个简单的求和函数示例：</p>
+<pre><code>func sum (a : int, b : int) =&gt; int
+    return @a + @b
+endfunc
+</code></pre>
+<h3 id="-2">函数的参数</h3>
+<p>Yaxi中函数的参数是需要携带类型的。通过按照相应的格式在函数名后的括号内进行书写，就能为函数定义参数。参数定义时，相邻参数间应用<code>,</code>隔开；定义每个参数时，参数名和参数类型用<code>:</code>隔开，定义参数的格式是<code>参数名 : 参数类型</code>。参数定义后，就可以在函数体中像使用变量一样地使用参数了。参数一经定义，就会赋值为相应类型的默认值（默认值见“变量”一章），但调用函数时传入的值又会改变参数的值。关于函数的调用，请见后文。</p>
+<h3 id="-3">函数的返回值</h3>
+<p>声明返回值应放在参数定义的后面，使用<code>=&gt;</code>符号。无论是否申明函数返回值，函数都有默认返回值（这一点与C++等语言存在差异）。返回类型是<code>int</code>的函数，默认返回值是0；返回类型是<code>str</code>的，默认返回值是空字符串；返回类型是<code>bool</code>的，默认返回值是<code>false</code>；返回类型是<code>float</code>的，默认返回值是0.0。这些返回值的默认值与变量默认值是一致的。如果希望自定义返回值，请使用<code>return</code>语句，下面是一个示例：</p>
+<pre><code>func fn () =&gt; int
+    return 1 + 2
+endfunc
+</code></pre>
+<p><code>return</code>后面接的内容就是你想要自定义的返回值。这个返回值的类型必须与定义函数时申明的返回值类型一样，或者可以互相转化（数据类型的转化请见“变量”一章），否则程序就会出错。</p>
+<p>如果定义函数时没有规定返回值类型，那返回类型默认使用<code>void</code>，即无类型，示例如下：</p>
+<pre><code>func fn1 ()
+    // 函数体
+endfunc
+
+func fn2 () =&gt; void
+    // 函数体
+endfunc
+
+// fn1与fn2返回值类型是一样的
+</code></pre>
+<p>这个类型的返回值下，无论返回什么都只会得到<code>null</code>这个结果。<code>null</code>值代表值为空，可以转化为其他的数据类型，以下是转换规则：</p>
+<pre><code>null -&gt; int : 0
+null -&gt; float : 0.0
+null -&gt; str : "null"
+null -&gt; bool : false
+</code></pre>
+<p><code>return</code>语句使用后，整个函数就会退出，也就是<code>return</code>之后函数中的剩余代码就不会运行了。</p>
+<h2 id="-4">函数的调用</h2>
+<p>函数的调用在“输入与输出”一章有提到过。Yaxi中函数的调用使用如下格式：</p>
+<pre><code>@func_name(params...)
+</code></pre>
+<p><code>@</code>是使用函数的标识符，<code>func_name</code>就是定义的函数名。调用函数时，必须保证函数在调用之前已经定义。<code>params</code>为传入的参数值。</p>
+<h3 id="-5">传入参数</h3>
+<p>调用函数时，参数的传入可参考如下代码：</p>
+<pre><code>func f (x : int, y : int) =&gt; int
+    return @x * @y
+endfunc
+
+@f(7, 22)
+</code></pre>
+<p>参数传入之后，将会代替参数定义后赋予的默认值，因此，上面的代码中调用<code>f(7, 22)</code>，结果就是154。</p>
+<p>传入参数需要注意以下几个方面：</p>
+<ol>
+<li>传入参数个数不能多于函数定义的参数个数，否则就会出错。但是传入参数个数可以小于函数定义的参数个数，未传入的参数将使用默认值。</li>
+<li>传入参数的类型必须和定义的参数类型相同，或者能互相转化。</li>
+</ol>
+<h2 id="-6">作用域</h2>
+<p>在yaxi中定义函数，会在原有的全局作用域上新建一个下层作用域。什么是作用域呢？大致可以理解为变量和函数的有效范围。比如以下例子就能说明问题：</p>
+<pre><code>int a = 727
+
+func fn ()
+    int b = 722
+
+    @print(@a + @b)
+endfunc
+
+
+@print(@b)  // 错误：无法获取变量`b`.
+</code></pre>
+<p>全局作用域是最高层的作用域，全局作用域无法访问下层作用域里的变量和函数，但反过来，下层作用域可以使用上层作用域的变量和函数，这就是为什么<code>fn</code>这个函数可以使用变量<code>a</code>，而全局访问变量<code>b</code>就会出错，出错的原因就在于变量<code>b</code>是在<code>fn</code>这个函数的作用域内，全局的作用域无法访问。</p>
+<blockquote>
+  <p>参数的定义是在函数作用域内的。</p>
+</blockquote>
+<p>变量在出作用域之后，将会被清除。如下代码是一个例子：</p>
+<pre><code>int b
+
+func fn (a : int)
+    @a += 10
+    @b += 10
+endfunc
+
+@fn()  // a = 10, b = 10
+@fn()  // a = 10, b = 20
+@fn()  // a = 10, b = 30
+</code></pre>
+<p>上述代码调用了三次函数<code>fn</code>，每次调用后变量<code>a</code>都是10，而<code>b</code>却经历了三次变化。这样的区别就在于，<code>a</code>是定义的参数，参数的作用域在函数内部。当函数执行完成后，变量<code>a</code>会被清理掉，变为相应数据类型默认值。而变量<code>b</code>作用域是全局作用域，要在运行到最后一行代码后，才算是出作用域，要在这时才会被清理掉。还有一个示例也能体现作用域问题：</p>
+<pre><code>func fn ()
+    int a = 727
+endfunc
+
+@fn()
+@fn()
+</code></pre>
+<p>上述代码调用了两次函数<code>fn</code>，如果变量<code>a</code>没有在第一次函数调用后被清理掉，那么第二次调用时，应该会报错，因为变量<code>a</code>不被清理的话，再次定义会出现变量名重复问题。然而运行代码并没有任何报错，也就是说，在第一次调用完成后，变量<code>a</code>由于出了作用域而被清理掉了。</p>
+<h2 id="-7">示例参考</h2>
+<p>关于函数的示例：<a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/function.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/function.yx</a></p>
+
+			<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+			<h3>Latest update: Mon Jul 24 2017</h3>
+			<h3><a href="https://github.com/yuehaowang/yaxi-lang/labels/doc%20typos">Report Typos</a> | <a href="https://github.com/yuehaowang/yaxi-lang">Github Repo</a> | Written by Yuehao with LOVE</h3>
+		</div>
+
+			
+		<div id="menu"  uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li ><a href='./0. 概况.html'><span uk-icon='icon: nut'></span> 0. 概况</a></li><li ><a href='./1. 遇见Yaxi.html'><span uk-icon='icon: nut'></span> 1. 遇见Yaxi</a></li><li ><a href='./2. 变量.html'><span uk-icon='icon: nut'></span> 2. 变量</a></li><li ><a href='./3. 输入与输出.html'><span uk-icon='icon: nut'></span> 3. 输入与输出</a></li><li ><a href='./4. 条件判断.html'><span uk-icon='icon: nut'></span> 4. 条件判断</a></li><li ><a href='./5. 循环语句.html'><span uk-icon='icon: nut'></span> 5. 循环语句</a></li><li class='uk-active'><a href='./6. 使用函数.html'><span uk-icon='icon: chevron-right'></span> 6. 使用函数</a></li><li ><a href='./7. goto语句.html'><span uk-icon='icon: nut'></span> 7. goto语句</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

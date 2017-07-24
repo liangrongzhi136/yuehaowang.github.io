@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>7. goto语句</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">Yaxi 中文文档</b>
+				</div>
+			</nav>
+		</div>
+
+
+		<div id="content" class="uk-container uk-margin-medium">
+			<h1 id="goto">goto 语句</h1>
+<p>Yaxi中的<code>goto</code>语句与C语言的<code>goto</code>存在差异。Yaxi中的<code>goto</code>是用于运行其他脚本文件的。有的时候，我们开发的项目不只一个文件，还需要多个文件配合完成，这个时候就需要一个语句来完成这一功能。对于C++，Java这类语言，在运行时跳到别的文件进行运行是不现实的，因为这类语言都是先进行了编译的，所以它们提供的类似功能是引入别的文件。而对于脚本语言，从一个文件跳到另一个文件运行其中的脚本却是可行的。</p>
+<p>以下是<code>goto</code>的应用举例。</p>
+<p>在同一目录下，创建两个脚本文件script1.yx和script2.yx，分别加入代码：</p>
+<p><strong>script1.yx</strong></p>
+<pre><code>@print("Hello")
+
+goto "./script2.yx"
+
+@print("-- end --")
+</code></pre>
+<p><strong>script2.yx</strong></p>
+<pre><code>@print("Running script2.yx")
+</code></pre>
+<p>运行script1.yx，输出的顺序是：Hello -&gt; Running script2.yx -&gt; -- end --</p>
+<p>我们可以看到，<code>goto</code>语句跳到运行另一个脚本文件后，script1.yx是会等待script2.yx运行完毕后，再接着运行的。</p>
+<p><code>goto</code>后接的文件路径若是相对路径，那么这个路径得是相对于当前运行的脚本文件的。例子如下：</p>
+<p>假设一个目录结构如下：</p>
+<pre><code>projectX/
+    |
+    `-- script0.yx
+    |
+    `-- src/
+        |
+        `-- script1.yx
+        |
+        `-- dir1/
+            |
+            `-- script2.yx
+</code></pre>
+<p>如果我们运行script1.yx，那想从script1.yx跳转到别的脚本文件所需的代码如下：</p>
+<pre><code>// script0.yx
+goto "../script0.yx"
+
+// script2.yx
+goto "./dir1/script2.yx"
+</code></pre>
+<h2 id="">示例参考</h2>
+<p>关于<code>goto</code>的示例请参考：<a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/goto.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/goto.yx</a></p>
+
+			<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+			<h3>Latest update: Mon Jul 24 2017</h3>
+			<h3><a href="https://github.com/yuehaowang/yaxi-lang/labels/doc%20typos">Report Typos</a> | <a href="https://github.com/yuehaowang/yaxi-lang">Github Repo</a> | Written by Yuehao with LOVE</h3>
+		</div>
+
+			
+		<div id="menu"  uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li ><a href='./0. 概况.html'><span uk-icon='icon: nut'></span> 0. 概况</a></li><li ><a href='./1. 遇见Yaxi.html'><span uk-icon='icon: nut'></span> 1. 遇见Yaxi</a></li><li ><a href='./2. 变量.html'><span uk-icon='icon: nut'></span> 2. 变量</a></li><li ><a href='./3. 输入与输出.html'><span uk-icon='icon: nut'></span> 3. 输入与输出</a></li><li ><a href='./4. 条件判断.html'><span uk-icon='icon: nut'></span> 4. 条件判断</a></li><li ><a href='./5. 循环语句.html'><span uk-icon='icon: nut'></span> 5. 循环语句</a></li><li ><a href='./6. 使用函数.html'><span uk-icon='icon: nut'></span> 6. 使用函数</a></li><li class='uk-active'><a href='./7. goto语句.html'><span uk-icon='icon: chevron-right'></span> 7. goto语句</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

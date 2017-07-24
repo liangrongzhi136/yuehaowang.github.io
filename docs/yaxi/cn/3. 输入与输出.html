@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>3. 输入与输出</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">Yaxi 中文文档</b>
+				</div>
+			</nav>
+		</div>
+
+
+		<div id="content" class="uk-container uk-margin-medium">
+			<h1 id="">输入与输出</h1>
+<h2 id="-1">输出</h2>
+<p>输出用到的函数是<code>print</code>，是一个内置函数（关于函数的详细说明，请见“使用函数”一章）。这个函数可接受任意多个的参数，每一个参数就是每一行中输出的内容。传入的参数值可以是任意类型，因为在输出时都会转化为<code>str</code>类型。使用举例：</p>
+<pre><code>@print("Hello World!", "Hello, Yaxi!")
+</code></pre>
+<p>输出结果：</p>
+<pre><code>$ Hello World!
+$ Hello, Yaxi!
+</code></pre>
+<blockquote>
+  <p>注意，<code>print</code>前的<code>@</code>是使用函数的标识符。</p>
+</blockquote>
+<h2 id="-2">输入</h2>
+<p>输入使用的是<code>input</code>函数，也是一个内置函数，仅接受一个参数，这个参数用于显示输入提示。输入函数返回值类型是<code>str</code>，所以用来储存输入内容的变量需要是<code>str</code>类型的，或者<code>str</code>类型的可转化类型（关于返回值类型和数据类型转化请分别参考“使用函数”和“变量”这两章）。代码示例：</p>
+<pre><code>str name = @input("Please input your name: ")
+
+@print("Hello " + @name)
+</code></pre>
+<h2 id="-3">示例参考</h2>
+<p>关于输出与输入的示例请参考：</p>
+<ul>
+<li><a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/hello_world.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/hello_world.yx</a></li>
+<li><a href="https://github.com/yuehaowang/yaxi-lang/blob/master/examples/input.yx">https://github.com/yuehaowang/yaxi-lang/blob/master/examples/input.yx</a></li>
+</ul>
+
+			<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+			<h3>Latest update: Mon Jul 24 2017</h3>
+			<h3><a href="https://github.com/yuehaowang/yaxi-lang/labels/doc%20typos">Report Typos</a> | <a href="https://github.com/yuehaowang/yaxi-lang">Github Repo</a> | Written by Yuehao with LOVE</h3>
+		</div>
+
+			
+		<div id="menu"  uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li ><a href='./0. 概况.html'><span uk-icon='icon: nut'></span> 0. 概况</a></li><li ><a href='./1. 遇见Yaxi.html'><span uk-icon='icon: nut'></span> 1. 遇见Yaxi</a></li><li ><a href='./2. 变量.html'><span uk-icon='icon: nut'></span> 2. 变量</a></li><li class='uk-active'><a href='./3. 输入与输出.html'><span uk-icon='icon: chevron-right'></span> 3. 输入与输出</a></li><li ><a href='./4. 条件判断.html'><span uk-icon='icon: nut'></span> 4. 条件判断</a></li><li ><a href='./5. 循环语句.html'><span uk-icon='icon: nut'></span> 5. 循环语句</a></li><li ><a href='./6. 使用函数.html'><span uk-icon='icon: nut'></span> 6. 使用函数</a></li><li ><a href='./7. goto语句.html'><span uk-icon='icon: nut'></span> 7. goto语句</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
