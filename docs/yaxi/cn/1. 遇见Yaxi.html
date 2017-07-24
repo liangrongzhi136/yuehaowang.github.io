@@ -35,14 +35,14 @@
 
 		<div id="content" class="uk-container uk-margin-medium">
 			<h1 id="yaxi">遇见yaxi</h1>
-<h2 id="yaxi-1">获取yaxi</h2>
-<p>获取yaxi可以采用以下的方式：</p>
-<h3 id="">自行编译源代码</h3>
+<h2 id="yaxi-1">获取yaxi翻译器</h2>
+<p>由于Yaxi是一款脚本语言，所以需要使用yaxi翻译器对yaxi脚本进行翻译，随后运行。获取yaxi翻译器可以采用以下的方式：</p>
+<h3 id="yaxi-2">自行编译Yaxi翻译器源代码</h3>
 <p>首先，从Github上把项目clone到本地：</p>
 <pre><code class="bash language-bash">$ git clone https://github.com/yuehaowang/yaxi-lang
 $ cd ./yaxi-lang
 </code></pre>
-<p>由于yaxi是基于Qt的，所以你需要下载和安装Qt。下载和安装完成后，就可以编译运行程序了。（据测试，Qt 4.8.6以及4.8.6之后的版本都能成功编译yaxi源代码。    ）</p>
+<p>由于yaxi翻译器是基于Qt的，所以你需要下载和安装Qt。下载和安装完成后，就可以编译运行程序了。（据测试，Qt 4.8.6以及4.8.6之后的版本都能成功编译yaxi源代码。    ）</p>
 <p>另一限制在于，由于在开发过程中使用了少量C++ 11的特性，所以在不支持C++ 11的编译器上编译，可能会碰到麻烦。将源代码稍作调整，即可编译通过。以下是调整方案：</p>
 <p><strong>1. interpreter.h文件中</strong></p>
 <p>找到如下这一行代码：</p>
@@ -59,7 +59,7 @@ $ cd ./yaxi-lang
 <li><code>--run -r [file path]</code>： 运行[file path]对应的脚本文件。</li>
 <li><code>--help -h</code>： 显示帮助列表。</li>
 </ul>
-<h2 id="-1">编写代码</h2>
+<h2 id="">编写代码</h2>
 <p>Yaxi仅支持纯文本格式的脚本文件。换句话说，不能使用Microsoft Word以及Pages等软件进行代码编辑，因为用这些软件保存下来的文件都不是纯文本文件。纯文本代码编辑器主要推荐以下几款，大家可以根据偏好进行选择：</p>
 <ul>
 <li>Notepad++（仅支持Windows系统）</li>
@@ -68,13 +68,13 @@ $ cd ./yaxi-lang
 <li>Visual Studio Code</li>
 </ul>
 <p>当然直接用系统自带的文本编辑器也是可行的。</p>
-<h2 id="-2">小试牛刀</h2>
+<h2 id="-1">小试牛刀</h2>
 <p>现在，让我们来编写第一个yaxi程序 —— Hello World，首先创建一个文本文件，命名为<code>hello_world.yx</code>（yaxi脚本文件以".yx"作为后缀名），用文本编辑器打开创建好的文件并加入以下代码：</p>
 <pre><code>@print("Hello world!", "Welcome to use yaxi programming language.")
 @print('Yaxi programming language is created by Yuehao Wang,' + " writen in C++ and powered by Qt.")
 </code></pre>
 <p>代码看不懂不要紧，现在主要是测试一下环境是否设置成功。</p>
-<p>接下来，找到执行文件<code>yaxi</code>的位置，使用如下命令运行<code>hello_world.yx</code>：</p>
+<p>接下来，找到翻译器执行文件<code>yaxi</code>的位置，使用如下命令运行<code>hello_world.yx</code>：</p>
 <pre><code>$ path/to/yaxi -r hello_world.yx
 </code></pre>
 <p>运行后，如果在终端中看到了类似于下图所示的结果，说明yaxi已经可以使用了：</p>
