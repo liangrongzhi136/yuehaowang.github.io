@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Yorhom&#39;s Lab">
 <meta property="og:description" content="初学lufylegend.js之日，我用lufylegend.js开发了第一个HTML5小游戏——拼图游戏，还写了篇博文来炫耀一下：HTML5小游戏《智力大拼图》发布，挑战你的思维风暴。不过当时初学游戏开发，经验浅薄，所以没有好好专研游戏里的算法和代码的缺陷，导致游戏出现了很多bug，甚至拼图打乱后很可能无法复原。最近经常有朋友问起这个游戏，希望我能把代码里的bug改一下方便初学者学习，顺便我也打">
 <meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/my_puzzle_record.png">
-<meta property="og:updated_time" content="2017-02-01T14:42:58.000Z">
+<meta property="og:updated_time" content="2017-07-28T07:38:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="挑战速度，2小时完成HTML5拼图小游戏">
 <meta name="twitter:description" content="初学lufylegend.js之日，我用lufylegend.js开发了第一个HTML5小游戏——拼图游戏，还写了篇博文来炫耀一下：HTML5小游戏《智力大拼图》发布，挑战你的思维风暴。不过当时初学游戏开发，经验浅薄，所以没有好好专研游戏里的算法和代码的缺陷，导致游戏出现了很多bug，甚至拼图打乱后很可能无法复原。最近经常有朋友问起这个游戏，希望我能把代码里的bug改一下方便初学者学习，顺便我也打">
@@ -295,7 +295,7 @@
 <blockquote>
 <p>此类游戏能否还原关键是看它打乱后的逆序次数之和是否为偶数<br>假设你打乱后的数组中的每一个小图块为<code>obj0</code>，<code>obj1</code>，<code>obj2</code>，…它们打乱之前的序号分别为<code>obj0.num</code>，<code>obj1.num</code>…<br>接下来循环数组，<strong>如果前面元素的序号比此元素后某个元素的序号大，如<code>obj0.num &gt; obj1.num</code>或者<code>obj2.num &gt; obj4.num</code>就表示一个逆序</strong><br><strong>当全部的逆序之和为奇数时表示不可还原</strong>，重新打乱即可，打乱后重新检测，直到逆序之和为偶数为止</p>
 </blockquote>
-<p>举个例子，如果有一个数组为<code>[3, 4, 2, 1]</code>，那么里面3 2, 3 1, 2 4, 4 1, 2 1是逆序的，所以逆序数是5。</p>
+<p>举个例子，如果有一个数组为<code>[3, 4, 2, 1]</code>，那么里面3 2, 3 1, 4 2, 4 1, 2 1是逆序的，所以逆序数是5。</p>
 <p>上面我给出的<code>getRandomBlockList</code>里的代码就是在实现打乱算法和检测是否可还原算法。</p>
 <p>还有一种打乱方式，大家可以尝试尝试：和复原拼图一样，将空白块一步一步地与周围的拼图随机交换顺序。这个打乱算法较上一种而言，不会出现无法复原的现象，而且可以根据打乱的步数设定游戏难度。</p>
 <p>在完成打乱拼图块后，如期而至的是显示拼图块：</p>
