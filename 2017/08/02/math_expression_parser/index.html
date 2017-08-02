@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Web App：波的叠加演示 | Yorhom&#39;s Lab</title>
+    <title>C++实现对数学基本运算表达式的解析 | Yorhom&#39;s Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，">
-<meta name="keywords" content="JavaScript,HTML5,canvas,lufylegend,App,物理模拟">
+    <meta name="description" content="前段时间在LeetCode上刷题，遇到了很多涉及对字符串进行解析的题目。可能是出于这个原因，最近迷恋上了字符串的解析问题。数学基本运算表达式的解析就涉及这类问题。所谓数学基本运算表达式的解析就是指给定一个表达式字符串，如1 + 1，3 * 9，对这个字符串进行解析，从而得到这个表达式的运算结果。（数学基本运算表达式也就是只用加减乘除进行计算的数学表达式） 其实站在我的角度来看，我觉得对数学基本运算">
+<meta name="keywords" content="数学,C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web App：波的叠加演示">
-<meta property="og:url" content="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/index.html">
+<meta property="og:title" content="C++实现对数学基本运算表达式的解析">
+<meta property="og:url" content="http://yuehaowang.github.io/2017/08/02/math_expression_parser/index.html">
 <meta property="og:site_name" content="Yorhom&#39;s Lab">
-<meta property="og:description" content="最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，">
-<meta property="og:image" content="http://yuehaowang.github.io/images/in_posts/wave_superposition_demo1.jpg">
-<meta property="og:updated_time" content="2017-07-16T10:33:50.000Z">
+<meta property="og:description" content="前段时间在LeetCode上刷题，遇到了很多涉及对字符串进行解析的题目。可能是出于这个原因，最近迷恋上了字符串的解析问题。数学基本运算表达式的解析就涉及这类问题。所谓数学基本运算表达式的解析就是指给定一个表达式字符串，如1 + 1，3 * 9，对这个字符串进行解析，从而得到这个表达式的运算结果。（数学基本运算表达式也就是只用加减乘除进行计算的数学表达式） 其实站在我的角度来看，我觉得对数学基本运算">
+<meta property="og:image" content="http://yuehaowang.github.io/images/thumbnails/math_expression_parser.png">
+<meta property="og:updated_time" content="2017-08-02T09:36:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web App：波的叠加演示">
-<meta name="twitter:description" content="最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，">
-<meta name="twitter:image" content="http://yuehaowang.github.io/images/in_posts/wave_superposition_demo1.jpg">
+<meta name="twitter:title" content="C++实现对数学基本运算表达式的解析">
+<meta name="twitter:description" content="前段时间在LeetCode上刷题，遇到了很多涉及对字符串进行解析的题目。可能是出于这个原因，最近迷恋上了字符串的解析问题。数学基本运算表达式的解析就涉及这类问题。所谓数学基本运算表达式的解析就是指给定一个表达式字符串，如1 + 1，3 * 9，对这个字符串进行解析，从而得到这个表达式的运算结果。（数学基本运算表达式也就是只用加减乘除进行计算的数学表达式） 其实站在我的角度来看，我觉得对数学基本运算">
+<meta name="twitter:image" content="http://yuehaowang.github.io/images/thumbnails/math_expression_parser.png">
     
 
     
@@ -208,7 +208,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-webapp-wave-superposition" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-math_expression_parser" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,7 +216,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Web App：波的叠加演示
+            C++实现对数学基本运算表达式的解析
         </h1>
     
 
@@ -225,8 +225,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/04/24/webapp-wave-superposition/">
-            <time datetime="2016-04-23T16:00:00.000Z" itemprop="datePublished">2016-04-24</time>
+        <a href="/2017/08/02/math_expression_parser/">
+            <time datetime="2017-08-01T16:00:00.000Z" itemprop="datePublished">2017-08-02</time>
         </a>
     </div>
 
@@ -234,13 +234,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/App发布/">App发布</a>
+        <a class="article-category-link" href="/categories/C-C/">C/C++</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/App/">App</a>, <a class="tag-link" href="/tags/HTML5/">HTML5</a>, <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/canvas/">canvas</a>, <a class="tag-link" href="/tags/lufylegend/">lufylegend</a>, <a class="tag-link" href="/tags/物理模拟/">物理模拟</a>
+        <a class="tag-link" href="/tags/C-C/">C/C++</a>, <a class="tag-link" href="/tags/数学/">数学</a>
     </div>
 
                     </div>
@@ -251,58 +251,41 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>最近物理学到波的叠加了。什么是波的叠加呢？简而言之，就是两个波传递到相同质点时，对该质点产生的共同作用。<br>课堂上，物理老师使用flash动画为我们演示了正弦波的叠加方式。不过由于演示程序的用户体验不佳、学校电脑较难操作、老师使用不当等种种原因，为了播放这个动画，老师可费了不少功夫。由于我本来就对这部分内容比较感兴趣，所以抽空研究了一下，用HTML5 + JavaScript制作了一个Web App，用于演示波的叠加。截图如下：</p>
-<p><img src="/images/in_posts/wave_superposition_demo1.png" alt="波的叠加演示 截图之一"></p>
+            <p>前段时间在LeetCode上刷题，遇到了很多涉及对字符串进行解析的题目。可能是出于这个原因，最近迷恋上了字符串的解析问题。数学基本运算表达式的解析就涉及这类问题。所谓数学基本运算表达式的解析就是指给定一个表达式字符串，如<code>1 + 1</code>，<code>3 * 9</code>，对这个字符串进行解析，从而得到这个表达式的运算结果。（数学基本运算表达式也就是只用加减乘除进行计算的数学表达式）</p>
+<p>其实站在我的角度来看，我觉得对数学基本运算表达式的解析还是有一定难度的。因为如果一开始没有正确的思路，我们是很难找到这个问题的着手点的，毕竟解析数学基本运算表达式需要考虑到的问题是有点多的，以下，我把其中主要的问题列举出来：</p>
+<ol>
+<li>乘除法优先计算</li>
+<li>括号里的内容优先计算</li>
+<li>表达式中的数字前可能存在正负号</li>
+</ol>
+<p>这些问题如果得不到恰当的处理，就会使解析过程失败。</p>
+<p>在实现解析数学基本运算表达式之前，我们首先得弄清楚哪些表达式是合法的，哪些表达式是不合法的。以下我将列举C/C++等语言中，一些合法与不合法的表达式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 合法 */</span></div><div class="line"><span class="number">7</span> + <span class="number">22</span> + <span class="number">7</span> * <span class="number">27</span></div><div class="line"><span class="number">6</span> + <span class="number">-13</span> * <span class="number">23</span> / <span class="number">-30</span> / <span class="number">35</span></div><div class="line"><span class="number">24</span> - +<span class="number">34</span></div><div class="line"><span class="number">10</span> + (<span class="number">3</span> * <span class="number">9</span>) / <span class="number">8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/* 不合法 */</span></div><div class="line">abc + <span class="number">123</span>  <span class="comment">// abc不是数字</span></div><div class="line"><span class="number">1</span> + <span class="number">2</span> *  <span class="comment">// *后缺少数字</span></div><div class="line"><span class="number">6</span> + + <span class="number">12</span>  <span class="comment">// 不能连用加号</span></div><div class="line"><span class="number">8</span> - - <span class="number">17</span>  <span class="comment">// 不能连用减号</span></div><div class="line"><span class="number">32</span> + () - <span class="number">4</span>  <span class="comment">// 括号中没有内容</span></div><div class="line">(<span class="number">0</span> + <span class="number">5</span>)) * <span class="number">7</span>  <span class="comment">// 右括号多了一个</span></div><div class="line">((<span class="number">11</span> + <span class="number">9</span>) / <span class="number">2</span>  <span class="comment">// 左括号多了一个</span></div></pre></td></tr></table></figure>
+<p>不排除有一些编程语言支持上述所说的部分或者全部不合法表达式，但这里我们先使用C/C++标准。</p>
 <a id="more"></a>
-<p><img src="/images/in_posts/wave_superposition_demo2.png" alt="波的叠加演示 截图之二"><br><img src="/images/in_posts/wave_superposition_demo3.png" alt="波的叠加演示 截图之三"></p>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>点击界面上的“Wave 1”和“Wave 2”按钮，将分别进入调节第一列波和第二列波的界面。<br>Wavelength（波长λ）、Period（周期T）、Amplitude（振幅A）几个滑块控件用于控制波的属性。以下是这几个属性的取值范围：</p>
-<table>
-<thead>
-<tr>
-<th>波长（m）</th>
-<th>周期（s）</th>
-<th>振幅（m）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> [0.6, 5.0]</td>
-<td>[0.2, 2.0]</td>
-<td>[0.6, 2.0]</td>
-</tr>
-</tbody>
-</table>
-<p><strong>注意：1m = 30px</strong></p>
-<p>Delay（延时）用于设定多少时间后波源开始运动；Origin（起源）用于设定波源起始的位置，左／右；Initial Direction（起振方向）用于设置波源开始振动的方向；Available用于设定是否开启这列波。</p>
-<p>调整好以上几个属性后，点击“Start”按钮开始演示；点击“Stop”按钮停止演示；“Reset”按钮用于将以上属性调为初始值。</p>
-<h1 id="兼容平台"><a href="#兼容平台" class="headerlink" title="兼容平台"></a>兼容平台</h1><p>如下表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">iOS</th>
-<th style="text-align:center">Android</th>
-<th style="text-align:center">Google Chrome</th>
-<th style="text-align:center">Firefox</th>
-<th style="text-align:center">Opera</th>
-<th style="text-align:center">Safari</th>
-<th style="text-align:center">IE9+ </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> √</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-</tr>
-</tbody>
-</table>
-<h1 id="技术支持"><a href="#技术支持" class="headerlink" title="技术支持"></a>技术支持</h1><p>GUI使用HTML5 Canvas和<a href="http://lufylegend.com/lufylegend/" target="_blank" rel="external">lufylegend.js</a>引擎</p>
-<h1 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h1><h3 id="在线使用地址-→"><a href="#在线使用地址-→" class="headerlink" title="在线使用地址 →"></a><a href="/demo/wave_superposition/">在线使用地址 →</a></h3><h3 id="Github项目地址-→"><a href="#Github项目地址-→" class="headerlink" title="Github项目地址 →"></a><a href="https://github.com/yuehaowang/wave_superposition" target="_blank" rel="external">Github项目地址 →</a></h3><h3 id="下载地址-→"><a href="#下载地址-→" class="headerlink" title="下载地址 →"></a><a href="/downloads/wave_superposition.zip">下载地址 →</a></h3><h1 id="P-S-（毕业典礼后追加）"><a href="#P-S-（毕业典礼后追加）" class="headerlink" title="P.S. （毕业典礼后追加）"></a>P.S. （毕业典礼后追加）</h1><p>话说这个小工具做出来也有一段时间了，结果我一直拖到毕业典礼才拿去送给了我的物理老师。听到物理老师说了句：<em>你自己做的吗？诶，还是厉害诶～</em>，瞬间觉得成就感MAX，^v^!!</p>
-<p><strong>如果本作出现bug，请及时联系我～</strong></p>
+<h1 id="原理讲解"><a href="#原理讲解" class="headerlink" title="原理讲解"></a>原理讲解</h1><p>由于实现的过程很“绕圈子”，所以我就先把我的实现思路和原理告诉大家，供大家参考。后文会提供相关源代码下载。</p>
+<p>（可能网上有大佬提供了更好、更高效的解析数学表达式方法，不过我认为我的处理方式是非常直白易懂的一种。）</p>
+<p>首先，我们来回忆一下我们做数学计算时的情形：</p>
+<p><strong>第一步</strong> 如果数学运算表达式存在括号的话，我们会率先找到括号里的内容，并将括号里的内容当作一个新的数学表达式进行优先运算。将这个新的数学表达式进行运算后，用得到的结果将括号及括号间的内容替换掉。当我们把所有括号里的内容都用相应的结果替换掉后，就能得到原先数学表达式消去括号后的简化式子，然后我们再对这个式子进行处理。例如原有的数学式<code>7 * (5 + 3)</code>，进行消去括号的处理后，就得到了<code>7 * 8</code>，接下来我们再对这个式子进行解析和计算，就能得到答案。</p>
+<p><strong>第二步</strong> 消去括号的数学基本运算表达式就只剩加减乘除符号以及数字、小数点（如果有小数的话）了。由于乘法和除法要优先运算，如果式子中有这两种运算的话，我们就要率先在式子中进行乘法运算和除法运算。运算的过程中，我们采用的做法同样是把运算得到的结果替换掉原来的运算式子。如下计算过程示例可能会让你重拾这一过程：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">7</span> + <span class="number">18</span> * <span class="number">5</span> / <span class="number">9</span></div><div class="line">  |</div><div class="line">  v</div><div class="line"><span class="number">7</span> + <span class="number">90</span> / <span class="number">9</span></div><div class="line">  |</div><div class="line">  v</div><div class="line"><span class="number">7</span> + <span class="number">10</span></div></pre></td></tr></table></figure>
+<p><strong>第三步</strong> 进行完前两步的处理，剩下的式子就只有加减符号以及数字、小数点（如果有小数的话）了。用和第二步中类似的做法进行计算，最后，式子就化成了数字，这个数字就是我们的答案。以第二步示例中最后得到的式子为例，<code>7 + 10</code>运算得到<code>17</code>，17就是最后的答案。</p>
+<p>现在，我们回忆完了平日里我们进行数学计算的步骤，其实这就是一个对表达式逐渐化简的过程。接下来我们就要从这些步骤中构思我们的解析算法。</p>
+<p>在第一步中，我们提到了对括号里的内容进行优先计算。但是我们可能会遇到括号套括号的问题。但是正如第一步中所说，我们可以把括号里的式子当作新的一个式子来处理，对于新的式子又可以采用第一步到第三步的方式依次进行处理得到结果。这样一来就形成了一种递归关系。所以，我们只用实现如下几个接口，就能完成对数学基本运算式的解析：</p>
+<ul>
+<li>接口A：处理运算式的统一接口</li>
+<li>接口B：处理括号的接口</li>
+<li>接口C：处理运算符的接口，一次可处理两种运算符号（因为四则运算符号可以分成 乘除一组，加减一组）</li>
+<li>接口D：基本运算接口，即针对两个数字之间四则运算的接口</li>
+<li>接口E：处理字符串的一个接口集合，提供了剔除字符串左右空白或者所有空白的接口、<code>float</code>与<code>std::string</code>相互转化的接口（为了方便小数计算，使用<code>float</code>类型）</li>
+</ul>
+<p>第一步用接口B来完成，第二、三步用接口C来完成。接口C中使用接口D来进行结果运算，即接口C进行的操作是找到运算符并获取运算符两边的数字，然后交给接口D对这两个数字按照找到的运算符进行计算，再将得到的计算结果替换掉式子中相应的部分。而接口E为前几个接口提供辅助功能。</p>
+<p>接口A是调用其他接口的一个入口。接口A~D的伪代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">interface_A</span> <span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; <span class="built_in">exp</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// 剔除表达式字符串的左右空白</span></div><div class="line">	<span class="built_in">string</span> __exp = interface_E(<span class="built_in">exp</span>);</div><div class="line"></div><div class="line">	<span class="comment">// 处理括号</span></div><div class="line">	interface_B(__exp);</div><div class="line">	</div><div class="line">	<span class="comment">// 处理乘法除法运算</span></div><div class="line">	interface_C(__exp, pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;(<span class="string">'*'</span>, <span class="string">'/'</span>));</div><div class="line">	<span class="comment">// 处理加法减法运算</span></div><div class="line">	interface_C(__exp, pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;(<span class="string">'+'</span>, <span class="string">'-'</span>));</div><div class="line"></div><div class="line">	<span class="comment">// 将`std::string`转化为`float`</span></div><div class="line">	<span class="keyword">float</span> res = interface_E(__exp);</div><div class="line"></div><div class="line">	<span class="comment">// 返回结果</span></div><div class="line">	<span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">interface_B</span> <span class="params">(<span class="built_in">string</span>&amp; <span class="built_in">exp</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span> 遍历`<span class="built_in">exp</span>` &#123;</div><div class="line">		<span class="keyword">if</span> 遇到括号 &#123;</div><div class="line">			<span class="built_in">string</span> content = 获取括号内容;</div><div class="line"></div><div class="line">			<span class="comment">// 将括号里的内容作为新的表达式处理</span></div><div class="line">			<span class="keyword">int</span> val = interface_A(content);</div><div class="line">			<span class="comment">// 将`float`转化为`std::string`</span></div><div class="line">			<span class="built_in">string</span> valStr = interface_E(val);</div><div class="line"></div><div class="line">			将`<span class="built_in">exp</span>`括号部分替换为valStr;</div><div class="line">			更新`<span class="built_in">exp</span>`长度和遍历的下标位置;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">interface_C</span> <span class="params">(<span class="built_in">string</span>&amp; <span class="built_in">exp</span>, pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; operators)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span> 遍历`<span class="built_in">exp</span>` &#123;</div><div class="line">		<span class="keyword">if</span> 遇到operators中的运算符 &#123;</div><div class="line">			<span class="built_in">string</span> strVal1 = 获取进行计算的数字<span class="number">1</span>;</div><div class="line">			<span class="built_in">string</span> strVal2 = 获取进行计算的数字<span class="number">2</span>;</div><div class="line"></div><div class="line">			<span class="comment">// 获取计算结果</span></div><div class="line">			<span class="keyword">float</span> v = interface_D(strVal1, 运算符, strVal2);</div><div class="line">			<span class="comment">// 将`float`转化为`std::string`</span></div><div class="line">			<span class="built_in">string</span> valStr = interface_E(v);</div><div class="line"></div><div class="line">			将`<span class="built_in">exp</span>`括号部分替换为valStr;</div><div class="line">			更新`<span class="built_in">exp</span>`长度和遍历的下标位置;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">interface_D</span> <span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; s1, <span class="keyword">const</span> <span class="built_in">string</span>&amp; _operator, <span class="keyword">const</span> <span class="built_in">string</span>&amp; s2)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// 将`std::string`转化为`float`</span></div><div class="line">	<span class="keyword">float</span> n1 = interface_E(s1);</div><div class="line">	<span class="keyword">float</span> n2 = interface_E(s2);</div><div class="line"></div><div class="line">	根据运算符_operator进行n1 n2之间的计算;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（至于接口E，由于是一个提供辅助功能的接口集，所以上面的伪代码中没有给出。具体实现方法请参考后文给出的源代码）</p>
+<h1 id="源代码下载"><a href="#源代码下载" class="headerlink" title="源代码下载"></a>源代码下载</h1><p>上文仅提供了伪代码，也就是只有骨架还没有血肉。下面是我的实现代码，欢迎各位下载：</p>
+<h3 id="源代码下载-1"><a href="#源代码下载-1" class="headerlink" title="源代码下载"></a><a href="/downloads/math_expression_parser.zip">源代码下载</a></h3><p>当然，各位读者也可以根据我前面的原理讲解自行实现算法。</p>
+<p><strong>欢迎大家提出疑问以及探讨相关话题～</strong></p>
 
 
 
@@ -310,7 +293,7 @@
 
 	<div style="margin-top: 60px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; background: #F9F9F9; border-left: 3px orangered solid;">
 		<b style="display: block; height: 30px;">版权声明：本文为博主原创文章，转载请注明出处</b>
-		<a href="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/">http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/</a>
+		<a href="http://yuehaowang.github.io/2017/08/02/math_expression_parser/">http://yuehaowang.github.io/2017/08/02/math_expression_parser/</a>
 	</div>
 
 
@@ -325,7 +308,7 @@
 
 </div>
 
-    <a data-url="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/" data-id="cj56jfkra000r70tc9jnn0i9y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yuehaowang.github.io/2017/08/02/math_expression_parser/" data-id="cj5ui5srm0000djtcqfdhzk5p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -393,7 +376,7 @@
 
             
     
-        <a href="http://yuehaowang.github.io/2016/04/24/webapp-wave-superposition/#comments" class="article-comment-link">评论</a>
+        <a href="http://yuehaowang.github.io/2017/08/02/math_expression_parser/#comments" class="article-comment-link">评论</a>
     
 
         </footer>
@@ -402,19 +385,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/05/21/derivative-of-sinx/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    证明：sin&#39;x = cosx
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/03/26/js-calcu-pi/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/10/simple_http_local_server_with_nodejs/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">JavaScript计算圆周率（解析几何+定积分）</div>
+            <div class="article-nav-title">NodeJs开发简易的Http本地服务器</div>
         </a>
     
 </nav>
