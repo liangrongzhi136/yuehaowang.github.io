@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>0. 概况</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/uikit.min.js"></script>
+		<script src="./js/uikit-icons.min.js"></script>
+		<style type="text/css">
+			pre {
+				color: #222222;
+				background: #EFEFEF;
+				padding: 25px 15px;
+			}
+
+			blockquote {
+				background: #F4F4F4;
+				border-left: #777777 5px solid;
+				padding: 20px;
+			}
+
+			#index-list {
+				position: fixed;
+				overflow: auto;
+				padding-top: 30px;
+			}
+
+			#index-list ul {
+				margin-left: 20px;
+				width: 240px;
+			}
+
+			#content {
+				padding-top: 30px;
+			}
+
+			@media (min-width: 960px) {
+				#content {
+					margin-left: 240px;
+					border-left: 2px dashed #BBBBBB;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="nav" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+			<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+				<div class="uk-navbar-left uk-margin-small-left">
+					<a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #menu"></a>
+					<b class="uk-navbar-item uk-logo">lufylegend 入门教程</b>
+				</div>
+			</nav>
+		</div>
+
+		<div id="doc-body">
+			<div id="index-list" class="uk-visible@m">
+				<ul class="uk-list">
+					<li><h4><span uk-icon="icon: list; ratio: 1.4"></span> INDEX</h4></li>
+					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图片显示.html'><span uk-icon='icon: nut'></span> 2. 图片显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
+				</ul>
+			</div>
+
+			<div id="content" class="uk-container uk-position-relative uk-padding-medium">
+				<h1 id="">概况</h1>
+<h2 id="-1">简介</h2>
+<p>lufylegend是一个HTML5开源引擎,它实现了利用仿ActionScript3.0的语法进行HTML5的开发， 包含了LSprite，LBitmapData，LBitmap，LLoader，LURLLoader，LTextField，LEvent等多个AS开发人员熟悉的类， 支持Google Chrome，Firefox，Opera，IE9，IOS，Android等多种热门环境。 利用lufylegend可以轻松的使用面向对象编程，并且可以配合Box2dWeb制作物理游戏， 另外它还内置了LTweenLite缓动类等非常实用的功能, 现在开始使用它吧，它可以让你更快的进入HTML5的世界！</p>
+<h2 id="-2">展柜</h2>
+<p>使用lufylegend开发出来的作品也不少，以下展示其中几个典型的作品：</p>
+<h3 id="httpsgjlufylegendcom"><a href="http://sgj.lufylegend.com/">三国记</a></h3>
+<p><strong>说明：</strong>三国记是一款以三国时期为背景的战略类游戏，玩家可以任选一名君主，以统一全国为目标。</p>
+<div class="uk-width-large">
+    <img src="http://images.cnblogs.com/cnblogs_com/yorhom/1056489/o_sanguoji.jpg" alt="三国记">
+</div>
+<h3 id="httpmqunheicomgameservergid3538html"><a href="http://m.qunhei.com/game/server/gid/3538.html">三国记-激斗</a></h3>
+<p><strong>说明：</strong>一款手机网游。三国记的番外。</p>
+<div class="uk-width-medium">
+    <img src="http://images.cnblogs.com/cnblogs_com/yorhom/1056489/o_sanguoji_jidou.png" alt="三国记-激斗">
+</div>
+<h3 id="flyingstonehttpwyhwjjsoftcompagesflying_stone"><a href="http://wyh.wjjsoft.com/pages/flying_stone/">Flying Stone</a></h3>
+<p><strong>说明：</strong>Flying Stone是一款益智类+物理运动模拟类游戏。游戏中，玩家通过轻敲屏幕，抛出系在旋转杆上的石头来攻击飞出的小鸟，以此得分。不同难度的小鸟，击中后得分也有所不同。游戏限时90秒，游戏结束后会上传你的得分，并得到你的全世界排行。</p>
+<div class="uk-width-large">
+    <img src="http://images.cnblogs.com/cnblogs_com/yorhom/1056489/o_flying_stone_poster.png" alt="Flying Stone">
+</div>
+<h2 id="-3">学习资料</h2>
+<p>除开此入门教程，以下是lufylegend学习之旅中的几个重要网站。</p>
+<p><strong>官方网站</strong></p>
+<p><a href="http://lufylegend.com/lufylegend">http://lufylegend.com/lufylegend</a></p>
+<p>下载lufylegend，文档，示例，更新日志……全面的信息尽在官网～</p>
+<p><strong>API文档</strong></p>
+<p><a href="http://lufylegend.com/lufylegend/api">http://lufylegend.com/lufylegend/api</a></p>
+<p>阅读完此入门教程，想要深入学习lufylegend，阅读API文档是非常必要的。</p>
+<p><strong>引擎论坛</strong></p>
+<p><a href="http://lufylegend.com/forum/forum.php">http://lufylegend.com/forum/forum.php</a></p>
+<p>有不懂的问题，大家尽量去逛逛论坛，说不定你的问题别人已经提到过了～实在找不到答案，可以发起新的帖子，会有引擎作者lufy前辈和热心的网友为你耐心解答的。同时，你也可以在论坛汇报Bug。有时也会有用户发布自己用lufylegend制作的游戏或者使用教程。</p>
+<blockquote>
+  <p>发帖前请先去新人报道帖中报道。发帖的时候，注意不要写太多的错别字，语句要通顺，问题描述尽量详细易懂，标题也要尽量简洁明了，这样可以方便大家回答你的问题，同时，前来寻找类似问题的同伴们也能更快的找到他们想要的帖子。</p>
+</blockquote>
+<p><strong>博客教程</strong></p>
+<p>lufy的博客：<a href="http://blog.csdn.net/lufy_legend">http://blog.csdn.net/lufy_legend</a></p>
+<p>Yorhom的博客：<a href="http://blog.csdn.net/yorhomwang">http://blog.csdn.net/yorhomwang</a></p>
+<p>上面的博客中含有许多关于使用lufylegend进行开发的教程，你可以通过阅读这些教程来增强你对lufylegend的认识。</p>
+<p><strong>Github项目地址</strong></p>
+<p><a href="https://github.com/lufylegend/lufylegend.js">https://github.com/lufylegend/lufylegend.js</a></p>
+<p>学习引擎源码的首选之地～</p>
+<p>除了在线学习以外，你也可以通过阅读图书来学习lufylegend：<strong><a href="http://lufylegend.com/book/view/1">HTML5 Canvas游戏开发实战</a></strong></p>
+<h2 id="-4">库件的使用流程</h2>
+<p>lufylegend库件的使用方法的使用非常简单：</p>
+<ol>
+<li>从<a href="http://lufylegend.com/lufylegend">官方网站</a>下载库件最新版。压缩包内包含lufylegend-x.x.x.js和lufylegend-x.x.x.min.js两个完整版本，还有lufylegend-x.x.x.simple.js和lufylegend-x.x.x.simple.min.js两个缩减版本，***.min是去除了回车和空格的压缩版本。
+simple缩减版本与完整版本的区别在于，将LBox2d，LQuadTree，LTransitionManager，LoadingSample1，LoadingSample2，LoadingSample3，LoadingSample4，LoadingSample5 等几个类与引擎的常用部分分离，缩减了引擎的体积。如果用到了被分离的部分的功能的话，可以进行手动加载。</li>
+<li>在html中将库件引入。</li>
+<li>调用LInit函数，初始化库件。</li>
+</ol>
+<p>上面仅是简单的流程介绍，从下章开始，我们将从零开始学习如何使用lufylegend进行游戏开发。</p>
+
+				<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
+				<h3>Latest update: Fri Aug 11 2017</h3>
+				<h3>Written by Yorhom.</h3><br />
+			</div>
+		</div>
+		
+		<div id="menu" class="uk-hidden@m" uk-offcanvas="mode: push; overlay: true">
+			<div class="uk-offcanvas-bar uk-flex uk-flex-column">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<ul class="uk-nav">
+					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
+					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图片显示.html'><span uk-icon='icon: nut'></span> 2. 图片显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
