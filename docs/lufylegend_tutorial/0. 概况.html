@@ -5,14 +5,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="./css/uikit.min.css" />
+		<link rel="stylesheet" href="./css/github.css">
+		<script src="./js/highlight.pack.js"></script>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/uikit.min.js"></script>
 		<script src="./js/uikit-icons.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 		<style type="text/css">
 			pre {
-				color: #222222;
-				background: #EFEFEF;
-				padding: 25px 15px;
+				border: none;
+			}
+
+			code {
+				border-radius: 5px;
+				padding: 10px;
 			}
 
 			blockquote {
@@ -60,15 +66,19 @@
 				<ul class="uk-list">
 					<li><h4><span uk-icon="icon: list; ratio: 1.4"></span> INDEX</h4></li>
 					<br />
-					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图片显示.html'><span uk-icon='icon: nut'></span> 2. 图片显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
+					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图像显示.html'><span uk-icon='icon: nut'></span> 2. 图像显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
 				</ul>
 			</div>
 
 			<div id="content" class="uk-container uk-position-relative uk-padding-medium">
 				<h1 id="">概况</h1>
 <h2 id="-1">简介</h2>
+<h3 id="-2">引擎介绍</h3>
 <p>lufylegend是一个HTML5开源引擎,它实现了利用仿ActionScript3.0的语法进行HTML5的开发， 包含了LSprite，LBitmapData，LBitmap，LLoader，LURLLoader，LTextField，LEvent等多个AS开发人员熟悉的类， 支持Google Chrome，Firefox，Opera，IE9，IOS，Android等多种热门环境。 利用lufylegend可以轻松的使用面向对象编程，并且可以配合Box2dWeb制作物理游戏， 另外它还内置了LTweenLite缓动类等非常实用的功能, 现在开始使用它吧，它可以让你更快的进入HTML5的世界！</p>
-<h2 id="-2">展柜</h2>
+<p>lufylegend目前仅支持Canvas渲染，不过在未来会推出WebGL渲染模式，敬请期待～</p>
+<h3 id="-3">教程介绍</h3>
+<p>本教程是lufylegend的入门教程。无论你之前是否从事过游戏开发，本教程都会引导你一步一步地探索lufylegend，从而成为一名HTML5游戏开发者。在开始学习之前，你需要有一定的HTML和JavaScript基础，能使用HTML写出像样的网站，以及能够调试JavaScript程序并且对JavaScript的面向对象编程有所了解。关于HTML和JavaScript的教程请自行百度／Google，网上有成堆的教程。此外，本教程中统一使用最新版本的lufylegend，如果你在使用本教程中的代码进行学习时，浏览器提示报错，请检查是否使用的是最新版本引擎。</p>
+<h2 id="-4">展柜</h2>
 <p>使用lufylegend开发出来的作品也不少，以下展示其中几个典型的作品：</p>
 <h3 id="httpsgjlufylegendcom"><a href="http://sgj.lufylegend.com/">三国记</a></h3>
 <p><strong>说明：</strong>三国记是一款以三国时期为背景的战略类游戏，玩家可以任选一名君主，以统一全国为目标。</p>
@@ -85,7 +95,7 @@
 <div class="uk-width-large">
     <img src="http://images.cnblogs.com/cnblogs_com/yorhom/1056489/o_flying_stone_poster.png" alt="Flying Stone">
 </div>
-<h2 id="-3">学习资料</h2>
+<h2 id="-5">学习资料</h2>
 <p>除开此入门教程，以下是lufylegend学习之旅中的几个重要网站。</p>
 <p><strong>官方网站</strong></p>
 <p><a href="http://lufylegend.com/lufylegend">http://lufylegend.com/lufylegend</a></p>
@@ -97,7 +107,7 @@
 <p><a href="http://lufylegend.com/forum/forum.php">http://lufylegend.com/forum/forum.php</a></p>
 <p>有不懂的问题，大家尽量去逛逛论坛，说不定你的问题别人已经提到过了～实在找不到答案，可以发起新的帖子，会有引擎作者lufy前辈和热心的网友为你耐心解答的。同时，你也可以在论坛汇报Bug。有时也会有用户发布自己用lufylegend制作的游戏或者使用教程。</p>
 <blockquote>
-  <p>发帖前请先去新人报道帖中报道。发帖的时候，注意不要写太多的错别字，语句要通顺，问题描述尽量详细易懂，标题也要尽量简洁明了，这样可以方便大家回答你的问题，同时，前来寻找类似问题的同伴们也能更快的找到他们想要的帖子。</p>
+  <p>发帖前请先去新人报道帖中报道，否则没有发帖的权限。发帖的时候，注意不要写太多的错别字，语句要通顺，问题描述尽量详细易懂，标题也要尽量简洁明了，这样可以方便大家回答你的问题，同时，前来寻找类似问题的同伴们也能更快的找到他们想要的帖子。</p>
 </blockquote>
 <p><strong>博客教程</strong></p>
 <p>lufy的博客：<a href="http://blog.csdn.net/lufy_legend">http://blog.csdn.net/lufy_legend</a></p>
@@ -107,18 +117,14 @@
 <p><a href="https://github.com/lufylegend/lufylegend.js">https://github.com/lufylegend/lufylegend.js</a></p>
 <p>学习引擎源码的首选之地～</p>
 <p>除了在线学习以外，你也可以通过阅读图书来学习lufylegend：<strong><a href="http://lufylegend.com/book/view/1">HTML5 Canvas游戏开发实战</a></strong></p>
-<h2 id="-4">库件的使用流程</h2>
-<p>lufylegend库件的使用方法的使用非常简单：</p>
-<ol>
-<li>从<a href="http://lufylegend.com/lufylegend">官方网站</a>下载库件最新版。压缩包内包含lufylegend-x.x.x.js和lufylegend-x.x.x.min.js两个完整版本，还有lufylegend-x.x.x.simple.js和lufylegend-x.x.x.simple.min.js两个缩减版本，***.min是去除了回车和空格的压缩版本。
-simple缩减版本与完整版本的区别在于，将LBox2d，LQuadTree，LTransitionManager，LoadingSample1，LoadingSample2，LoadingSample3，LoadingSample4，LoadingSample5 等几个类与引擎的常用部分分离，缩减了引擎的体积。如果用到了被分离的部分的功能的话，可以进行手动加载。</li>
-<li>在html中将库件引入。</li>
-<li>调用LInit函数，初始化库件。</li>
-</ol>
-<p>上面仅是简单的流程介绍，从下章开始，我们将从零开始学习如何使用lufylegend进行游戏开发。</p>
+<h2 id="-6">库件包介绍</h2>
+<p>首先从<a href="http://lufylegend.com/lufylegend">官方网站</a>下载库件最新版。解开下载好的压缩包后，你将得到一个库件目录。</p>
+<p>库件包内包含lufylegend-x.x.x.js和lufylegend-x.x.x.min.js两个完整版本，还有lufylegend-x.x.x.simple.js和lufylegend-x.x.x.simple.min.js两个缩减版本，***.min是去除了回车和空格的压缩版本。</p>
+<p>simple缩减版本与完整版本的区别在于，将LBox2d，LQuadTree，LTransitionManager，LoadingSample1，LoadingSample2，LoadingSample3，LoadingSample4，LoadingSample5 等几个类与引擎的常用部分分离，缩减了引擎的体积。如果用到了被分离的部分的功能的话，可以进行手动加载。</p>
+<p>除了上面几个库件.js文件，下载包含的api.html是API手册，examples/包含了一些示例，src/是引擎源代码，lib/是一些附加库件，比如上面提到的LBox2d，LQuadTree，LTransitionManager等，README.md是说明文件。</p>
 
 				<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
-				<h3>Latest update: Fri Aug 11 2017</h3>
+				<h3>Latest update: Sat Aug 12 2017</h3>
 				<h3>Written by Yorhom.</h3><br />
 			</div>
 		</div>
@@ -129,7 +135,7 @@ simple缩减版本与完整版本的区别在于，将LBox2d，LQuadTree，LTran
 
 				<ul class="uk-nav">
 					<li class="uk-nav-header"><h2><span uk-icon="icon: list; ratio: 2"></span> INDEX</h2></li>
-					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图片显示.html'><span uk-icon='icon: nut'></span> 2. 图片显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
+					<li class='uk-active'><a href='./0. 概况.html'><span uk-icon='icon: chevron-right'></span> 0. 概况</a></li><li ><a href='./1. Hello World.html'><span uk-icon='icon: nut'></span> 1. Hello World</a></li><li ><a href='./2. 图像显示.html'><span uk-icon='icon: nut'></span> 2. 图像显示</a></li><li ><a href='./3. 层次化.html'><span uk-icon='icon: nut'></span> 3. 层次化</a></li><li ><a href='./4. 鼠标事件.html'><span uk-icon='icon: nut'></span> 4. 鼠标事件</a></li><li ><a href='./5. 时间轴事件.html'><span uk-icon='icon: nut'></span> 5. 时间轴事件</a></li>
 				</ul>
 			</div>
 		</div>
