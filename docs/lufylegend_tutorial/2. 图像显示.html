@@ -72,10 +72,103 @@
 
 			<div id="content" class="uk-container uk-position-relative uk-padding-medium">
 				<h1 id="">图像显示</h1>
-<h2 id="-1">编写中...</h2>
+<h2 id="-1">加载图像</h2>
+<p>在显示图像之前，我们得先对图像进行加载。在lufylegend中，加载图片是异步的，这样可以避免界面因加载时间过长而卡住。lufylegend的图片加载器是LLoader，它一次只能加载单张图片，如果我们游戏中的图片资源有点多，那么这时候使用LLoadManage才是最佳选择。接下来我们分别来学习一下这两个加载器。</p>
+<h3 id="lloader">LLoader</h3>
+<p>LLoader使用时需要先进行实例化，然后添加加载完成事件（事件的概念见“概况”一章），最后调用一下加载方法进行加载。资源加载完成后，会自动调用加载完成事件对应的回调函数，我们显示图片的代码写在这个回调函数中就可以了。如下：</p>
+<pre><code class="javascript language-javascript">LInit(1000 / 60, "mylegend", 800, 450, main);
+
+function main(){
+    var loader = new LLoader();
+    loader.addEventListener(LEvent.COMPLETE, onComplete); 
+    loader.load("img1.png", LLoader.TYPE_BITMAPDATE);
+}
+
+function onComplete (event) {
+    // 显示图片的代码
+}
+</code></pre>
+<p>load方法有三个参数，第一个是图片路径，第二个是资源类型，目前只能填写LLoader.TYPE_BITMAPDATE，第三个是是否使用XHR，一般对这个参数不进行设置，默认为false。</p>
+<h3 id="lloadmanage">LLoadManage</h3>
+<p>LLoadManage是一个静态类，使用时不用进行实例化。LLoadManage的方便之处在于可以批量加载资源，不仅是图片，就连.js文件，音频文件等，LLoadManage都可以对它们进行加载。这一章我们就只加载图片，加载其他类型资源的方式和加载图片的方式类似。使用LLoadManage前，你需要先准备一个用于保存加载结果的列表，以及一个加载列表。以下是示例：</p>
+<pre><code class="javascript language-javascript">LInit(1000 / 60, "mylegend", 800, 450, main);
+
+// 保存加载结果的列表，一个Object
+var datalist = {};
+
+function main(){
+    // 加载列表，一个Array
+    var loadList = [
+        {name : "img1", path : "img1.png"},
+        {name : "img2", path : "img2.png"},
+        {name : "img3", path : "img3.png"}
+    ];
+
+    LLoadManage.load(loadList, null, function (res) {
+        datalist = res;
+
+        // 显示图片的代码
+    });
+}
+</code></pre>
+<p>加载列表中的成员是一个Object，大致格式为<code>{name : "resource_name", path : "file_path", type : "resource_type"}</code>。
+其中的type和name可以省略不写。带有name属性的加载列表成员，在加载完成后将会被添加进加载结果列表中，使用datalist["resource_name"]进行对资源内容的获取。通常情况下，.js文件等资源不需要在加载后对内容进行获取，所以可以不加name属性。而type属性在不写的情况下，加载器会根据文件后缀名来自动判断资源类型。（请参考<a href="http://lufylegend.com/api/zh_CN/out/classes/LLoadManage.html">LLoadManage API文档</a>）</p>
+<p>LLoadManage.load静态方法也是有三个参数的，第一个是加载列表，第二个是加载过程中调用的函数，一般用来显示加载进度，第三个是加载完成时调用的函数。这里我们先抛开显示加载进度，填写了另外两个参数。加载完成时调用的函数会在被调用时接到一个参数，这个参数就是加载结果列表，这时我们需要把它保存到一个利于访问的变量中，方便我们之后从中获取资源内容。</p>
+<h2 id="-2">显示加载完成的图像</h2>
+<p>现在我们完成了第一步：加载图像。之后我们就要开始显示了。显示图像需要两个类：LBitmapData，LBitmap，前者是图像数据对象，而后者才是图像显示对象。具体用法如下：</p>
+<pre><code class="javascript language-javascript">var bitmapdata = new LBitmapData(loadedImg);  
+var bitmap = new LBitmap(bitmapdata);
+addChild(bitmap);
+</code></pre>
+<p>上面代码中，首先我们需要使用一个加载完成了的图片资源（loadedImg）来实例化LBitmapData，然后用这个LBitmapData实例化出来一个LBitmap对象，最后将LBitmap对象加入到显示列表。使用LLoader和使用LLoadManage的主要区别在于如何获取加载完成了的图片资源。</p>
+<p>首先来看如果是LLoader，显示图像的代码如下：</p>
+<pre><code class="javascript language-javascript">LInit(1000 / 60, "mylegend", 800, 450, main);
+
+function main(){
+    var loader = new LLoader();
+    loader.addEventListener(LEvent.COMPLETE, onComplete); 
+    loader.load("img1.png", LLoader.TYPE_BITMAPDATE);
+}
+
+function onComplete (event) {
+    var bitmapdata = new LBitmapData(event.target);  
+    var bitmap = new LBitmap(bitmapdata);
+    addChild(bitmap);
+}
+</code></pre>
+<p>加载完成事件对应的回调函数会接收到一个参数，这个参数我们一般命名为event，通过event.target我们可以获取事件携带的数据，这里的数据就是加载完成了的图片资源，event.currentTarget可以获取事件发出者，这里我们的事件发出者是一个LLoader对象。（其他的事件也有类似的用法，后续章节会有相应的讲解）</p>
+<p>此外，LLoader对象的content属性也能用于获取加载完成了的图片资源。</p>
+<p>接下来是用LLoadManage加载资源的情况下，显示图片的示例：</p>
+<pre><code class="javascript language-javascript">LInit(1000 / 60, "mylegend", 800, 450, main);
+
+// 保存加载结果的列表，一个Object
+var datalist = {};
+
+function main(){
+    // 加载列表，一个Array
+    var loadList = [
+        {name : "img1", path : "img1.png"},
+        {name : "img2", path : "img2.png"},
+        {name : "img3", path : "img3.png"}
+    ];
+
+    LLoadManage.load(loadList, null, function (res) {
+        datalist = res;
+
+        var bitmapdata = new LBitmapData(datalist["img1"]);
+        var bitmap = new LBitmap(bitmapdata);
+        addChild(bitmap);
+    });
+}
+</code></pre>
+<blockquote>
+  <p>测试上面的代码，请在项目目录下添加相应的图片文件。</p>
+</blockquote>
+<p>LBitmap也适用x y，scaleX scaleY，rotate属性，你可以更改这些属性然后运行代码查看效果。当然也有特别的一些用法。参考<a href="http://lufylegend.com/api/zh_CN/out/classes/LBitmap.html">LBitmap API文档</a>。</p>
+<p>LBitmapData作为LBitmap的数据存储类，也提供了很多有用的功能，比如像素操作，参考<a href="http://lufylegend.com/api/zh_CN/out/classes/LBitmapData.html">LBitmapData API文档</a>。</p>
 
 				<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
-				<h3>Latest update: Sat Aug 12 2017</h3>
+				<h3>Latest update: Wed Aug 16 2017</h3>
 				<h3>Written by Yorhom.</h3><br />
 			</div>
 		</div>

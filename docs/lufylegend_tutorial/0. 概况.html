@@ -122,9 +122,17 @@
 <p>库件包内包含lufylegend-x.x.x.js和lufylegend-x.x.x.min.js两个完整版本，还有lufylegend-x.x.x.simple.js和lufylegend-x.x.x.simple.min.js两个缩减版本，***.min是去除了回车和空格的压缩版本。</p>
 <p>simple缩减版本与完整版本的区别在于，将LBox2d，LQuadTree，LTransitionManager，LoadingSample1，LoadingSample2，LoadingSample3，LoadingSample4，LoadingSample5 等几个类与引擎的常用部分分离，缩减了引擎的体积。如果用到了被分离的部分的功能的话，可以进行手动加载。</p>
 <p>除了上面几个库件.js文件，下载包含的api.html是API手册，examples/包含了一些示例，src/是引擎源代码，lib/是一些附加库件，比如上面提到的LBox2d，LQuadTree，LTransitionManager等，README.md是说明文件。</p>
+<h2 id="-7">基本概念</h2>
+<h3 id="displayobject">显示对象（DisplayObject）</h3>
+<p>显示对象是lufylegend中一个十分重要的元素，顾名思义，显示对象就是可以被显示到界面上的对象。如果你了解过Unity，那你可以把它看作GameObject，当然二者也是有一定区别的。显示对象其实是一个抽象概念，而文本对象，图像对象，矢量图对象等则是对其进行了具体的实现，比如文本对象实现了显示文本的功能，图像对象实现了绘制图像的功能。任何的显示对象都有一些公用的属性，比如x y属性，用于控制显示的位置，scaleX scaleY属性用于控制拉伸的尺度，rotate属性用于控制旋转。创建显示对象一般通过实例化一些显示对象类。常用的显示对象类有LSprite，LBitmap，LTextField，LGraphics。</p>
+<h3 id="-8">显示列表</h3>
+<p>创建好了的显示对象还无法被显示出来，这时候需要将显示对象添加到显示列表中。显示列表其实就是一个数组。引擎会定期对界面进行重画，这个重画的过程中就有遍历显示列表并重画每一个显示对象的子过程。lufylegend中将显示对象加入到显示列表中的标准用法是调用addChild方法，它接受一个参数，这个参数就是需要添加进显示列表的对象。你也可以简单地将显示列表理解为一个游戏层。</p>
+<h3 id="event">事件（Event）</h3>
+<p>lufylegend事件和HTML事件的作用几乎完全相同，都是用于在一定的情景下触发事件执行指定的操作。比如我们希望鼠标点击界面后，执行输出操作，那么这时候就需要监听鼠标事件，并绑定事件监听器（也就是事件触发后执行的操作，这里就是输出操作），当鼠标按下后就会触发这个事件，执行这个事件的监听器。给对象添加事件的方法通常是addEventListener，这个方法接受两个参数，第一个是事件类型，第二个是事件触发时需要调用的回调函数。</p>
+<p><strong>对以上的概念有了一定的了解之后，阅读此后的章节会更加轻松。</strong></p>
 
 				<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
-				<h3>Latest update: Sat Aug 12 2017</h3>
+				<h3>Latest update: Wed Aug 16 2017</h3>
 				<h3>Written by Yorhom.</h3><br />
 			</div>
 		</div>

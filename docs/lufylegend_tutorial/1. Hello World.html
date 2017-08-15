@@ -117,12 +117,8 @@ function main () {
 </code></pre>
 <p>在浏览器中打开／刷新index.html，如果浏览器弹出写有“初始化完成！”的对话框，那说明你的代码运行成功了。</p>
 <h2 id="-2">显示文本</h2>
-<p>现在我们来用lufylegend来完成一个古老而经典的小程序——Hello World。首先我们来了解一下显示对象这一概念。</p>
-<h3 id="displayobject">显示对象（DisplayObject）</h3>
-<p>显示对象是lufylegend中一个十分重要的元素。如果你了解过Unity，那你可以把它看作GameObject，当然二者也是有一定区别的。显示对象其实是一个抽象概念，而文本对象，图像对象，矢量图对象等则是对其进行了具体的实现，比如文本对象实现了显示文本的功能，图像对象实现了绘制图像的功能。任何的显示对象都有一些公用的属性，比如x y属性，用于控制显示的位置，scaleX scaleY属性用于控制拉伸的尺度，rotate属性用于控制旋转。</p>
-<p>这里我们需要显示文本，所以需要的是文本对象。</p>
-<h3 id="ltextfield">LTextField文本类</h3>
-<p>为了得到文本对象，我们需要对LTextField类进行实例化，并将其加入到显示列表中，显示对象只有被加入到了显示列表中才能被渲染出来，将显示对象加入到显示列表使用addChild函数。仅经过实例化的LTextField对象不能显示内容，需要对其设置text属性。以下是示例：</p>
+<p>现在我们来用lufylegend来完成一个古老而经典的小程序——Hello World。这里就需要用到上一章提到的显示对象这一概念了。一脸懵逼？赶紧去上一章补一补吧。这里我们需要显示文本，所以需要的是文本对象。</p>
+<p>为了得到文本对象，我们需要对LTextField类进行实例化，并将其加入到显示列表中，显示对象只有被加入到了显示列表中才能被渲染出来，将显示对象加入到最底层显示列表使用全局的addChild函数。仅经过实例化的LTextField对象不能显示内容，需要对其设置text属性。更改main函数中的代码为如下代码：</p>
 <pre><code class="javascript language-javascript">var txtObj = new LTextField();
 txtObj.text = "Hello World!";
 addChild(txtObj);
@@ -148,14 +144,14 @@ txtObj.scaleY = 2;
 <pre><code class="javascript language-javascript">txtObj.rotate = 90;
 </code></pre>
 <blockquote>
-  <p>lufylegend中，旋转角度为正则是顺时针旋转，为负则是逆时针旋转。rotate属性的单位是角度（而不是弧度）</p>
+  <p>lufylegend中，旋转角度为正则是顺时针旋转，为负则是逆时针旋转，旋转的锚点默认在对象的左上角。rotate属性的单位是角度（而不是弧度）。</p>
 </blockquote>
 <p>以上修改了一些显示对象的基本属性，对于其他种类的显示对象也是适用的。接下来改改LTextField的特有属性。</p>
 <p>更改字体大小：</p>
 <pre><code class="javascript language-javascript">txtObj.size = 50;
 </code></pre>
 <p>更改字体：</p>
-<pre><code class="javascript language-javascript">txtObj.size = "黑体";
+<pre><code class="javascript language-javascript">txtObj.font = "黑体";
 </code></pre>
 <p>更改粗细：</p>
 <pre><code class="javascript language-javascript">txtObj.weight = "bold";
@@ -164,7 +160,7 @@ txtObj.scaleY = 2;
 <p>阅读完本章教程，相信你对创建lufylegend项目，显示对象，文本显示有了一定了解。接下来将会介绍更多常用显示对象的使用方法。</p>
 
 				<h2>-- END -- <a href="" uk-totop>TO TOP </a></h2>
-				<h3>Latest update: Sat Aug 12 2017</h3>
+				<h3>Latest update: Wed Aug 16 2017</h3>
 				<h3>Written by Yorhom.</h3><br />
 			</div>
 		</div>
