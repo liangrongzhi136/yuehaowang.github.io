@@ -1,0 +1,116 @@
+TextureData class
+=================
+
+
+The *TextureData* class stores texture data read from an image file. To display the texture, the *TextureData* object ought to be passed to a *Texture* object.
+
+**Base class:** :doc:`Object <../../core/Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`image`: ``PIL.Image``
+
+	- Default: None
+
+	- Description: Texture data read from an image file.
+
+
+
+:py:attr:`x`: ``int``
+
+	- Default: 0
+
+	- Description: The x-coordinate of image's display area.
+
+
+
+:py:attr:`y`: ``int``
+
+	- Default: 0
+
+	- Description: The y-coordinate of image's display area.
+
+
+
+:py:attr:`width`: ``int``
+
+	- Default: The image's primitive width.
+
+	- Description: The width of image's display area.
+
+
+
+:py:attr:`height`: ``int``
+
+	- Default: The image's primitive height.
+
+	- Description: The height of image's display area.
+
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__(image = None, x = 0, y = 0, width = None, height = None)
+
+	:param image: Texture data read from an image file.
+	:type image: ``PIL.Image``
+	:param x: The x-coordinate of image's display area.
+	:type x: ``int``
+	:param y: The y-coordinate of image's display area.
+	:type y: ``int``
+	:param width: The width of image's display area.
+	:type width: ``int``
+	:param height: The height of image's display area.
+	:type height: ``int``
+
+
+	Constructs a *TextureData* object.
+
+
+
+.. py:method:: load(path)
+
+	:param path: An image file's path.
+	:type path: ``str``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Loads an image and stores its data.
+
+
+
+.. py:staticmethod:: fromText(text, size = 12, font = None, color = Color(), antialiasing = True)
+
+	:param text: The content of the text field.
+	:type text: ``str``
+	:param size: The font size of the text field.
+	:type size: ``int``
+	:param font: The font file of the text field.
+	:type font: ``str``
+	:param color: The font file of the text field.
+	:type color: :doc:`Color <../Color/index>`
+	:param antialiasing: Enables/disables antialiasing for genrating text field texture data.
+	:type antialiasing: ``bool``
+	:return: A texture data where a text field is placed.
+	:rtype: ``TextureData``
+
+
+	Generates a texture data for displaying text.
+
+
+
+

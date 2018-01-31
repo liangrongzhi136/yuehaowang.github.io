@@ -1,0 +1,160 @@
+DisplayObject class
+===================
+
+
+The *DisplayObject* class is the most fundamental class in *duckling*, which is the base class of all other classes used for displaying.
+
+**Base class:** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+Attributes
+----------
+
+
+:py:attr:`x`: ``int``
+
+	- Default: 0
+
+	- Description: The x-coordinate.
+
+
+
+:py:attr:`y`: ``int``
+
+	- Default: 0
+
+	- Description: The y-coordinate.
+
+
+
+:py:attr:`rotation`: ``int``
+
+	- Default: 0
+
+	- Description: Indicates the rotation of the *DisplayObject* instance, in degrees, from its original orientation.
+
+
+
+:py:attr:`scaleX`: ``float``
+
+	- Default: 1.0
+
+	- Description: Indicates the horizontal scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.
+
+
+
+:py:attr:`scaleY`: ``float``
+
+	- Default: 1.0
+
+	- Description: Indicates the vertical scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.
+
+
+
+:py:attr:`parent`: ``float`` **[Read Only]**
+
+	- Description: Gets the parent of the display object.
+
+
+
+:py:attr:`name`: ``str``
+
+	- Description: Sets/gets the display object's name.
+
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+
+
+
+	The constructor of *DisplayObject* class. However, it is not recommended to instantiate *DisplayObject* class directly for it is an abstract class.
+
+
+
+.. py:method:: getWidth()
+
+	:return: The width of the display object.
+	:rtype: ``float``
+
+
+	Gets the width of the display object.
+
+
+
+.. py:method:: getHeight()
+
+	:return: The height of the display object.
+	:rtype: ``float``
+
+
+	Gets the height of the display object.
+
+
+
+.. py:method:: remove()
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Removes self from the parent object.
+
+
+
+.. py:method:: addEventListener(eventType, listener)
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../../events/Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Adds an event and its responding listener.
+
+
+
+.. py:method:: removeEventListener(eventType, listener)
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../../events/Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Removes an event and its responding listener.
+
+
+
+.. py:method:: removeAllEventListeners()
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Removes all events and those responding listeners.
+
+
+
+

@@ -1,0 +1,36 @@
+OpenGLRenderer2D class
+======================
+
+
+The *OpenGLRenderer2D* class is a 2D renderer wrapping a set of methods using OpenGL.
+
+**Base class:** :doc:`Object <../../core/Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+
+
+
+	**Inherited from** :doc:`Object <../../core/Object/index>`
+
+	The constructor of *Object* class.
+
+
+
+

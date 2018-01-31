@@ -1,0 +1,278 @@
+Graphics class
+==============
+
+
+The *Graphics* class contains a set of methods that you can use to create a vector shape.
+
+**Base class:** :doc:`DisplayObject <../DisplayObject/index>`
+
+Attributes
+----------
+
+
+:py:attr:`arcSmoothness`: ``int``
+
+	- Default: 2
+
+	- Description: Sets/gets the smoothness of the arcs drawn in *Graphics* object. Less the value is (> 0), more smooth the arcs will be.
+
+
+
+:py:attr:`x`: ``int``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Default: 0
+
+	- Description: The x-coordinate.
+
+
+
+:py:attr:`y`: ``int``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Default: 0
+
+	- Description: The y-coordinate.
+
+
+
+:py:attr:`rotation`: ``int``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Default: 0
+
+	- Description: Indicates the rotation of the *DisplayObject* instance, in degrees, from its original orientation.
+
+
+
+:py:attr:`scaleX`: ``float``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Default: 1.0
+
+	- Description: Indicates the horizontal scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.
+
+
+
+:py:attr:`scaleY`: ``float``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Default: 1.0
+
+	- Description: Indicates the vertical scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.
+
+
+
+:py:attr:`parent`: ``float`` **[Read Only]**
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Description: Gets the parent of the display object.
+
+
+
+:py:attr:`name`: ``str``
+
+	- Inherited from :doc:`DisplayObject <../DisplayObject/index>`
+
+	- Description: Sets/gets the display object's name.
+
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+
+
+
+	Constructs a vector-shape canvas. Usually, *Graphics* objects are used as a part of *Sprite* instances instead of standalone display objects.
+
+
+
+.. py:method:: drawRect(x, y, w, h, lineWidth = 1, strokeStyle = Color(0, 0, 0, 1), fillStyle = None)
+
+	:param x: The x-coordinate of the rectangle's origin.
+	:type x: ``int``
+	:param y: The y-coordinate of the rectangle's origin.
+	:type y: ``int``
+	:param w: The width of the rectangle.
+	:type w: ``int``
+	:param h: The height of the rectangle.
+	:type h: ``int``
+	:param lineWidth: The line width of the rectangle.
+	:type lineWidth: ``int``
+	:param strokeStyle: The line color of the rectangle.
+	:type strokeStyle: :doc:`Color <../Color/index>`
+	:param fillStyle: The fill color of the rectangle.
+	:type fillStyle: :doc:`Color <../Color/index>`
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Draws a rectangle.
+
+
+
+.. py:method:: drawArc(x, y, r, beginAngle = 0, endAngle = 360, lineWidth = 1, strokeStyle = Color(0, 0, 0, 1), fillStyle = None)
+
+	:param x: The x-coordinate of the circle's center.
+	:type x: ``int``
+	:param y: The y-coordinate of the circle's center.
+	:type y: ``int``
+	:param r: The radius of the circle.
+	:type r: ``int``
+	:param beginAngle: The begin angle of the arc (unit: degree).
+	:type beginAngle: ``int``
+	:param endAngle: The end angle of the arc (unit: degree)
+	:type endAngle: ``int``
+	:param lineWidth: The line width of the arc.
+	:type lineWidth: ``int``
+	:param strokeStyle: The line color of the arc.
+	:type strokeStyle: :doc:`Color <../Color/index>`
+	:param fillStyle: The fill color of the arc.
+	:type fillStyle: :doc:`Color <../Color/index>`
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Draws an arc (usually used for drawing a circle).
+
+
+
+.. py:method:: drawLine(x0, y0, x1, y1, lineWidth = 1, strokeStyle = Color(0, 0, 0, 1))
+
+	:param x0: The x-coordinate of the line's start position.
+	:type x0: ``int``
+	:param y0: The y-coordinate of the line's start position.
+	:type y0: ``int``
+	:param x1: The x-coordinate of the line's end position.
+	:type x1: ``int``
+	:param y1: The y-coordinate of the line's end position.
+	:type y1: ``int``
+	:param lineWidth: The line width.
+	:type lineWidth: ``int``
+	:param strokeStyle: The line color.
+	:type strokeStyle: :doc:`Color <../Color/index>`
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Draws a line.
+
+
+
+.. py:method:: drawVertices(v, lineWidth = 1, strokeStyle = Color(0, 0, 0, 1), fillStyle = None)
+
+	:param v: A list containing polygon's vertices.
+	:type v: ``list[Point2D]``
+	:param lineWidth: The line width of the polygon.
+	:type lineWidth: ``int``
+	:param strokeStyle: The line color of the polygon.
+	:type strokeStyle: :doc:`Color <../Color/index>`
+	:param fillStyle: The fill color of the polygon.
+	:type fillStyle: :doc:`Color <../Color/index>`
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Draws a polygon.
+
+
+
+.. py:method:: getWidth()
+
+	:return: The width of the display object.
+	:rtype: ``float``
+
+
+	**Inherited from** :doc:`DisplayObject <../DisplayObject/index>`
+
+	Gets the width of the display object.
+
+
+
+.. py:method:: getHeight()
+
+	:return: The height of the display object.
+	:rtype: ``float``
+
+
+	**Inherited from** :doc:`DisplayObject <../DisplayObject/index>`
+
+	Gets the height of the display object.
+
+
+
+.. py:method:: remove()
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`DisplayObject <../DisplayObject/index>`
+
+	Removes self from the parent object.
+
+
+
+.. py:method:: addEventListener(eventType, listener)
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../../events/Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Adds an event and its responding listener.
+
+
+
+.. py:method:: removeEventListener(eventType, listener)
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../../events/Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Removes an event and its responding listener.
+
+
+
+.. py:method:: removeAllEventListeners()
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	**Inherited from** :doc:`EventDispatcher <../../events/EventDispatcher/index>`
+
+	Removes all events and those responding listeners.
+
+
+
+

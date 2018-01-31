@@ -1,0 +1,74 @@
+TextureDataLoader class
+=======================
+
+
+The *TextureDataLoader* class is used for loading and managing image resource.
+
+**Base class:** :doc:`Object <../../core/Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+
+
+
+	Constructs a loader for reading, analyzing and storing image data.
+
+
+
+.. py:method:: loadOne(name, path, properties = {'x': 0, 'y': 0, 'width': None, 'height': None})
+
+	:param name: The name of the image used for identifying the resource.
+	:type name: ``str``
+	:param path: The path of the image.
+	:type path: ``str``
+	:param properties: This parameter is used for setting the display area of the image.
+	:type properties: ``dict``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Creates a *TextureData* object which loads the image from the given path and then stores it in a `dict`.
+
+
+
+.. py:method:: loadList(ls)
+
+	:param ls: A list in this format: ``[{'name': 'resource_name', 'path': 'resource_path'}, ...]``.
+	:type ls: ``list[dict]``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Loads and stores a set of images.
+
+
+
+.. py:method:: get(name)
+
+	:param name: The name of the image resource.
+	:type name: ``str``
+	:return: A *TextureData* object
+	:rtype: :doc:`TextureData <../../display/TextureData/index>`
+
+
+	Gets a *TextureData* object by its name.
+
+
+
+
