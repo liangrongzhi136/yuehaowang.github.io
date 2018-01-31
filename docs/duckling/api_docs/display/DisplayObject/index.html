@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>DisplayObject class &#8212; Duckling Game Engine 1.0.0b2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/mycss.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0b2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Graphics class" href="../Graphics/index.html" />
+    <link rel="prev" title="Color class" href="../Color/index.html" />
+  
+   
+
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../Graphics/index.html" title="Graphics class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Color/index.html" title="Color class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">display module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+        <a href="
+    ../../../index.html" class="text-logo">Duckling Game Engine</a>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">core module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">display module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events/index.html">events module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../loaders/index.html">loaders module</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</div>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../../index.html">Docs</a></li>
+              
+                <li><a href="../../index.html">API Docs</a></li>
+              
+                <li><a href="../index.html">display module</a></li>
+              
+              <li>DisplayObject class</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="displayobject-class">
+<h1>DisplayObject class<a class="headerlink" href="#displayobject-class" title="Permalink to this headline">¶</a></h1>
+<p>The <em>DisplayObject</em> class is the most fundamental class in <em>duckling</em>, which is the base class of all other classes used for displaying.</p>
+<p><strong>Base class:</strong> <a class="reference internal" href="../../events/EventDispatcher/index.html"><span class="doc">EventDispatcher</span></a></p>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-attr docutils literal"><span class="pre">x</span></code>: <code class="docutils literal"><span class="pre">int</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: The x-coordinate.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">y</span></code>: <code class="docutils literal"><span class="pre">int</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: The y-coordinate.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">rotation</span></code>: <code class="docutils literal"><span class="pre">int</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: Indicates the rotation of the <em>DisplayObject</em> instance, in degrees, from its original orientation.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">scaleX</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 1.0</li>
+<li>Description: Indicates the horizontal scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">scaleY</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 1.0</li>
+<li>Description: Indicates the vertical scale (percentage) of the object as applied from the registration point. The default registration point is (0,0). 1.0 equals 100% scale.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">parent</span></code>: <code class="docutils literal"><span class="pre">float</span></code> <strong>[Read Only]</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Description: Gets the parent of the display object.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">name</span></code>: <code class="docutils literal"><span class="pre">str</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Description: Sets/gets the display object’s name.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">objectIndex</span></code>: <code class="docutils literal"><span class="pre">int</span></code> <strong>[Read Only]</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Inherited from <a class="reference internal" href="../../core/Object/index.html"><span class="doc">Object</span></a></li>
+<li>Description: A unique index for each object.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>The constructor of <em>DisplayObject</em> class. However, it is not recommended to instantiate <em>DisplayObject</em> class directly for it is an abstract class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getWidth">
+<code class="descname">getWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getWidth" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The width of the display object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">float</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Gets the width of the display object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getHeight">
+<code class="descname">getHeight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getHeight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The height of the display object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">float</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Gets the height of the display object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">NoneType</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Removes self from the parent object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="addEventListener">
+<code class="descname">addEventListener</code><span class="sig-paren">(</span><em>eventType</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#addEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> (<a class="reference internal" href="../../events/Event/index.html"><span class="doc">Event</span></a>) – The type of the event.</li>
+<li><strong>listener</strong> (<code class="docutils literal"><span class="pre">function</span></code>) – The type of the event.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">NoneType</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inherited from</strong> <a class="reference internal" href="../../events/EventDispatcher/index.html"><span class="doc">EventDispatcher</span></a></p>
+<p>Adds an event and its responding listener.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="removeEventListener">
+<code class="descname">removeEventListener</code><span class="sig-paren">(</span><em>eventType</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#removeEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> (<a class="reference internal" href="../../events/Event/index.html"><span class="doc">Event</span></a>) – The type of the event.</li>
+<li><strong>listener</strong> (<code class="docutils literal"><span class="pre">function</span></code>) – The type of the event.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">NoneType</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inherited from</strong> <a class="reference internal" href="../../events/EventDispatcher/index.html"><span class="doc">EventDispatcher</span></a></p>
+<p>Removes an event and its responding listener.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="removeAllEventListeners">
+<code class="descname">removeAllEventListeners</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#removeAllEventListeners" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">NoneType</span></code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inherited from</strong> <a class="reference internal" href="../../events/EventDispatcher/index.html"><span class="doc">EventDispatcher</span></a></p>
+<p>Removes all events and those responding listeners.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../Color/index.html" title="previous chapter (use the left arrow)">Color class</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../Graphics/index.html" title="next chapter (use the right arrow)">Graphics class</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../Graphics/index.html" title="Graphics class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Color/index.html" title="Color class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >display module</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Yuehao Wang. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
