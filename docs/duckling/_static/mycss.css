@@ -1,0 +1,12 @@
+td, th {
+	padding: 5px;
+}
+
+table {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+dt {
+	margin-top: 30px;
+}

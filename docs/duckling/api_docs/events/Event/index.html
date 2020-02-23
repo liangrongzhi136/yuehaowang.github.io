@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Event class &#8212; Duckling Game Engine 1.0.0b2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/mycss.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0b2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EventDispatcher class" href="../EventDispatcher/index.html" />
+    <link rel="prev" title="events module" href="../index.html" />
+  
+   
+
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../EventDispatcher/index.html" title="EventDispatcher class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="events module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">events module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+        <a href="
+    ../../../index.html" class="text-logo">Duckling Game Engine</a>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../display/index.html">display module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">events module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../loaders/index.html">loaders module</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</div>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../../index.html">Docs</a></li>
+              
+                <li><a href="../../index.html">API Docs</a></li>
+              
+                <li><a href="../index.html">events module</a></li>
+              
+              <li>Event class</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="event-class">
+<h1>Event class<a class="headerlink" href="#event-class" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Event</em> class is used as the base class for the creation of event objects, which are passed as the parameters to event listeners when an event occurs.</p>
+<p><strong>Base class:</strong> <a class="reference internal" href="../../core/Object/index.html"><span class="doc">Object</span></a></p>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-attr docutils literal"><span class="pre">id</span></code>: <code class="docutils literal"><span class="pre">str</span></code> <strong>[Read Only]</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Description: A unique name for the event.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">data</span></code>: <code class="docutils literal"><span class="pre">dict</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Description: The attached data.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">currentTarget</span></code>: <a class="reference internal" href="../EventDispatcher/index.html"><span class="doc">EventDispatcher</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li>Description: The object who dispatches the event.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">objectIndex</span></code>: <code class="docutils literal"><span class="pre">int</span></code> <strong>[Read Only]</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Inherited from <a class="reference internal" href="../../core/Object/index.html"><span class="doc">Object</span></a></li>
+<li>Description: A unique index for each object.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – The unique name of the event.</td>
+</tr>
+</tbody>
+</table>
+<p>Constructs an <em>Event</em> object.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../index.html" title="previous chapter (use the left arrow)">events module</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../EventDispatcher/index.html" title="next chapter (use the right arrow)">EventDispatcher class</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../EventDispatcher/index.html" title="EventDispatcher class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="events module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >events module</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Yuehao Wang. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

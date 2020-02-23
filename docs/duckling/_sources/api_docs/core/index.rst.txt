@@ -1,0 +1,18 @@
+core module
+===========
+
+
+*core* package contains many useful classes and functions for creating basic game elements and debug.
+
+Classes
+-------
+
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+
+	Game/index
+	Keyboard/index
+	Mouse/index
+	Object/index
+

@@ -1,0 +1,55 @@
+Event class
+===========
+
+
+The *Event* class is used as the base class for the creation of event objects, which are passed as the parameters to event listeners when an event occurs.
+
+**Base class:** :doc:`Object <../../core/Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`id`: ``str`` **[Read Only]**
+
+	- Description: A unique name for the event.
+
+
+
+:py:attr:`data`: ``dict``
+
+	- Description: The attached data.
+
+
+
+:py:attr:`currentTarget`: :doc:`EventDispatcher <../EventDispatcher/index>`
+
+	- Description: The object who dispatches the event.
+
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__(name)
+	:noindex:
+
+	:param name: The unique name of the event.
+	:type name: ``str``
+
+
+	Constructs an *Event* object.
+
+
+
+

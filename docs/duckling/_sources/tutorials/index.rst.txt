@@ -1,0 +1,10 @@
+Tutorials
+=========
+
+To have the first impression on *duckling* game engine and learn basic game development technique, reading tutorials below may come to your assistance.
+
+
+.. toctree::
+	:maxdepth: 1
+
+	Installation

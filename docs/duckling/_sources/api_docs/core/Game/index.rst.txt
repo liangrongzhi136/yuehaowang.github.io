@@ -1,0 +1,133 @@
+Game class
+==========
+
+
+The *Game* class is used for creating a game window and configuring the global performance of the game. Any games created by *duckling* require an object instantiated from *Game* class for creating a window where game elements display and event system runs.
+
+**Base class:** :doc:`Object <../Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`windowWidth`: ``int``
+
+	- Default: 800
+
+	- Description: Sets/gets the width of window.
+
+
+
+:py:attr:`windowHeight`: ``int``
+
+	- Default: 600
+
+	- Description: Sets/gets the height of window.
+
+
+
+:py:attr:`windowTitle`: ``str``
+
+	- Default: 'Game'
+
+	- Description: Sets/gets the title of window.
+
+
+
+:py:attr:`backgroundColor`: :doc:`Color <../../display/Color/index>`
+
+	- Default: Color(1, 1, 1, 1)
+
+	- Description: Sets/gets the window's background color
+
+
+
+:py:attr:`renderer`: :doc:`OpenGLRenderer2D <../../display/OpenGLRenderer2D/index>` **[Read Only]**
+
+	- Description: A 2D renderer powered by OpenGL.
+
+
+
+:py:attr:`stage`: :doc:`Sprite <../../display/Sprite/index>` **[Read Only]**
+
+	- Description: The stage layer of the game, namely the bottommost layer.
+
+
+
+:py:attr:`antialiasing`: ``bool``
+
+	- Default: True
+
+	- Description: Disables/enables antialiasing.
+
+
+
+:py:attr:`enableDoubleBuffer`: ``bool``
+
+	- Default: True
+
+	- Description: Disables/enables double buffer.
+
+
+
+:py:attr:`fps`: ``int``
+
+	- Default: 60
+
+	- Description: Sets/gets game's FPS.
+
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__(width = 800, height = 600, title = 'Game')
+	:noindex:
+
+	:param width: The width of the game window.
+	:type width: ``int``
+	:param height: The height of the game window.
+	:type height: ``int``
+	:param title: The title of the game window.
+	:type title: ``str``
+
+
+	Constructs a *Game* object.
+
+
+
+.. py:method:: run()
+	:noindex:
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Runs the game and starts the window main loop which will block program main process so that code added after the calling of `run` method won't take any effect before closing the game window.
+
+
+
+.. py:method:: exit(code = 0)
+	:noindex:
+
+	:param code: Exit code.
+	:type code: ``int``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Makes the game exit.
+
+
+
+

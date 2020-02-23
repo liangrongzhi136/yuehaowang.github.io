@@ -1,0 +1,21 @@
+display module
+==============
+
+
+*display* package contains many useful classes and functions for constructing display objects.
+
+Classes
+-------
+
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+
+	Color/index
+	DisplayObject/index
+	Graphics/index
+	OpenGLRenderer2D/index
+	Sprite/index
+	Texture/index
+	TextureData/index
+

@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Installation &#8212; Duckling Game Engine 1.0.0b2 documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/mycss.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0b2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Docs" href="../api_docs/index.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+  
+   
+
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../api_docs/index.html" title="API Docs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Tutorials"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Tutorials</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+        <a href="
+    ../index.html" class="text-logo">Duckling Game Engine</a>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_docs/index.html">API Docs</a></li>
+</ul>
+
+    
+  </div>
+</div>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+                <li><a href="index.html">Tutorials</a></li>
+              
+              <li>Installation</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="make-sure-you-re-using-python3">
+<h3>1, Make sure you’re using <em>python3</em><a class="headerlink" href="#make-sure-you-re-using-python3" title="Permalink to this headline">¶</a></h3>
+<p><em>Duckling</em> is built on <em>python3</em> and you may come across some weird problems if you import <em>duckling</em> to a <em>python2</em> project. The instructions below are based on the assumption that you are using <em>python3</em>, namely <cite>python</cite> and <cite>pip</cite> command serve <em>python3</em> instead of <em>python2</em>. If the default <em>python</em> in your system is <em>python2</em>, replace <cite>python</cite> and <cite>pip</cite> command in the following instructions with <cite>python3</cite> and <cite>pip3</cite> command respectively.</p>
+</div>
+<div class="section" id="make-sure-you-re-working-on-a-64-bit-system">
+<h3>2, Make sure you’re working on a 64-bit system<a class="headerlink" href="#make-sure-you-re-working-on-a-64-bit-system" title="Permalink to this headline">¶</a></h3>
+<p><em>Duckling</em> engine is tested successfully merely on 64-bit systems which are wildly applied to modern computers. Also note, 64-bit <em>python3</em> instead of 32-bit <em>python3</em> is required when developing games with <em>duckling</em> engine.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clone-duckling">
+<h3>1, Clone <em>duckling</em><a class="headerlink" href="#clone-duckling" title="Permalink to this headline">¶</a></h3>
+<p>Clone <em>duckling</em> to your local file system by using <em>git</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/yuehaowang/duckling.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-duckling">
+<h3>2, Install <em>duckling</em><a class="headerlink" href="#install-duckling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="on-windows">
+<h4>On <em>Windows</em><a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Windows users have to install <em>PyOpenGL</em> by yourself before configuring <em>duckling</em> since <em>duckling</em> is based on it and official <em>PyOpenGL</em> package doesn’t work satisfyingly on modern Windows. Few steps below will show you how to install an unofficial but suitable <em>PyOpenGL</em> package on your Windows.</p>
+<p>First, download a <em>PyOpenGL</em> package which is compatible with your python environment <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl">here</a>. Then, install the downloaded <em>.wheel</em> file using <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">/path/to/your_downloaded_file.wheel</span></code>.</p>
+<p>After the setup of <em>PyOpenGL</em>, open <em>Command Prompt</em> (or <em>Powershell</em> ) in ‘duckling/’ directory and install <em>duckling</em> using <code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="on-linux-macos">
+<h4>On <em>Linux/MacOS</em><a class="headerlink" href="#on-linux-macos" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>It’s quite easy for Linux/MacOS users to install <em>duckling</em> game engine with the help of ‘setup.py’ after cloning <em>duckling</em> repo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd ./duckling
+$ python setup.py install
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your installation is stopped by ‘Permission denied’, retry this step with prefixed command <em>sudo</em>.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="run-demo-and-examples">
+<h3>3, Run demo and examples<a class="headerlink" href="#run-demo-and-examples" title="Permalink to this headline">¶</a></h3>
+<p>The <em>duckling</em> repo cloned from Github contains some demo and examples which can be utilized to check whether the intallation is perfectly done. For instance, run a ‘Hello World’ demo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python demo/hello_world/main.py  # assuming your current working directory is &#39;duckling/&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="index.html" title="previous chapter (use the left arrow)">Tutorials</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../api_docs/index.html" title="next chapter (use the right arrow)">API Docs</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../api_docs/index.html" title="API Docs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Tutorials"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Tutorials</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Yuehao Wang. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

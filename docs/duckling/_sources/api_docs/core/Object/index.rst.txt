@@ -1,0 +1,33 @@
+Object class
+============
+
+
+The base class of other all classes(eliminating some static classes) in *duckling* engine.
+
+**Base class:** ``object``
+
+Attributes
+----------
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+	:noindex:
+
+
+
+	The constructor of *Object* class.
+
+
+
+

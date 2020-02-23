@@ -1,0 +1,76 @@
+EventDispatcher class
+=====================
+
+
+The *EventDispatcher* class is the base class for adding and dispatching events.
+
+**Base class:** :doc:`Object <../../core/Object/index>`
+
+Attributes
+----------
+
+
+:py:attr:`objectIndex`: ``int`` **[Read Only]**
+
+	- Inherited from :doc:`Object <../../core/Object/index>`
+
+	- Description: A unique index for each object.
+
+
+
+
+Methods
+-------
+
+
+.. py:method:: __init__()
+	:noindex:
+
+
+
+	The constructor of *EventDispatcher* class.
+
+
+
+.. py:method:: addEventListener(eventType, listener)
+	:noindex:
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Adds an event and its responding listener.
+
+
+
+.. py:method:: removeEventListener(eventType, listener)
+	:noindex:
+
+	:param eventType: The type of the event.
+	:type eventType: :doc:`Event <../Event/index>`
+	:param listener: The type of the event.
+	:type listener: ``function``
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Removes an event and its responding listener.
+
+
+
+.. py:method:: removeAllEventListeners()
+	:noindex:
+
+	:return: None
+	:rtype: ``NoneType``
+
+
+	Removes all events and those responding listeners.
+
+
+
+

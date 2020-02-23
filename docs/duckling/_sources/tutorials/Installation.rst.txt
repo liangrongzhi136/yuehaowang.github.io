@@ -1,0 +1,60 @@
+Installation
+============
+
+
+Prerequisites
+-------------
+
+1, Make sure you're using *python3*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Duckling* is built on *python3* and you may come across some weird problems if you import *duckling* to a *python2* project. The instructions below are based on the assumption that you are using *python3*, namely `python` and `pip` command serve *python3* instead of *python2*. If the default *python* in your system is *python2*, replace `python` and `pip` command in the following instructions with `python3` and `pip3` command respectively.
+
+
+2, Make sure you're working on a 64-bit system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Duckling* engine is tested successfully merely on 64-bit systems which are wildly applied to modern computers. Also note, 64-bit *python3* instead of 32-bit *python3* is required when developing games with *duckling* engine.
+
+
+
+Installation
+------------
+
+1, Clone *duckling*
+^^^^^^^^^^^^^^^^^^^
+
+Clone *duckling* to your local file system by using *git*: ::
+
+	$ git clone https://github.com/yuehaowang/duckling.git
+
+2, Install *duckling*
+^^^^^^^^^^^^^^^^^^^^^
+
+On *Windows*
+""""""""""""
+
+	Windows users have to install *PyOpenGL* by yourself before configuring *duckling* since *duckling* is based on it and official *PyOpenGL* package doesn't work satisfyingly on modern Windows. Few steps below will show you how to install an unofficial but suitable *PyOpenGL* package on your Windows. 
+
+	First, download a *PyOpenGL* package which is compatible with your python environment `here <https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl>`_. Then, install the downloaded *.wheel* file using ``pip install /path/to/your_downloaded_file.wheel``.
+
+	After the setup of *PyOpenGL*, open *Command Prompt* (or *Powershell* ) in 'duckling/' directory and install *duckling* using ``python setup.py install``.
+
+On *Linux/MacOS*
+""""""""""""""""
+
+	It's quite easy for Linux/MacOS users to install *duckling* game engine with the help of 'setup.py' after cloning *duckling* repo: ::
+
+		$ cd ./duckling
+		$ python setup.py install
+
+
+	.. note::
+	   If your installation is stopped by 'Permission denied', retry this step with prefixed command *sudo*.
+
+3, Run demo and examples
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The *duckling* repo cloned from Github contains some demo and examples which can be utilized to check whether the intallation is perfectly done. For instance, run a 'Hello World' demo: ::
+
+	$ python demo/hello_world/main.py  # assuming your current working directory is 'duckling/'

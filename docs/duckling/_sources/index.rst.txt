@@ -1,0 +1,27 @@
+Duckling Game Engine Documentation
+====================================
+
+
+This is a documentation of *duckling*, which is an OpenGL based game engine for *python*. Some useful information can be found here via the 'Table of Contents' below and searching keywords.
+
+If you find some typos or mistakes in this documentation, please email me to wangyuehao1999@gmail.com.
+
+This documentation is divided into two parts: **Tutorials** and **API Docs**. For beginners who want to get started with game development using *duckling* game engine, **Tutorials** part which includes many basic instructions and usages is worth reading. While **API Docs** part is for those who would like to know more detailed and overall usages.
+
+If you would like to get more information, please view `duckling <https://github.com/yuehaowang/duckling>`_ on Github.
+
+
+Table of Contents
+-----------------
+
+.. toctree::
+	:maxdepth: 2
+
+	tutorials/index
+
+
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+
+	api_docs/index

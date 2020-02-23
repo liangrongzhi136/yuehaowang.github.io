@@ -1,0 +1,19 @@
+events module
+=============
+
+
+The classes in *events* package are all relevant to event type and dispatching event.
+
+Classes
+-------
+
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+
+	Event/index
+	EventDispatcher/index
+	KeyboardEvent/index
+	LoopEvent/index
+	MouseEvent/index
+

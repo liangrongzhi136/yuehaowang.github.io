@@ -1,1391 +1,490 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    
-    <title>Yorhom&#39;s Lab</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yorhom&#39;s Lab">
-<meta property="og:url" content="http://yuehaowang.github.io/index.html">
-<meta property="og:site_name" content="Yorhom&#39;s Lab">
-<meta property="og:description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yorhom&#39;s Lab">
-<meta name="twitter:description" content="游戏开发，移动开发，Web开发，HTML5，lufylegend，Yorhom，JavaScript，Python">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
 
-    
-        <link rel="alternate" href="atom.xml" title="Yorhom&#39;s Lab" type="application/atom+xml" />
-    
-
-    
-        <link rel="icon" href="/favicon.png" />
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-    
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">Yorhom&#39;s Lab</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="/showcase">作品展示</a>
-                
-                    <a class="main-nav-link" href="/about">关于我</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/images/avatar.png" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div id="container" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary mdl-shadow--2dp">
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row ">
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
+    <div class="mdl-layout__header-row">
+        <h3>Yuehao's Lab</h3>
     </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="/showcase">作品展示</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于我</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
-
-                </td>
-            </tr>
-        </table>
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+        <a href="#home" class="mdl-layout__tab is-active">Home</a>
+        <a href="#showcase" class="mdl-layout__tab">Showcase</a>
     </div>
 </header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/images/avatar.png" />
-            <h2 id="name">Yorhom</h2>
-            <h3 id="title">std::vector&lt;Tech&gt; me;</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>中国 上海 浦东新区</span>
-            <a id="follow" target="_blank" href="https://weibo.com/yorhomwang/">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                13
-                <span>文章</span>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="home">
+    <section class="section--center mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h4>Biography</h4>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header style="overflow: hidden;" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white">
+                <img style="height: 250px;" src="images/portrait.jpg" />
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card__supporting-text justify-text">
+                    A naive undergraduate majoring in Computer Science who is a hardcore of open-source, keen on science and mathematics, curious about nature and humanity, amateurish music maker, and also a dream pursuer.
+                    <br />
+                    My research insterests include <b>Computer Graphics, Computer Vision, Deep Learning, Computer Systems, and Consumer Psychology</b>. My recent research focus on neural rendering technology and learning-based ambivalence tracking of consumers. In addition, I am also passionate about website design and game development.
+                    <a href="downloads/resume.pdf">Download My Resume</a>
+                </div>
             </div>
-            <div class="article-info-block">
-                16
-                <span>标签</span>
+        </section>
+
+        <h4>Contact</h4>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell contact-list mdl-cell--12-col">
+                <div class="mdl-grid mdl-cell--10-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">email</i>
+                                    wangyuehao1999#gmail.com
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">inbox</i>
+                                    Github: <a href="https://github.com/yuehaowang" style="margin-left: 5px;" target="_blank">@yuehaowang</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">camera</i>
+                                    Instagram: <a href="https://www.instagram.com/yuehao727/" style="margin-left: 5px;" target="_blank">@yuehao727</a>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">person_add</i>
+                                    LinkedIn: <a href="https://www.linkedin.com/in/yuehaowang/" style="margin-left: 5px;" target="_blank">yuehaowang</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h4>Highlights</h4>
+        <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text justify-text">
+                    <h4>Reinforcement Cache</h4>
+                    We adopt a reinforcement learning-based method to cache replacement strategy, aiming to improve the miss rate of existing traditional cache replacement policies. The main idea of modeling is to regard the strategy as a MDP so that we can employ DRL to learn cache eviction patterns.
+                    <b>(Excellent Course Project at <i>Artificial Intelligence</i>)</b>
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="https://github.com/peihaowang/DRLCache/blob/master/A_Reinforcement_Learning_Based_Replacement_Strategy_for_Content_Caching.pdf" class="mdl-button">View Report</a>
+                </div>
+            </div>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header style="overflow: hidden;" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white">
+                <img style="height: 280px;" src="images/demo/shadow_scent.png" />
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card__supporting-text justify-text">
+                    <h4>Shadow Scent</h4>
+                    A mobile game which is friendly to visually impaired people. After desk research and interviews about entertainment of visually impaired people, we design this game aiming to improve video game's user experience and sociability for those vulnerable people.
+                    <b>(The Best Course Project at Roadshow of <i>Design Thinking</i>)</b>
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="https://github.com/yuehaowang/ShadowScent" class="mdl-button">View More</a>
+                </div>
+            </div>
+        </section>
+        <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text justify-text">
+                    <h4>Pylash Engine</h4>
+                    Pylash is a 2D game framework in Python, which was developed when I was a high school student. Inspired from my experience designing and developing video games, this framework is integrated with various essential modules including 2D graphics rendering (based on PySide2), event systems, tween animation, multimedia systems, SAT collision detection, etc.
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="https://github.com/yuehaowang/pylash_engine" class="mdl-button">View More</a>
+                </div>
+            </div>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header style="overflow: hidden;" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white">
+                <img style="height: 280px;" src="images/demo/greeting_card1.png" />
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card__supporting-text justify-text">
+                    <h4>Greeting Card</h4>
+                    You may want to write some warm words to your best friends, parents or lover. Plain text may bore them. Greeting Card provides a magnificent animation to show the message brick by brick. Receivers just need to tap the screen until they make sense of what you want to express (maybe it's your gratitude or your love).
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="https://github.com/yuehaowang/greeting_card" class="mdl-button">View More</a>
+                </div>
+            </div>
+        </section>
+        <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text justify-text">
+                    <h4>Offer Pool</h4>
+                    Application for foreign universities is a tough and important problem for students who want to study abroad. We utilize data mining techniques to predict admission of target universities. With text data crawling from related websites, we train a model which receives your major, TOEFL, GRE, GPA, target universities, etc., and output probabilities that target universities will give you offers.
+                    <b>(Excellent Course Project at <i>Web and Text Mining</i>)</b>
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="https://github.com/yuehaowang/CS190B-WebAndTextMining-OfferPool" class="mdl-button">View Source</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    </section>
+</div>
+        <div class="mdl-layout__tab-panel" id="showcase">
+    <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text">
+                <h4>Games</h4>
+            
+                <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--cyan mdl-list__item-avatar">games</i>
+                            <span>SanguoTD</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/sanguo_td" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">games</i>
+                            <span>Flying Stone</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/flying_stone/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--blue mdl-list__item-avatar">games</i>
+                            <span>Crazy Racing</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/crazy_racing/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--pink mdl-list__item-avatar">games</i>
+                            <span>Ink Spill</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/ink_spill/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--grey mdl-list__item-avatar">games</i>
+                            <span>Raglan and Over</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/raglan_and_over/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--purple mdl-list__item-avatar">games</i>
+                            <span>The Best Arithmetic</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/the_best_arithmetic/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--blue-gray mdl-list__item-avatar">games</i>
+                            <span>Mine Sweeper</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/minesweeper/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--deep-orange mdl-list__item-avatar">games</i>
+                            <span>Fan Sangoku</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="games/fan_sangoku/index.html"><i class="material-icons">play_circle_outline</i></a>
+                        </span>
+                    </li>
+                </ul>
             </div>
         </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
+    </section>
+
+    <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+                <h4>Frameworks</h4>
+
+                <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">code</i>
+                            <span>Pylash Engine</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/pylash_engine" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">code</i>
+                            <span>Duckling</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/duckling" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">code</i>
+                            <span>Greeting Card</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/greeting_card" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
                     
-                    
-                    <td>
-                        <a href="http://github.com/yuehaowang/" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/yorhomwang/" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yuehaowang/" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
-                            <i class="fa fa-rss"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">code</i>
+                            <span>IRMap</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/irmap" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">code</i>
+                            <span>Jpp.js</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/jpp.js" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-    </div>
-</aside>
+    </section>
 
-            
-            <section id="main">
-    <article id="post-math_expression_parser" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/08/02/math_expression_parser/">C++实现对数学基本运算表达式的解析</a>
-        </h1>
-    
+    <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+                <h4>Musical Composition</h4>
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/08/02/math_expression_parser/">
-            <time datetime="2017-08-01T16:00:00.000Z" itemprop="datePublished">2017-08-02</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/C-C/">C/C++</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/C-C/">C/C++</a>, <a class="tag-link" href="/tags/数学/">数学</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>前段时间在LeetCode上刷题，遇到了很多涉及对字符串进行解析的题目。可能是出于这个原因，最近迷恋上了字符串的解析问题。数学基本运算表达式的解析就涉及这类问题。所谓数学基本运算表达式的解析就是指给定一个表达式字符串，如<code>1 + 1</code>，<code>3 * 9</code>，对这个字符串进行解析，从而得到这个表达式的运算结果。（数学基本运算表达式也就是只用加减乘除进行计算的数学表达式）</p>
-<p>其实站在我的角度来看，我觉得对数学基本运算表达式的解析还是有一定难度的。因为如果一开始没有正确的思路，我们是很难找到这个问题的着手点的，毕竟解析数学基本运算表达式需要考虑到的问题是有点多的，以下，我把其中主要的问题列举出来：</p>
-<ol>
-<li>乘除法优先计算</li>
-<li>括号里的内容优先计算</li>
-<li>表达式中的数字前可能存在正负号</li>
-</ol>
-<p>这些问题如果得不到恰当的处理，就会使解析过程失败。</p>
-<p>在实现解析数学基本运算表达式之前，我们首先得弄清楚哪些表达式是合法的，哪些表达式是不合法的。以下我将列举C/C++等语言中，一些合法与不合法的表达式：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 合法 */</span></div><div class="line"><span class="number">7</span> + <span class="number">22</span> + <span class="number">7</span> * <span class="number">27</span></div><div class="line"><span class="number">6</span> + <span class="number">-13</span> * <span class="number">23</span> / <span class="number">-30</span> / <span class="number">35</span></div><div class="line"><span class="number">24</span> - +<span class="number">34</span></div><div class="line"><span class="number">10</span> + (<span class="number">3</span> * <span class="number">9</span>) / <span class="number">8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/* 不合法 */</span></div><div class="line">abc + <span class="number">123</span>  <span class="comment">// abc不是数字</span></div><div class="line"><span class="number">1</span> + <span class="number">2</span> *  <span class="comment">// *后缺少数字</span></div><div class="line"><span class="number">6</span> + + <span class="number">12</span>  <span class="comment">// 不能连用加号</span></div><div class="line"><span class="number">8</span> - - <span class="number">17</span>  <span class="comment">// 不能连用减号</span></div><div class="line"><span class="number">32</span> + () - <span class="number">4</span>  <span class="comment">// 括号中没有内容</span></div><div class="line">(<span class="number">0</span> + <span class="number">5</span>)) * <span class="number">7</span>  <span class="comment">// 右括号多了一个</span></div><div class="line">((<span class="number">11</span> + <span class="number">9</span>) / <span class="number">2</span>  <span class="comment">// 左括号多了一个</span></div></pre></td></tr></table></figure>
-<p>不排除有一些编程语言支持上述所说的部分或者全部不合法表达式，但这里我们先使用C/C++标准。</p></p>
-            <p class="article-more-link">
-                <a href="/2017/08/02/math_expression_parser/#more">阅读全文 →</a>
-            </p>
-        
+                <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--pink mdl-list__item-avatar">music_note</i>
+                            <span>Birthday Fireworks</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="downloads/BirthdayFireworks.mp3" target="_blank"><i class="material-icons">play_arrow</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--purple mdl-list__item-avatar">music_note</i>
+                            <span>Travelling Apollo</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="downloads/TravellingApollo.mp3" target="_blank"><i class="material-icons">play_arrow</i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
+    </section>
 
+    <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+                <h4>Toys</h4>
 
+                <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Portals</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/portals/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Beta Class</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/BetaClass" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Toy Flow</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/ToyFlow" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Posea</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://github.com/yuehaowang/posea" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Lokout</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="https://lokout.cn" target="_blank"><i class="material-icons">call_made</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Box2D Bomb</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/box2d_bomb/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Box2D Linkage</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/box2d_linkage/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Drag and Drop Robot</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/drag_and_drop_robot/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>SAT Algorithm</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/sat_js/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Ride Bike Box2D</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/ridebike_box2d/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Wave Superposition</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/wave_superposition/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--one-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-color--teal mdl-list__item-avatar">toys</i>
+                            <span>Tower Defense</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="demo/TowerDefense/index.html"><i class="material-icons">play_circle_fill</i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <section class="section--center mdl-color--dark mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+                <h4>Copyrights</h4>
+
+                <ul>
+                    <li>Games and toys are licensed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPLv3.0 License</a>.</li>
+                    <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Musical compositions are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+                    <li>Licenses of frameworks are placed in their project repositories.</li>
+                </ul> 
+            </div>
+        </div>
+    </section>
 </div>
-
-    <a data-url="http://yuehaowang.github.io/2017/08/02/math_expression_parser/" data-id="cj5xjqlbc000ad3tctz838yic" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2017/08/02/math_expression_parser/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-simple_http_local_server_with_nodejs" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/07/10/simple_http_local_server_with_nodejs/">NodeJs开发简易的Http本地服务器</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/07/10/simple_http_local_server_with_nodejs/">
-            <time datetime="2017-07-09T16:00:00.000Z" itemprop="datePublished">2017-07-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/NodeJs/">NodeJs</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>第一次接触本地服务器是很早之前因为Js学到Ajax部分，需要通过发送Http请求读取本地文件。</p>
-<p>网上实用的本地服务器有很多，如Apache，XAMPP等。不过在我平时开发的过程中，其实用不了太多功能，多数情况下只需要我们的服务器根据请求从本地读取文件，不大必要使用上述的大型本地服务器，所以在我接触NodeJs后，索性用NodeJs写了一个Http本地服务器，连同空行总共69行代码。</p>
-<p><img src="/images/in_posts/run_nodejs_fileserver1.png" alt="运行效果图之一"></p>
-<p>（成功开启服务器后的效果如上图所示）</p></p>
-            <p class="article-more-link">
-                <a href="/2017/07/10/simple_http_local_server_with_nodejs/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/" data-id="cj5xjqlbp000qd3tcyeszrxz3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2017/07/10/simple_http_local_server_with_nodejs/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-sat-explanation" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/31/sat-explanation/">【译】碰撞检测之分离轴定理算法讲解</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/31/sat-explanation/">
-            <time datetime="2017-01-30T16:00:00.000Z" itemprop="datePublished">2017-01-31</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/译文/">译文</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/数学/">数学</a>, <a class="tag-link" href="/tags/算法/">算法</a>, <a class="tag-link" href="/tags/译文/">译文</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><strong>本文翻译自<a href="http://www.sevenson.com.au/" target="_blank" rel="external">@sevenson</a>的文章<a href="http://www.sevenson.com.au/actionscript/sat/" target="_blank" rel="external">Separating Axis Theorem (SAT) Explanation</a> 。原文作者用的是ActionScript 3来编写算法，不过文中主要讲述的还是算法原理，我想一旦算法原理被我们掌握了，选择什么编程语言来实现算法都是次要的事情了。</strong><br><strong>本人并非英文专业，所以文中翻译得有不妥或疏漏之处，欢迎各位指正，谢谢！</strong></p>
-<hr>
-<p><strong><em>正文如下：</em></strong></p>
-<p><img src="/images/in_posts/sat_1.jpg" alt="多边形碰撞"></p>
-<p>分离轴定理（英文简称SAT）是一项用于检测凸多边形碰撞的技术。</p>
-<p>我绝不是这个方面的专家，但当检测碰撞的需求出现在我面前之后，我做了大量的阅读并最终在ActionScript 3中实现了它。</p>
-<p>我想，我应该把我所学到的分享给大家，希望大家不会在这方面被坑得很惨：）</p></p>
-            <p class="article-more-link">
-                <a href="/2017/01/31/sat-explanation/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2017/01/31/sat-explanation/" data-id="cj5xjqlbr000ud3tcprql5139" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2017/01/31/sat-explanation/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-new-game-flying-stone" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/12/25/new-game-flying-stone/">分享新作 - 虐心小游戏Flying Stone</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/12/25/new-game-flying-stone/">
-            <time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/App发布/">App发布</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/App/">App</a>, <a class="tag-link" href="/tags/HTML5/">HTML5</a>, <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/canvas/">canvas</a>, <a class="tag-link" href="/tags/lufylegend/">lufylegend</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h1 id="游戏简介"><a href="#游戏简介" class="headerlink" title="游戏简介"></a>游戏简介</h1><p><strong>Flying Stone</strong>是一款益智类物理游戏。游戏中，玩家通过轻敲屏幕，抛出系在旋转杆上的石头来攻击飞出的小鸟，以此得分。不同难度的小鸟，击中后得分也有所不同。游戏限时90秒，游戏结束后会上传你的得分，并得到你的全世界排行。</p>
-<p><strong>本游戏目前支持Android版和在线版。</strong></p>
-<p><img src="/images/demo/flying_stone_poster.png" alt="Flying Stone"></p>
-<h1 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h1><p>访问游戏主页，你可以在其中找到所需的版本：</p>
-<p><a href="http://wyh.wjjsoft.com/pages/flying_stone/" target="_blank" rel="external">http://wyh.wjjsoft.com/pages/flying_stone/</a></p></p>
-            <p class="article-more-link">
-                <a href="/2016/12/25/new-game-flying-stone/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/" data-id="cj5xjqlbk000kd3tcc909v2c5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2016/12/25/new-game-flying-stone/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-develop-puzzle-within-2h" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/09/develop-puzzle-within-2h/">挑战速度，2小时完成HTML5拼图小游戏</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/09/develop-puzzle-within-2h/">
-            <time datetime="2016-08-08T16:00:00.000Z" itemprop="datePublished">2016-08-09</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/HTML5/">HTML5</a>, <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/canvas/">canvas</a>, <a class="tag-link" href="/tags/lufylegend/">lufylegend</a>, <a class="tag-link" href="/tags/游戏开发/">游戏开发</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>初学lufylegend.js之日，我用lufylegend.js开发了第一个HTML5小游戏——拼图游戏，还写了篇博文来炫耀一下：<a href="http://blog.csdn.net/yorhomwang/article/details/8546053" target="_blank" rel="external">HTML5小游戏《智力大拼图》发布，挑战你的思维风暴</a>。不过当时初学游戏开发，经验浅薄，所以没有好好专研游戏里的算法和代码的缺陷，导致游戏出现了很多bug，甚至拼图打乱后很可能无法复原。最近经常有朋友问起这个游戏，希望我能把代码里的bug改一下方便初学者学习，顺便我也打算测试一下自己写这种小游戏的速度，所以就抽出了一些时间将这个游戏从头到尾重新写了一遍，计算了一下用时，从准备、修改素材到最后完成游戏，一共用了大约2h的时间。</p>
-<p>以下是游戏地址：</p>
-<p><strong><a href="http://yuehaowang.github.io/games/puzzle/">http://yuehaowang.github.io/games/puzzle/</a></strong></p>
-<p>这是我的游戏记录，欢迎各位挑战：</p>
-<p><img src="/images/in_posts/my_puzzle_record.png" alt="我的纪录"></p>
-<p>接下来就来讲讲如何开发完成这款游戏的。（按“编年体”）</p></p>
-            <p class="article-more-link">
-                <a href="/2016/08/09/develop-puzzle-within-2h/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2016/08/09/develop-puzzle-within-2h/" data-id="cj5xjqlb60006d3tcxmjn89m9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2016/08/09/develop-puzzle-within-2h/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-counting-principle-algorithm" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/22/counting-principle-algorithm/">算法研究：利用Python解决数学计数原理问题</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/22/counting-principle-algorithm/">
-            <time datetime="2016-07-21T16:00:00.000Z" itemprop="datePublished">2016-07-22</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/数学/">数学</a>, <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近数学修行到“计数原理”部分，前几天做作业时遇到这样一道数学题：</p>
-<blockquote>
-<p>用四种不同颜色给三棱柱六个顶点涂色,要求每个点涂一种颜色,且每条棱的两个端点涂不同颜色,则不同的涂色方法有多少种？<br><img src="/images/in_posts/picture_of_couting_principle_math_question.jpg" alt="题目配图"></p>
-</blockquote>
-<p>当我看完题目后，顿时不知所措。于是我拿起草稿纸在一旁漫无目的地演算了一下，企图能找到解决方法。结果一无所获。今天终于等到放假了，于是打算通过程序算法解决这个问题。经过2个多小时的研究，终于完成了代码，并求得了答案。</p>
-<p>由于Python写起来比较方便而且本人比较喜欢Python的语法，所以研究算法时我通常采用Python，此次也不例外。以下就是整个算法的实现过程。</p></p>
-            <p class="article-more-link">
-                <a href="/2016/07/22/counting-principle-algorithm/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/" data-id="cj5xjqlaz0002d3tcxh8i1u8s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2016/07/22/counting-principle-algorithm/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-derivative-of-sinx" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/21/derivative-of-sinx/">证明：sin&#39;x = cosx</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/21/derivative-of-sinx/">
-            <time datetime="2016-05-20T16:00:00.000Z" itemprop="datePublished">2016-05-21</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/其他/">其他</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/数学/">数学</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>初三将近毕业的时候老爸给我买了几本数学相关的书籍。还把他的大学教材翻出来给我看，希望我去提前学习高等数学。很遗憾，当时的我对于这些东西完全不感兴趣，所以就不屑一顾，往书架上一扔就是两年。不久前，自己在数学教科书上看到了积分。书中运用积分的知识求得了一个曲边形的面积。当时我就傻眼了，什么！数学居然可以这么神奇。我这才意识到自己的无知，并且激起了我强烈的研究数学的欲望。这段时间里，我相继学习了导数和定积分，越发觉得数学的高深，决定提前学习大学里的高等数学。</p>
-<p>大学课程中，第一个难题就是极限。有了它，才有导数、积分……</p>
-<p>经过一个半月的课余时间学习，我大致地掌握了极限的一些知识。于是我决定使用它来解决一个我在导数学习过程中的一个问题：证明sin’x = cosx。</p>
-<p>以下是我经过研究，得出的证明过程。</p>
-<h1 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h1><p>首先根据导数定义，我们得到以下几个式子：</p>
-<p><img src="/images/in_posts/derivative_of_sinx1.png" alt="证明过程 之一"></p></p>
-            <p class="article-more-link">
-                <a href="/2016/05/21/derivative-of-sinx/#more">阅读全文 →</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/" data-id="cj5xjqlas0000d3tcxqocebg7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yuehaowang.github.io/2016/05/21/derivative-of-sinx/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-    </nav>
-</section>
-            
-                <aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/08/02/math_expression_parser/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/thumbnails/math_expression_parser.png)" alt="C++实现对数学基本运算表达式的解析" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/C-C/">C/C++</a></p>
-                            <p class="item-title"><a href="/2017/08/02/math_expression_parser/" class="title">C++实现对数学基本运算表达式的解析</a></p>
-                            <p class="item-date"><time datetime="2017-08-01T16:00:00.000Z" itemprop="datePublished">2017-08-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/07/10/simple_http_local_server_with_nodejs/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/thumbnails/simple_http_local_server_with_nodejs.png)" alt="NodeJs开发简易的Http本地服务器" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
-                            <p class="item-title"><a href="/2017/07/10/simple_http_local_server_with_nodejs/" class="title">NodeJs开发简易的Http本地服务器</a></p>
-                            <p class="item-date"><time datetime="2017-07-09T16:00:00.000Z" itemprop="datePublished">2017-07-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/01/31/sat-explanation/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/in_posts/sat_1.jpg)" alt="【译】碰撞检测之分离轴定理算法讲解" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/译文/">译文</a></p>
-                            <p class="item-title"><a href="/2017/01/31/sat-explanation/" class="title">【译】碰撞检测之分离轴定理算法讲解</a></p>
-                            <p class="item-date"><time datetime="2017-01-30T16:00:00.000Z" itemprop="datePublished">2017-01-31</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/12/25/new-game-flying-stone/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/demo/flying_stone_poster.png)" alt="分享新作 - 虐心小游戏Flying Stone" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/App发布/">App发布</a></p>
-                            <p class="item-title"><a href="/2016/12/25/new-game-flying-stone/" class="title">分享新作 - 虐心小游戏Flying Stone</a></p>
-                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/09/develop-puzzle-within-2h/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/in_posts/my_puzzle_record.png)" alt="挑战速度，2小时完成HTML5拼图小游戏" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a></p>
-                            <p class="item-title"><a href="/2016/08/09/develop-puzzle-within-2h/" class="title">挑战速度，2小时完成HTML5拼图小游戏</a></p>
-                            <p class="item-date"><time datetime="2016-08-08T16:00:00.000Z" itemprop="datePublished">2016-08-09</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
+      </main>
+      <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">
+        Copyright &copy; 2020 Yuehao Wang
         </div>
     </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/App发布/">App发布</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5-JavaScript/">HTML5&JavaScript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/译文/">译文</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/App/" style="font-size: 12px;">App</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/HTML5/" style="font-size: 16px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Pylash/" style="font-size: 10px;">Pylash</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/canvas/" style="font-size: 16px;">canvas</a> <a href="/tags/lufylegend/" style="font-size: 16px;">lufylegend</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/数学/" style="font-size: 18px;">数学</a> <a href="/tags/游戏开发/" style="font-size: 14px;">游戏开发</a> <a href="/tags/物理模拟/" style="font-size: 10px;">物理模拟</a> <a href="/tags/算法/" style="font-size: 12px;">算法</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io/">Hexo</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://lufylegend.com/">lufylegend</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ladeng6666.com/blog/">ladeng6666</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰的官方网站</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.xsec.io/">Netxfly&#39;s Blog</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.eastpiger.com/">Eastpiger</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2018 Yuehao<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-        </div>
+    <div class="mdl-mini-footer__right-section">
+        <ul class="mdl-mini-footer__link-list">
+        <li><a href="https://github.com/yuehaowang" target="_blank">Github</a></li>
+        <li><a href="https://www.instagram.com/yuehao727/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/yuehaowang/" target="_blank">LinkedIn</a></li>
+        </ul>
     </div>
 </footer>
-        
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128376"></script>
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
     </div>
-</body>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
 </html>

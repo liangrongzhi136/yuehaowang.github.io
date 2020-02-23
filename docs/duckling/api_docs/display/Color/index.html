@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Color class &#8212; Duckling Game Engine 1.0.0b2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/mycss.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0b2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DisplayObject class" href="../DisplayObject/index.html" />
+    <link rel="prev" title="display module" href="../index.html" />
+  
+   
+
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../DisplayObject/index.html" title="DisplayObject class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="display module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">display module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+        <a href="
+    ../../../index.html" class="text-logo">Duckling Game Engine</a>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">core module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">display module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events/index.html">events module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../loaders/index.html">loaders module</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</div>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../../index.html">Docs</a></li>
+              
+                <li><a href="../../index.html">API Docs</a></li>
+              
+                <li><a href="../index.html">display module</a></li>
+              
+              <li>Color class</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="color-class">
+<h1>Color class<a class="headerlink" href="#color-class" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Color</em> class provides colors based on RGBA value. (Note: R G B A channels ought to be in range of [0, 1].)</p>
+<p><strong>Base class:</strong> <a class="reference internal" href="../../core/Object/index.html"><span class="doc">Object</span></a></p>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-attr docutils literal"><span class="pre">r</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: Red channel.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">g</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: Green channel.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">b</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 0</li>
+<li>Description: Blue channel.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">a</span></code>: <code class="docutils literal"><span class="pre">float</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Default: 1.0</li>
+<li>Description: Alpha channel.</li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-attr docutils literal"><span class="pre">objectIndex</span></code>: <code class="docutils literal"><span class="pre">int</span></code> <strong>[Read Only]</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Inherited from <a class="reference internal" href="../../core/Object/index.html"><span class="doc">Object</span></a></li>
+<li>Description: A unique index for each object.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>r = 0</em>, <em>g = 0</em>, <em>b = 0</em>, <em>a = 1.0</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>r</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Red channel.</li>
+<li><strong>g</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Green channel.</li>
+<li><strong>b</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Blue channel.</li>
+<li><strong>a</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Alpha channel.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Initializes a color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">toList</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">list[float]</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Converts to a list as [R, G, B, A].</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">set</code><span class="sig-paren">(</span><em>r = 0</em>, <em>g = 0</em>, <em>b = 0</em>, <em>a = 1.0</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>r</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Red channel.</li>
+<li><strong>g</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Green channel.</li>
+<li><strong>b</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Blue channel.</li>
+<li><strong>a</strong> (<code class="docutils literal"><span class="pre">float</span></code>) – Alpha channel.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">NoneType</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Sets color’s RGBA channel.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A copy of the color.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">Color</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Creates a copy of the color.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><code class="descname">fromHex</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<code class="docutils literal"><span class="pre">str</span></code>) – A hex string.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A copy of the color.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal"><span class="pre">Color</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Generates a color object from a hex value like ‘#F8E309’.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../index.html" title="previous chapter (use the left arrow)">display module</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../DisplayObject/index.html" title="next chapter (use the right arrow)">DisplayObject class</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../DisplayObject/index.html" title="DisplayObject class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="display module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Duckling Game Engine 1.0.0b2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >API Docs</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >display module</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Yuehao Wang. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

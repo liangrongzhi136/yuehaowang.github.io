@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pexp</title>
+	<style type="text/css">
+		body {
+			margin: 20px;
+		}
+		canvas {
+			border: 2px solid #888888;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+		input {
+			width: 250px;
+		}
+		#footer {
+			margin-top: 20px;
+			padding: 20px;
+			border-top: 1px dashed #AAAAAA;
+		}
+		#more-options{
+			margin-top: 20px;
+			line-height: 1.5
+		}
+		#more-options span{
+			margin-left: 20px;
+		}
+		h1 {
+			border-bottom: 1px dashed #AAAAAA;
+			padding-bottom: 20px;
+		}
+		h1 small {
+			margin-left: 20px;
+			font-size: 20px;
+		} 
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var canvasObj = document.getElementById("mycanvas");
+
+			var btn = document.getElementById("button-draw");
+			btn.onclick = function () {
+				var gnv = parseInt(document.getElementById("input-groupnum").value),
+					tnv = parseInt(document.getElementById("input-testnum").value),
+					gv = parseFloat(document.getElementById("select-graduationval").value),
+					p = parseFloat(document.getElementById("input-p").value),
+					fc = document.getElementById("input-fillcolor").value;
+
+				if (fc.length <= 0) {
+					fc = "#FFFF00";
+				}
+
+				if (isNaN(p) || p > 1) {
+					p = 0.5;
+				}
+
+				if (!isNaN(gnv) && !isNaN(tnv) && gnv >= 20 && tnv >= 1) {
+					var data = getData(gnv, tnv, p, gv);
+
+					drawTable(data, canvasObj, fc);
+				} else {
+					alert("Please input correct data.");
+				}
+			};
+		};
+
+		function getData (g, t, p, xgv) {
+			var d = {
+				graduationVal : xgv,
+				groupNum : g,
+				average : 0,
+				variance : 0,
+				xScaling : Array((1 / xgv) + 1).fill(0)
+			};
+
+			var ls = new Array();
+			var total = 0;
+
+			for (var j = 0; j < g; j++) {
+				var count = 0;
+
+				for (var i = 0; i < t; i++) {
+					if (Math.random() < p) {
+						count += 1;
+					}
+				}
+
+				var v = count / t;
+
+				d.xScaling[Math.floor(v / xgv)] += 1;
+
+				total += v;
+
+				ls.push(v);
+			}
+
+			d.average = total / g;
+
+			total = 0;
+
+			for (var i = 0, l = ls.length; i < l; i++) {
+				total += Math.pow(ls[i] - d.average, 2);
+			}
+			
+			d.variance = total / g;
+
+			return d;
+		}
+
+		function drawTable (d, canvasObj, fillColor) {
+			var ctx = canvasObj.getContext("2d");
+			var w = canvasObj.width, h = canvasObj.height;
+			var margin = 40, xLen = w - margin * 2 - 10, yLen = h - margin * 2 - 15;
+			var ox = margin, oy = h - margin;
+			var graduationVal = d.graduationVal, groupNum = d.groupNum, xScaling = d.xScaling;
+
+			// Draw background
+			ctx.save();
+			ctx.fillStyle = "#FEFEFE";
+			ctx.fillRect(0, 0, w, h);
+			ctx.restore();
+
+			// Draw data text
+			ctx.save();
+			ctx.beginPath();
+			ctx.font = "15px Arial";
+			ctx.fillStyle = "#000000";
+			ctx.textBaseline = "top";
+			ctx.textAlign = "right";
+			ctx.fillText("Average: " + d.average.toFixed(5), w - 20, 10);
+			ctx.fillText("Variance: " + d.variance.toFixed(5), w - 20, 30);
+			ctx.restore();
+
+			// Draw axes
+			ctx.save();
+			ctx.beginPath();
+			ctx.lineWidth = 2;
+			ctx.moveTo(ox, oy);
+			ctx.lineTo(margin, margin);
+			ctx.lineTo(margin - 7, margin + 7);
+			ctx.moveTo(margin, margin)
+			ctx.lineTo(margin + 7, margin + 7);
+
+			ctx.moveTo(ox, oy);
+			ctx.lineTo(w - margin, h - margin);
+			ctx.lineTo(w - margin - 7, h - margin - 7);
+			ctx.moveTo(w - margin, h - margin)
+			ctx.lineTo(w - margin - 7, h - margin + 7);
+
+			ctx.stroke();
+
+			ctx.textAlign = "right";
+			ctx.textBaseline = "top";
+			ctx.font = "25px Arial";
+			ctx.fillText("p", ox + xLen + 10, oy + 10);
+			ctx.fillText("f", ox - 10, oy - yLen - 50);
+
+			ctx.restore();
+
+			// Draw scaling
+			ctx.save();
+			ctx.beginPath();
+			ctx.lineWidth = 1;
+
+			for (var i = 0, l = xScaling.length; i < l; i++) {
+				var tx = xLen * (i / l) + ox;
+				ctx.moveTo(tx, oy - 5);
+				ctx.lineTo(tx, oy);
+				ctx.textAlign = "center";
+				ctx.textBaseline = "top";
+				ctx.fillText((i * graduationVal).toFixed(3), tx, oy + 3);
+			}
+
+			for (var j = 0, n = 20; j <= n; j++) {
+				var ty = oy - j * yLen / n;
+				ctx.moveTo(ox + 5, ty);
+				ctx.lineTo(ox, ty);
+				ctx.textAlign = "right";
+				ctx.textBaseline = "middle";
+				ctx.fillText((j * groupNum / n).toFixed(2), ox - 3, ty);
+			}
+
+			ctx.stroke();
+			ctx.restore();
+
+			// Draw histogram
+			ctx.save();
+			ctx.beginPath();
+			ctx.lineWidth = 2;
+
+			for (var i = 0, l = xScaling.length, w = xLen / l; i < l; i++) {
+				var tx = xLen * (i / l) + ox,
+					h = (xScaling[i] / groupNum) * yLen,
+					ty = oy - h;
+
+				ctx.fillStyle = fillColor;
+				ctx.rect(tx, ty, w, h);
+				ctx.fill();
+				ctx.stroke();
+
+				ctx.font = "25px Arial";
+				ctx.fillStyle = "#000000";
+				ctx.textBaseline = "bottom";
+				ctx.fillText(xScaling[i], tx + 5, ty - 3);
+			}
+
+			ctx.restore();
+		}
+	</script>
+</head>
+<body>
+<h1>Pexp <small>A Tool for Generating Frequency Histogram</small></h1>
+<div>
+	<input type="text" id="input-groupnum" placeholder="The number of groups (>= 20)" />
+	<input type="text" id="input-testnum" placeholder="The number of tests in each group (>= 1)" />
+	<button id="button-draw">Draw Table</button>
+
+	<br />
+	<div id="more-options">
+		<b>More options</b>
+
+		<span>Probability </span>
+		<input type="text" id="input-p" placeholder="Occurrence probability (<= 1), default: 0.5" />
+
+		<span>Graduation Value </span>
+		<select id="select-graduationval">
+			<option value="0.05">0.05</option>
+			<option value="0.1" selected="selected">0.1</option>
+			<option value="0.2">0.2</option>
+		</select>
+
+		<span>Fill Color </span>
+		<input type="text" id="input-fillcolor" placeholder="Color name or RGB, default: #FFFF00" />
+	</div>
+
+	<br />
+	<canvas id="mycanvas" width=800 height=600></canvas>
+
+	<br />
+	<b>* If you want to save the graph, open the right-mouse menu and select 'Save Image As...'.</b>
+</div>
+
+<div id="footer">
+	&copy; Copyright <a href="https://github.com/yuehaowang" target="_blank">Yuehao Wang</a> from ShanghaiTech University.
+	<br />Comments are welcome. Email: wangyh3@shanghaitech.edu.cn
+</div>
+</body>
+</html>

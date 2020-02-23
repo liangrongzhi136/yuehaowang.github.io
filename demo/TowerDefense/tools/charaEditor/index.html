@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>人物编辑器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="./js/Main.js"></script>
+<script type="text/javascript" src="../../initialization/skillData.js"></script>
+<script type="text/javascript" src="../../initialization/armsData.js"></script>
+<style>
+body{
+	font-family:微软雅黑;
+	width:95%;
+}
+button{
+	background-color: #00D7FF;
+	background-image: -webkit-linear-gradient(top,gray,lightgray);
+	background-image: -moz-linear-gradient(top,gray,lightgray);
+	background-image: -ms-linear-gradient(top,gray,lightgray);
+	background-image: -o-linear-gradient(top,gray,lightgray);
+	background-image: linear-gradient(top,gray,lightgray);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+	padding:10px 10px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+input{
+	border-radius: 5px;
+	border: 2px solid gray;
+}
+#bodypart{
+	float:left;
+	width:100%;
+	padding:0 0 0 20px;
+}
+#control{
+	float:left;
+	width:40%;
+	padding:0px 0 0 20px;
+}
+#code_area{
+	width:100%;
+	height:510px;
+	background:lightgray;
+	padding:10px 0 0 10px;
+	overflow:auto;
+}
+#mainpart{
+	font-size:12px;
+	font-weight:bold;
+	float:left;
+	background: gainsboro;
+	border: 3px solid dimgray;
+	border-radius: 5px;
+	color: black;
+	padding:10px 10px;
+	width: 50%;
+	height: 560px;
+	overflow: auto;
+}
+#hint_box{
+	position:absolute;
+	background: gray;
+	border: 3px solid dimgray;
+	border-radius: 5px;
+	margin:100px 40%;
+	width:200px;
+	display:none;
+	padding:20px 0;
+	text-align: center;
+}
+#hint_box span{
+	color:white;
+}
+#hint_box button{
+	margin:20px 0;
+}
+</style>
+</head>
+<body onload="initPage();">
+	<div id="bodypart">
+		<div id="mainpart">
+			<p>
+				<span>武将代号：</span>
+				<input type="text" value="" id="chara_en_name">
+				<span>※代号为人物中文名称拼音</span>
+			</p>
+			<p>
+				<span>武将姓名：</span>
+				<input type="text" value="" id="chara_ch_name">
+			</p>
+			<p>
+				<span>人物介绍：</span>
+				<input type="text" value="" id="introduction">
+			</p>
+			<p>
+				<span>是否为大众形象：</span>
+				<select id="isNormal">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</select>
+			</p>
+			<p>
+				<span>出场次数：</span>
+				<input type="text" value="" id="amount">
+				<span>※无限则写countless</span>
+			</p>
+			<p>
+				<span>攻击力：</span>
+				<input type="text" value="" id="attack">
+			</p>
+			<p>
+				<span>消耗：</span>
+				<input type="text" value="" id="cost">
+			</p>
+			<p>
+				<span>最高等级：</span>
+				<input type="text" value="" id="maxLevel">
+			</p>
+			<p>
+				<span>攻击范围：</span>
+				<select id="range_type">
+					<option value="circle">circle</option>
+				</select>
+				<input type="text" value="" id="range_range">
+				<span>※单位为格数</span>
+			</p>
+			<p>
+				<span>技能：</span>
+				<select id="skill">
+					<option value="null">无</option>
+				</select>
+			</p>
+			<p>
+				<span>归类：</span>
+				<select id="attribute">
+					<option value="soldier">soldier</option>
+					<option value="general">general</option>
+				</select>
+			</p>
+			<p>
+				<span>兵种：</span>
+				<select id="arms"></select>
+			</p>
+			<p>
+				<span>升级形象：</span>
+				<input type="text" value="" id="levelUpStyle">
+				<span>※没有填null</span>
+			</p>
+			<p>
+				<span>体力：</span>
+				<input type="text" value="" id="hp">
+			</p>
+			<p>
+				<span>对军营的伤害：</span>
+				<input type="text" value="" id="hurt">
+			</p>
+			<p>
+				<span>移动速度：</span>
+				<select id="speed">
+					<option value="12">12</option>
+					<option value="8">8</option>
+					<option value="6">6</option>
+					<option value="4">4</option>
+				</select>
+			</p>
+			
+			<p>
+				<span>奖励：</span>
+				<input type="text" value="" id="value">
+			</p>
+		</div>
+		<div id="control">
+			<button onclick="createChara();">创建人物</button>
+			<pre id="code_area">
+			</pre>
+		</div>
+	</div>
+	<div id="hint_box">
+		<span id="hint_box_content"></span>
+		<br />
+		<button onclick="closeHintBox()">确定</button>
+	</div>
+</body>
+</html>
