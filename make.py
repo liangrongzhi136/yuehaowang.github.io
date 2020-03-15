@@ -18,6 +18,18 @@ PAGE_CONFS = [
         'slug': '/showcase',
         'content': 'showcase.html',
         'output': 'showcase/index.html'
+    },
+    {
+        'title': 'Toys',
+        'slug': '/toys',
+        'content': 'toys.html',
+        'output': 'toys/index.html'
+    },
+    {
+        'title': 'Articles',
+        'slug': '/articles',
+        'content': 'articles.html',
+        'output': 'articles/index.html'
     }
 ]
 
