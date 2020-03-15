@@ -60,7 +60,7 @@ The first experiment aims to check correctness of the random distance distributi
 
 ![Random Distance Distribution](random_distance_distribution.png)
 
-The next figure compares theoretical result and simulated result of the probability that data points are closer to the edge of sampling space than to other data points. Since the sparsity of the sampling space depends on the number of samples ($$N$$) and the dimensions of the space ($$p$$), the figure exhibits four subplots which are under different $$N$$ (10, 100, 1000, 10000) and plot the probability changing curve over $$p$$ (from 1 to 10).
+The next figure compares theoretical result and simulated result of the probability that data points are closer to the edge of sampling space than to other data points. Since the sparsity of the sampling space depends on the number of samples ($$N$$) and the dimensions of the space ($$p$$), the figure exhibits four subplots which are under different $$N$$ (10, 100, 1000, 10000) and plot the probability changing curves over $$p$$ (from 1 to 10).
 
 Theoretical result and simulated result are displayed in blue and green, respectively. We can see the two curves have the same tendency and roughly overlapped with each other under different $$N$$.
 
