@@ -16,7 +16,6 @@ function main(){
 	LStage.setDebug(true);
 	
 	var urlList = [
-		{path:"./src/main/CGlobal.js",type:"js"},
 		{path:"./src/utils/CLoadManager.js",type:"js"},
 		{path:"./src/utils/CJsManager.js",type:"js"},
 		{path:"./src/window/CSimpleLoadingBar.js",type:"js"}
