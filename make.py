@@ -19,12 +19,12 @@ PAGE_CONFS = [
         'content': 'showcase.html',
         'output': 'showcase/index.html'
     },
-    {
-        'title': 'Toys',
-        'slug': '/toys',
-        'content': 'toys.html',
-        'output': 'toys/index.html'
-    },
+    # {
+    #     'title': 'Toys',
+    #     'slug': '/toys',
+    #     'content': 'toys.html',
+    #     'output': 'toys/index.html'
+    # },
     {
         'title': 'Articles',
         'slug': '/articles',
