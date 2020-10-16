@@ -85,7 +85,7 @@ html, body {
   align-items: center;
   justify-content: center;
 }
-.justify-text h4 {
+.justify-text h4, h5 {
   text-align: left;
 }
 @media (min-width: 479px) {
@@ -111,7 +111,7 @@ html, body {
   height: auto;
 }
 .mdl-demo .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
+  margin: 30px;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -119,7 +119,7 @@ html, body {
   color: inherit;
   width: calc(100% - 80px);
 }
-.mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
+.mdl-demo.mdl-demo .mdl-card__supporting-text h4, h5 {
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -131,6 +131,7 @@ html, body {
 .mdl-demo .mdl-card__actions a {
   color: #00BCD4;
   margin: 0;
+  font-weight: bold;
 }
 .mdl-demo .mdl-card__actions a:hover,
 .mdl-demo .mdl-card__actions a:active {
@@ -162,7 +163,7 @@ html, body {
           justify-content: center;
 }
 .mdl-demo section > .section__play-btn {
-  min-height: 200px;
+  min-height: 100px;
 }
 .mdl-demo section > header > .material-icons {
   font-size: 3rem;
@@ -271,8 +272,25 @@ html, body {
   margin-top: 50px;
 }
 
-.inline-material-icons{
+.inline-material-icon {
   display: inline-flex;
   vertical-align: middle;
   margin-right: 5px;
+}
+
+.github-btn-icon{
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.work_item .authors a {
+  color: #00BCD4 !important;
+  margin: 0;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.work_item .authors a:hover {
+  text-decoration: underline;
 }
