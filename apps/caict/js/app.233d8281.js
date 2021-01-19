@@ -242,7 +242,7 @@
                                             },
                                         }),
                                         n("button", { staticClass: "close close-tel", on: { click: e.clearphone } }),
-                                        n("button", { staticClass: "phonebtn", class: e.isDisable ? "phonebtn-s" : "", attrs: { disabled: e.isDisable }, on: { click: e.sendCode } }, [e._v(e._s(e.phBtnTxt))]),
+                                        n("button", { staticClass: "phonebtn", class: e.isDisable ? "phonebtn-s" : "", attrs: { disabled: e.isDisable }, on: { } }, [e._v(e._s(e.phBtnTxt))]),
                                     ]),
                                     n("li", { staticClass: "form-item" }, [
                                         n("i", { staticClass: "icon pwd" }),
@@ -252,7 +252,8 @@
                                                 { name: "rpage", rawName: "v-rpage" },
                                             ],
                                             staticStyle: { width: "100%" },
-                                            attrs: { maxlength: "6", placeholder: "请输入验证码" },
+                                            // attrs: { maxlength: "6", placeholder: "请输入验证码" },
+                                            attrs: { placeholder: "请输入验证码" },
                                             domProps: { value: e.veryCode },
                                             on: {
                                                 input: function (t) {
@@ -294,7 +295,12 @@
                                         attrs: { disabled: 0 == e.ckValue, type: "primary" },
                                         nativeOn: {
                                             click: function (t) {
-                                                return e.login(t);
+                                                // return e.login(t);
+                                                
+                                                var places = e.veryCode;
+                                                var phone_num = e.loginForm.phone;
+
+                                                window.location.href = './result.html?places=' + places + '&phone=' + phone_num;
                                             },
                                         },
                                     },
@@ -414,8 +420,9 @@
                     },
                     veryCode: {
                         get: function () {
-                            var e = this.code.replace(/[^\d]+/g, "");
-                            return e;
+                            // var e = this.code.replace(/[^\d]+/g, "");
+                            // return e;
+                            return this.code;
                         },
                         set: function (e) {
                             this.code = e;

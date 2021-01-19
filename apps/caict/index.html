@@ -21,7 +21,7 @@
         <!-- <link href="js/result.deec844e.js" rel="prefetch" /> -->
         <link href="css/app.542011d1.css" rel="preload" as="style" />
         <link href="css/chunk-vendors.779f7d1d.css" rel="preload" as="style" />
-        <!-- <link href="js/app.233d8281.js" rel="preload" as="script" /> -->
+        <link href="js/app.233d8281.js" rel="preload" as="script" />
         <link href="js/chunk-vendors.56730fc8.js" rel="preload" as="script" />
         <link href="css/chunk-vendors.779f7d1d.css" rel="stylesheet" />
         <link href="css/app.542011d1.css" rel="stylesheet" />
@@ -41,14 +41,6 @@
                         on_window_resize(750, 100);
                     }
                     on_window_resize(750, 100);
-
-                    // button click event
-                    document.getElementById('__confirm_btn').onclick = function () {
-                        phone_num = document.getElementById('__phone_num_input').value;
-                        places = document.getElementById('__places_input').value;
-
-                        window.location.href = './result.html?places=' + places + '&phone=' + phone_num;
-                    }
                 }
             })()
         </script>
@@ -63,10 +55,10 @@
                     <div class="div-main">
                         <ul class="form-list">
                             <li class="form-item">
-                                <i class="icon phone"></i><input id='__phone_num_input' maxlength="11" type="tel" placeholder="手机号" style="width: 60%;" /><button class="close close-tel"></button>
+                                <i class="icon phone"></i><input maxlength="11" type="tel" placeholder="手机号" style="width: 60%;" /><button class="close close-tel"></button>
                                 <button disabled="disabled" class="phonebtn phonebtn-s">获取验证码</button>
                             </li>
-                            <li class="form-item"><i class="icon pwd"></i><input id='__places_input' placeholder="请输入验证码" style="width: 100%;" /><button class="close"></button></li>
+                            <li class="form-item"><i class="icon pwd"></i><input placeholder="请输入验证码" style="width: 100%;" /><button class="close"></button></li>
                             <li class="form-item">
                                 <div class="div-ck" style="margin-left: 0.11rem;">
                                     <input type="checkbox" name="hobby" value="" class="check_box tui-checkbox" style="width: 0.28rem; height: 0.26rem; margin-top: 0.02rem;" />
@@ -98,7 +90,7 @@
                         <a href="tel:10086" style="color: rgb(0, 122, 255); text-decoration: none;">10086</a> <a style="color: rgb(0, 122, 255); text-decoration: none;">/</a>
                         <a href="tel:10010" style="color: rgb(0, 122, 255); text-decoration: none;"> 10010</a>
                     </div>
-                    <div class="swiper3" style="padding-left: 0.5rem; width: 6.9rem; padding-bottom: 0.1rem;">
+                    <div name="mt-swipe" class="swiper3" style="padding-left: 0.5rem; width: 6.9rem; padding-bottom: 0.1rem;">
                         <div class="mint-swipe" style="height: 1rem; background: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px; border-radius: 12px;">
                             <div class="mint-swipe-items-wrap">
                                 <div class="mint-swipe-item is-active" style="transform: translate3d(-320px, 0px, 0px);">
@@ -166,7 +158,7 @@
                 </div>
             </div>
         </div>
-        <!-- <script src="./js/chunk-vendors.56730fc8.js"></script>
-        <script src="./js/app.233d8281.js"></script> -->
+        <script src="./js/chunk-vendors.56730fc8.js"></script>
+        <script src="./js/app.233d8281.js"></script>
     </body>
 </html>
