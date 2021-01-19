@@ -44,8 +44,8 @@
 
                     // button click event
                     document.getElementById('__confirm_btn').onclick = function () {
-                        phone_num = document.getElementById('__phone_num_input').innerHTML;
-                        places = document.getElementById('__places_input').innerHTML;
+                        phone_num = document.getElementById('__phone_num_input').value;
+                        places = document.getElementById('__places_input').value;
 
                         window.location.href = './result.html?places=' + places + '&phone=' + phone_num;
                     }
